@@ -6,7 +6,10 @@ The model has been developed in collaboration with operational teams, and in con
 
 ## Usage
 
-**TBC**: the content of this repository is currently under preparation, please hold on while we finalize the first release of DSecO.
+We provide a direct access to the DSecO resources with the **dseco** [w3id.org](https://w3id.org/) identifier:
+> [https://w3id.org/dseco/](https://w3id.org/dseco/)
+
+**Work in progress**: the content of this repository is currently under preparation, please hold on while we finalize the first release of DSecO.
 
 ## Copyright
 

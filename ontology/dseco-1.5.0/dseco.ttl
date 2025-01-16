@@ -1,0 +1,245 @@
+# Copyright (c) 2023-2025 Orange. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+#     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+#     3. All advertising materials mentioning features or use of this software must display the following acknowledgement:
+#     This product includes software developed by Orange.
+#     4. Neither the name of Orange nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Orange "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Orange BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# === PREFIXES ================================================================
+
+# --- Basic ---
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:	<http://www.w3.org/ns/shacl#> .
+
+# --- Ontology management ---
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# --- Domain specific ---
+@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> . # Unified Cybersecurity Ontology (UCO)
+@prefix org: <http://www.w3.org/ns/org#> .  # The Organization Ontology
+
+# --- security-ontology ---
+@prefix dseco: <https://w3id.org/dseco/ontology/> .
+@prefix : <https://w3id.org/dseco/ontology/> .
+
+# =============================================================================
+
+<https://w3id.org/dseco/ontology/>
+    a voaf:Vocabulary, owl:Ontology ;
+    dcterms:title "The DNS Security Ontology"@en ;
+    dcterms:description """The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.
+The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.
+
+Alignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).
+Directions for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.
+Alignment holds for the following vocabulary releases:
+
+- [ORG](https://www.w3.org/TR/vocab-org/) 0.8
+- [UCO](https://github.com/ucoProject/uco) Release-0.8.0
+"""@en ;
+    bibo:status <http://purl.org/ontology/bibo/status/draft> ;  # https://www.dublincore.org/specifications/bibo/bibo/bibo.rdf.xml#
+    dcterms:creator "Didier Bringer (https://orcid.org/0009-0007-9787-2559)" ;  # Didier Bringer : 0009-0007-9787-2559
+    dcterms:contributor "Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)" ;  # Lionel Tailhardat
+    dcterms:publisher <https://www.orange.com/> ;
+    dcterms:license <https://spdx.org/licenses/BSD-4-Clause> ;
+    vann:preferredNamespacePrefix "dseco" ;
+    vann:preferredNamespaceUri "https://w3id.org/dseco/ontology/" ;  # See https://dgarijo.github.io/Widoco/doc/bestPractices/index-en.html
+    dcterms:issued "2022-05-10"^^xsd:date ;
+    dcterms:modified "2025-01-16"^^xsd:date ;
+    skos:changeNote """Changes in v1.5.0:
+
+- Added owl:Ontology details, including creator, preferredNamespacePrefix, and so on.
+- Added rdfs:isDefinedBy to the ontology classes and properties.
+- Added vs:term_status to the ontology classes and properties.
+- Added rdfs:comment to the ontology classes and properties for auto-documentation.
+
+"""@en ;
+    owl:versionInfo "v1.5.0" ;
+    owl:versionIRI <dseco-1.5.0> ;
+    rdfs:seeAlso <https://w3id.org/dseco/doc/> ;
+.
+
+#################################################################
+#    Classes
+#################################################################
+
+:FQDN
+    a owl:Class ;
+    rdfs:label "FQDN" ;
+    rdfs:comment "Fully Qualified Domain Name."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:IP_Address
+    a owl:Class ;
+    rdfs:label "IP_Address" ;
+    rdfs:comment "An ip address."@en ;
+    owl:equivalentClass observable:IPAddress ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:WhoisDomain
+    a owl:Class ;
+    rdfs:label "WhoisDomain" ;
+    rdfs:comment "Beware a WhoisDomain here is not a dns zone strictly speaking, here it is a domain of the form name.tLD that answer to a whois query."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:is_CNAME_of
+    a owl:ObjectProperty ;
+    rdfs:label "is_CNAME_of" ;
+    rdfs:domain :FQDN ;
+    rdfs:range :FQDN ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:is_A_to
+    a owl:ObjectProperty ;
+    rdfs:label "is_A_to" ;
+    rdfs:domain :FQDN ;
+    rdfs:range :IP_Address ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:is_AAAA_to
+    a owl:ObjectProperty ;
+    rdfs:label "is_AAAA_to" ;
+    rdfs:domain :FQDN ;
+    rdfs:range :IP_Address ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:has_whois_domain
+    a owl:ObjectProperty ,
+      owl:FunctionalProperty ; # A functional property is a property that can have only one (unique) value y for each instance x
+    rdfs:label "has_whois_domain" ;
+    rdfs:domain :FQDN ;
+    rdfs:range :WhoisDomain ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:is_CNAME_of_CNAME_of
+    a owl:ObjectProperty ;
+    rdfs:label "is_CNAME_of_CNAME_of" ;
+    rdfs:comment "To test inferences."@en ;
+    owl:propertyChainAxiom (:is_CNAME_of :is_CNAME_of) ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:managedBy
+    a owl:ObjectProperty ;
+    rdfs:label "managedBy" ;
+    rdfs:domain :WhoisDomain ;
+    rdfs:range org:OrganizationalUnit ;
+    rdfs:comment "The Agent or Owner that can change entries in the zone."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+#################################################################
+#    Data properties
+#################################################################
+
+:hasAddress
+    a owl:DatatypeProperty ,
+      owl:FunctionalProperty ;
+    rdfs:label "hasAddress" ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :IP_Address ;
+    rdfs:range xsd:string ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:hasName
+    a owl:DatatypeProperty ,
+      owl:FunctionalProperty ;
+    rdfs:label "hasName" ;
+    rdfs:comment "The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B. This means that :hasName can be used with instances of class A or class B."@en ;
+    rdfs:comment "Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B. Cela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B."@fr ;
+    rdfs:domain [
+                    a owl:Class ;
+                    owl:unionOf (:FQDN :WhoisDomain)
+                ] ;
+    rdfs:range xsd:string ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:hasASN
+    a owl:DatatypeProperty,
+      owl:FunctionalProperty ;
+    rdfs:label "hasASN" ;
+    rdfs:comment "The Autonomous System Number (ASN) associated with a network entity."@en ;
+    rdfs:comment "L'Autonomous System Number (ASN) associé à une entité."@fr ;
+    rdfs:domain :IP_Address ;
+    rdfs:range xsd:integer ;
+    vs:term_status "unstable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:hasCountry
+    a owl:DatatypeProperty,
+      owl:FunctionalProperty ;
+    rdfs:label "hasCountry" ;
+    rdfs:domain :IP_Address ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The country where the entity is located."@en ;
+    rdfs:comment "Le pays où se trouve l'entité."@fr ;
+    vs:term_status "unstable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:isinOurSubnet
+    a owl:DatatypeProperty,
+      owl:FunctionalProperty ;
+    rdfs:label "isinOurSubnet" ;
+    rdfs:domain :IP_Address ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "True if the IP is in our subnets. It is populated by a INSERT WHERE query."@en ;
+    vs:term_status "unstable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+:FQDN_ends_in_exampleorg
+    a owl:DatatypeProperty ,
+      owl:FunctionalProperty ;
+    rdfs:label "FQDN_ends_in_exampleorg" ;
+    rdfs:domain :FQDN ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "This property is designed here for illustrative purposes. It is populated by an INSERT WHERE."@en ;
+    vs:term_status "unstable" ;
+    rdfs:isDefinedBy dseco: ;
+.
+
+# === EOF =====================================================================

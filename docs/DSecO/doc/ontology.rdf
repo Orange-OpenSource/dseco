@@ -1,0 +1,474 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/dseco/ontology/"
+     xml:base="https://w3id.org/dseco/ontology/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/dseco/ontology/">
+        <owl:versionIRI rdf:resource="file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0"/>
+        <terms:contributor>Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)</terms:contributor>
+        <terms:creator>Didier Bringer (https://orcid.org/0009-0007-9787-2559)</terms:creator>
+        <terms:description xml:lang="en">The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.
+The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.
+
+Alignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).
+Directions for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.
+Alignment holds for the following vocabulary releases:
+
+- [ORG](https://www.w3.org/TR/vocab-org/) 0.8
+- [UCO](https://github.com/ucoProject/uco) Release-0.8.0
+</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-10</terms:issued>
+        <terms:license rdf:resource="https://spdx.org/licenses/BSD-4-Clause"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-01-16</terms:modified>
+        <terms:publisher rdf:resource="https://www.orange.com/"/>
+        <terms:title xml:lang="en">The DNS Security Ontology</terms:title>
+        <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/draft"/>
+        <vann:preferredNamespacePrefix>dseco</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/dseco/ontology/</vann:preferredNamespaceUri>
+        <rdfs:seeAlso rdf:resource="https://w3id.org/dseco/doc/"/>
+        <owl:versionInfo>v1.5.0</owl:versionInfo>
+        <skos:changeNote xml:lang="en">Changes in v1.5.0:
+
+- Added owl:Ontology details, including creator, preferredNamespacePrefix, and so on.
+- Added rdfs:isDefinedBy to the ontology classes and properties.
+- Added vs:term_status to the ontology classes and properties.
+- Added rdfs:comment to the ontology classes and properties for auto-documentation.
+
+</skos:changeNote>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#changeNote -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#changeNote"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/has_whois_domain -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dseco/ontology/has_whois_domain">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/FQDN"/>
+        <rdfs:range rdf:resource="https://w3id.org/dseco/ontology/WhoisDomain"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>has_whois_domain</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/is_AAAA_to -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dseco/ontology/is_AAAA_to">
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/FQDN"/>
+        <rdfs:range rdf:resource="https://w3id.org/dseco/ontology/IP_Address"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>is_AAAA_to</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/is_A_to -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dseco/ontology/is_A_to">
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/FQDN"/>
+        <rdfs:range rdf:resource="https://w3id.org/dseco/ontology/IP_Address"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>is_A_to</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/is_CNAME_of -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dseco/ontology/is_CNAME_of">
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/FQDN"/>
+        <rdfs:range rdf:resource="https://w3id.org/dseco/ontology/FQDN"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>is_CNAME_of</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/dseco/ontology/is_CNAME_of"/>
+            <rdf:Description rdf:about="https://w3id.org/dseco/ontology/is_CNAME_of"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">To test inferences.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>is_CNAME_of_CNAME_of</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/managedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dseco/ontology/managedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/WhoisDomain"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/org#OrganizationalUnit"/>
+        <rdfs:comment xml:lang="en">The Agent or Owner that can change entries in the zone.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>managedBy</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/FQDN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">This property is designed here for illustrative purposes. It is populated by an INSERT WHERE.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>FQDN_ends_in_exampleorg</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/hasASN -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/dseco/ontology/hasASN">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/IP_Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="fr">L&apos;Autonomous System Number (ASN) associé à une entité.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The Autonomous System Number (ASN) associated with a network entity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>hasASN</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/hasAddress -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/dseco/ontology/hasAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/IP_Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>hasAddress</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/hasCountry -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/dseco/ontology/hasCountry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/IP_Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le pays où se trouve l&apos;entité.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The country where the entity is located.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>hasCountry</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/hasName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/dseco/ontology/hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/dseco/ontology/FQDN"/>
+                    <rdf:Description rdf:about="https://w3id.org/dseco/ontology/WhoisDomain"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B. Cela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B. This means that :hasName can be used with instances of class A or class B.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>hasName</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/isinOurSubnet -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/dseco/ontology/isinOurSubnet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dseco/ontology/IP_Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">True if the IP is in our subnets. It is populated by a INSERT WHERE query.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>isinOurSubnet</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/vocommons/voaf#Vocabulary -->
+
+
+    <owl:Class rdf:about="http://purl.org/vocommons/voaf#Vocabulary"/>
+    
+
+
+    <!-- http://www.w3.org/ns/org#OrganizationalUnit -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/org#OrganizationalUnit"/>
+    
+
+
+    <!-- https://unifiedcyberontology.org/ontology/uco/observable#IPAddress -->
+
+
+    <owl:Class rdf:about="https://unifiedcyberontology.org/ontology/uco/observable#IPAddress">
+        <owl:equivalentClass rdf:resource="https://w3id.org/dseco/ontology/IP_Address"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/FQDN -->
+
+
+    <owl:Class rdf:about="https://w3id.org/dseco/ontology/FQDN">
+        <rdfs:comment xml:lang="en">Fully Qualified Domain Name.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>FQDN</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/IP_Address -->
+
+
+    <owl:Class rdf:about="https://w3id.org/dseco/ontology/IP_Address">
+        <rdfs:comment xml:lang="en">An ip address.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>IP_Address</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/WhoisDomain -->
+
+
+    <owl:Class rdf:about="https://w3id.org/dseco/ontology/WhoisDomain">
+        <rdfs:comment xml:lang="en">Beware a WhoisDomain here is not a dns zone strictly speaking, here it is a domain of the form name.tLD that answer to a whois query.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/dseco/ontology/"/>
+        <rdfs:label>WhoisDomain</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/dseco/ontology/ -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/dseco/ontology/">
+        <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

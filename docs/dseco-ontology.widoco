@@ -1,0 +1,47 @@
+
+abstract=The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.
+The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.
+
+Alignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).
+Directions for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.
+Alignment holds for the following vocabulary releases:
+
+- [ORG](https://www.w3.org/TR/vocab-org/) 0.8
+- [UCO](https://github.com/ucoProject/uco) Release-0.8.0
+
+ontologyTitle=The DNS Security Ontology
+ontologyPrefix=dseco
+ontologyNamespaceURI=https://w3id.org/dseco/ontology/
+ontologyName=The DNS Security Ontology
+thisVersionURI=file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0
+latestVersionURI=
+previousVersionURI=
+dateOfRelease=2025-01-16
+ontologyRevisionNumber=v1.5.0
+licenseURI=https://spdx.org/licenses/BSD-4-Clause
+licenseName=https://spdx.org/licenses/BSD-4-Clause
+licenseIconURL=null
+citeAs=Didier Bringer (https://orcid.org/0009-0007-9787-2559). The DNS Security Ontology. Revision: v1.5.0. Retrieved from: file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0
+DOI=
+status=draft
+backwardsCompatibleWith=
+publisher=https://www.orange.com/
+publisherURI=https://www.orange.com/
+publisherInstitution=null
+publisherInstitutionURI=null
+authors=Didier Bringer (https://orcid.org/0009-0007-9787-2559)
+authorsURI=
+authorsInstitution=
+authorsInstitutionURI=
+contributors=Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)
+contributorsURI=
+contributorsInstitution=
+contributorsInstitutionURI=
+importedOntologyNames=
+importedOntologyURIs=
+extendedOntologyNames=
+extendedOntologyURIs=
+RDFXMLSerialization=ontology.rdf
+TurtleSerialization=ontology.ttl
+N3Serialization=ontology.nt
+JSONLDSerialization=ontology.jsonld

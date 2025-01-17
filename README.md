@@ -27,13 +27,13 @@ Overview of the DNS-KG approach:
 We provide a direct access to the DSecO resources with the **dseco** [w3id.org](https://w3id.org/) identifier:
 > [https://w3id.org/dseco/](https://w3id.org/dseco/)
 
-Based on this identifier, the following links apply for direct access to the NORIA-O featured topics:
+Based on this identifier, the following links apply for direct access to the DSecO featured topics:
 
-| DSecO                                                                    | Link                               |
-|--------------------------------------------------------------------------|------------------------------------|
-| Ontology implementation                                                  | https://w3id.org/dseco/ontology/   |
-| Documentation                                                            | https://w3id.org/dseco/doc/        |
-| Evaluation (regressiont tests & DNS-KG configuration assessment queries) | https://w3id.org/dseco/evaluation/ |
+| DSecO                    | Link                               |
+|--------------------------|------------------------------------|
+| Ontology implementation  | https://w3id.org/dseco/ontology/   |
+| Documentation            | https://w3id.org/dseco/doc/        |
+| Evaluation               | https://w3id.org/dseco/evaluation/ |
 
 
 ## Copyright

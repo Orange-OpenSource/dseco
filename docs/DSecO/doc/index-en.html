@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>The DNS Security Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/dseco/ontology/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/dseco/ontology/","name":"The DNS Security Ontology", "headline":"The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.Alignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).Directions for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.Alignment holds for the following vocabulary releases:- [ORG](https://www.w3.org/TR/vocab-org/) 0.8- [UCO](https://github.com/ucoProject/uco) Release-0.8.0", "datePublished":"2025-01-16", "version":"v1.5.0", "license":"https://spdx.org/licenses/BSD-4-Clause", "author":[{"@type":"Person","name":"Didier Bringer (https://orcid.org/0009-0007-9787-2559)"}], "contributor":[{"@type":"Person","name":"Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>The DNS Security Ontology</h1>
+<h2>Release 2025-01-16</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0">file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0</a></dd>
+<dt>Revision:</dt>
+<dd>v1.5.0</dd>
+<dt>Issued on: </dt>
+<dd>2022-05-10</dd>
+<dt>Authors:</dt>
+<dd>Didier Bringer (https://orcid.org/0009-0007-9787-2559)</dd>
+
+<dt>Contributors:</dt>
+<dd>Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)</dd>
+
+<dt>Publisher:</dt>
+<dd><a href="https://www.orange.com/">https://www.orange.com/</a></dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://spdx.org/licenses/BSD-4-Clause" target="_blank"><img src="https://img.shields.io/badge/License-https://spdx.org/licenses/BSD_4_Clause-blue.svg" alt="https://spdx.org/licenses/BSD-4-Clause" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Didier Bringer (https://orcid.org/0009-0007-9787-2559). The DNS Security Ontology. Revision: v1.5.0. Retrieved from: file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.
+The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.
+
+Alignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).
+Directions for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.
+Alignment holds for the following vocabulary releases:
+
+- [ORG](https://www.w3.org/TR/vocab-org/) 0.8
+- [UCO](https://github.com/ucoProject/uco) Release-0.8.0
+</span>
+</div>
+<div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">The DNS Security Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+   </li>
+   <li>
+      <a href="#https://unifiedcyberontology.org/ontology/uco/observable#IPAddress"
+         title="https://unifiedcyberontology.org/ontology/uco/observable#IPAddress">
+         <span>i p address</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+   </li>
+   <li>
+      <a href="#WhoisDomain" title="https://w3id.org/dseco/ontology/WhoisDomain">WhoisDomain</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#has_whois_domain" title="https://w3id.org/dseco/ontology/has_whois_domain">has_whois_domain</a>
+   </li>
+   <li>
+      <a href="#is_A_to" title="https://w3id.org/dseco/ontology/is_A_to">is_A_to</a>
+   </li>
+   <li>
+      <a href="#is_AAAA_to" title="https://w3id.org/dseco/ontology/is_AAAA_to">is_AAAA_to</a>
+   </li>
+   <li>
+      <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+   </li>
+   <li>
+      <a href="#is_CNAME_of_CNAME_of"
+         title="https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of">is_CNAME_of_CNAME_of</a>
+   </li>
+   <li>
+      <a href="#managedBy" title="https://w3id.org/dseco/ontology/managedBy">managedBy</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#FQDN_ends_in_exampleorg"
+         title="https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg">FQDN_ends_in_exampleorg</a>
+   </li>
+   <li>
+      <a href="#hasAddress" title="https://w3id.org/dseco/ontology/hasAddress">hasAddress</a>
+   </li>
+   <li>
+      <a href="#hasASN" title="https://w3id.org/dseco/ontology/hasASN">hasASN</a>
+   </li>
+   <li>
+      <a href="#hasCountry" title="https://w3id.org/dseco/ontology/hasCountry">hasCountry</a>
+   </li>
+   <li>
+      <a href="#hasName" title="https://w3id.org/dseco/ontology/hasName">hasName</a>
+   </li>
+   <li>
+      <a href="#isinOurSubnet" title="https://w3id.org/dseco/ontology/isinOurSubnet">isinOurSubnet</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for The DNS Security Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The DNS Security Ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+      </li>
+      <li>
+         <a href="#https://unifiedcyberontology.org/ontology/uco/observable#IPAddress"
+            title="https://unifiedcyberontology.org/ontology/uco/observable#IPAddress">
+            <span>i p address</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+      </li>
+      <li>
+         <a href="#WhoisDomain" title="https://w3id.org/dseco/ontology/WhoisDomain">WhoisDomain</a>
+      </li>
+   </ul>
+   <div class="entity" id="FQDN">
+      <h3>FQDN<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/FQDN</p>
+      <div class="comment">
+         <span class="markdown">Fully Qualified Domain Name.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#FQDN_ends_in_exampleorg"
+               title="https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg">FQDN_ends_in_exampleorg</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#has_whois_domain" title="https://w3id.org/dseco/ontology/has_whois_domain">has_whois_domain</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_AAAA_to" title="https://w3id.org/dseco/ontology/is_AAAA_to">is_AAAA_to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_A_to" title="https://w3id.org/dseco/ontology/is_A_to">is_A_to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://unifiedcyberontology.org/ontology/uco/observable#IPAddress">
+      <h3>i p address<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://unifiedcyberontology.org/ontology/uco/observable#IPAddress</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IP_Address">
+      <h3>IP_Address<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/IP_Address</p>
+      <div class="comment">
+         <span class="markdown">An ip address.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasASN" title="https://w3id.org/dseco/ontology/hasASN">hasASN</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAddress" title="https://w3id.org/dseco/ontology/hasAddress">hasAddress</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCountry" title="https://w3id.org/dseco/ontology/hasCountry">hasCountry</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#isinOurSubnet" title="https://w3id.org/dseco/ontology/isinOurSubnet">isinOurSubnet</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#is_AAAA_to" title="https://w3id.org/dseco/ontology/is_AAAA_to">is_AAAA_to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#is_A_to" title="https://w3id.org/dseco/ontology/is_A_to">is_A_to</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WhoisDomain">
+      <h3>WhoisDomain<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/WhoisDomain</p>
+      <div class="comment">
+         <span class="markdown">Beware a WhoisDomain here is not a dns zone strictly speaking, here it is a domain of the form name.tLD that answer to a whois query.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#managedBy" title="https://w3id.org/dseco/ontology/managedBy">managedBy</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_whois_domain" title="https://w3id.org/dseco/ontology/has_whois_domain">has_whois_domain</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#has_whois_domain" title="https://w3id.org/dseco/ontology/has_whois_domain">has_whois_domain</a>
+      </li>
+      <li>
+         <a href="#is_A_to" title="https://w3id.org/dseco/ontology/is_A_to">is_A_to</a>
+      </li>
+      <li>
+         <a href="#is_AAAA_to" title="https://w3id.org/dseco/ontology/is_AAAA_to">is_AAAA_to</a>
+      </li>
+      <li>
+         <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+      </li>
+      <li>
+         <a href="#is_CNAME_of_CNAME_of"
+            title="https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of">is_CNAME_of_CNAME_of</a>
+      </li>
+      <li>
+         <a href="#managedBy" title="https://w3id.org/dseco/ontology/managedBy">managedBy</a>
+      </li>
+   </ul>
+   <div class="entity" id="has_whois_domain">
+      <h3>has_whois_domain<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/has_whois_domain</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#WhoisDomain" title="https://w3id.org/dseco/ontology/WhoisDomain">WhoisDomain</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_A_to">
+      <h3>is_A_to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_A_to</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_AAAA_to">
+      <h3>is_AAAA_to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_AAAA_to</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_CNAME_of">
+      <h3>is_CNAME_of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_CNAME_of</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_CNAME_of_CNAME_of">
+      <h3>is_CNAME_of_CNAME_of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of</p>
+      <div class="comment">
+         <span class="markdown">To test inferences.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="managedBy">
+      <h3>managedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/managedBy</p>
+      <div class="comment">
+         <span class="markdown">The Agent or Owner that can change entries in the zone.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#WhoisDomain" title="https://w3id.org/dseco/ontology/WhoisDomain">WhoisDomain</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/org#OrganizationalUnit"
+                  target="_blank"
+                  title="http://www.w3.org/ns/org#OrganizationalUnit">organizational unit</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#FQDN_ends_in_exampleorg"
+            title="https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg">FQDN_ends_in_exampleorg</a>
+      </li>
+      <li>
+         <a href="#hasAddress" title="https://w3id.org/dseco/ontology/hasAddress">hasAddress</a>
+      </li>
+      <li>
+         <a href="#hasASN" title="https://w3id.org/dseco/ontology/hasASN">hasASN</a>
+      </li>
+      <li>
+         <a href="#hasCountry" title="https://w3id.org/dseco/ontology/hasCountry">hasCountry</a>
+      </li>
+      <li>
+         <a href="#hasName" title="https://w3id.org/dseco/ontology/hasName">hasName</a>
+      </li>
+      <li>
+         <a href="#isinOurSubnet" title="https://w3id.org/dseco/ontology/isinOurSubnet">isinOurSubnet</a>
+      </li>
+   </ul>
+   <div class="entity" id="FQDN_ends_in_exampleorg">
+      <h3>FQDN_ends_in_exampleorg<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg</p>
+      <div class="comment">
+         <span class="markdown">This property is designed here for illustrative purposes. It is populated by an INSERT WHERE.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAddress">
+      <h3>hasAddress<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasAddress</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasASN">
+      <h3>hasASN<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasASN</p>
+      <div class="comment">
+         <span class="markdown">The Autonomous System Number (ASN) associated with a network entity.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasCountry">
+      <h3>hasCountry<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasCountry</p>
+      <div class="comment">
+         <span class="markdown">The country where the entity is located.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasName">
+      <h3>hasName<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasName</p>
+      <div class="comment">
+         <span class="markdown">The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B. This means that :hasName can be used with instances of class A or class B.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#WhoisDomain" title="https://w3id.org/dseco/ontology/WhoisDomain">WhoisDomain</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isinOurSubnet">
+      <h3>isinOurSubnet<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isinOurSubnet</p>
+      <div class="comment">
+         <span class="markdown">True if the IP is in our subnets. It is populated by a INSERT WHERE query.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>unstable</dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IP_Address" title="https://w3id.org/dseco/ontology/IP_Address">IP_Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

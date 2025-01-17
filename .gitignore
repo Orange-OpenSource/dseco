@@ -1,0 +1,11 @@
+# Default ignored files and directories
+.env
+/venv
+*.log
+*.~*
+
+# Python
+__pycache__/
+
+# Ignore development tools libs
+/lib/widoco

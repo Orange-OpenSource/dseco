@@ -1,4 +1,4 @@
-# DNS Security Ontology (DSecO) -- unit tests
+# DNS Security Ontology (DSecO) -- v1.5.0 unit tests & assessment cases
 
 This folder holds authoring tests for evaluating the DSecO implementation through a unit test approach.
 Authoring tests also reflects DNS audit application queries, thus can also serve as example queries to run on a DNS-KG structured by DSecO.

@@ -1,4 +1,4 @@
-# DSecO / ontology files repository
+# DNS Security Ontology (DSecO) -- ontology files repository
 
 This folder contains the **DSecO ontology documents**.
 

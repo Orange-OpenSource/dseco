@@ -2,7 +2,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0> a prov:Entity;
+<https://w3id.org/dseco/ontology/dseco-1.5.0> a prov:Entity;
 	 dc:title "The DNS Security Ontology";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo :agent1;

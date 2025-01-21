@@ -8,9 +8,11 @@ Cite:
 
 ```bibtex
 @misc{dseco-2025,
-  title     = {{DSecO: Domain Name System (DNS) Data as a Knowledge Graph for Enhanced Security Analysis}},
-  author    = {{Didier Bringer} and {Lionel Tailhardat}},
-  year      = {2025}
+  title        = {{DSecO: Domain Name System (DNS) Data as a Knowledge Graph for Enhanced Security Analysis}},
+  author       = {{Didier Bringer} and {Lionel Tailhardat}},
+  year         = {2025},
+  howpublished = {\url{https://hal.science/hal-04887392}},
+  note         = {RefId: hal-04887392}
 }
 ```
 

@@ -1,0 +1,367 @@
+# Copyright (c) 2024-2025. Orange. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+#     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+#     3. All advertising materials mentioning features or use of this software must display the following acknowledgement:
+#       This product includes software developed by Orange.
+#     4. Neither the name of Orange nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Orange "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Orange BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# === PREFIXES ================================================================
+
+# --- Basic ---
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Domain specific ---
+@prefix org: <http://www.w3.org/ns/org#> .  # The Organization Ontology
+
+# --- Application specific ---
+@prefix dseco: <https://w3id.org/dseco/ontology/> .
+# kg with individuals is mykg
+@prefix mykg: <https://w3id.org/dseco/mykg/> .
+
+
+########################################################################################################################
+#    Individuals
+#
+# Facts are written one at a time.
+# It is helpful for processing with simple scripting (e.g. easier to handle semicolons and comas).
+# Inference will combine these facts in later.steps.
+#
+########################################################################################################################
+
+mykg:ORGU_int a owl:NamedIndividual, org:OrganizationalUnit .
+mykg:ORGU_top a owl:NamedIndividual, org:OrganizationalUnit .
+
+
+mykg:FQDN_auto.example.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_auto.example.org dseco:is_CNAME_of mykg:FQDN_auto.example.org.cfy.multis.internalzone1.org .
+mykg:FQDN_auto.example.org dseco:has_whois_domain mykg:WhoisDomain_example.org .
+mykg:FQDN_auto.example.org dseco:hasName "auto.example.org." .
+
+
+mykg:FQDN_auto.example.org.cfy.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_auto.example.org.cfy.multis.internalzone1.org dseco:is_CNAME_of mykg:FQDN_paas.prod.cachehttp.gslb.internalzone1.org .
+mykg:FQDN_auto.example.org.cfy.multis.internalzone1.org dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org .
+mykg:FQDN_auto.example.org.cfy.multis.internalzone1.org dseco:hasName "auto.example.org.cfy.multis.internalzone1.org." .
+
+
+mykg:FQDN_yetanother_isp.fr rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_yetanother_isp.fr dseco:is_A_to mykg:IP_99.99.1.1 .
+mykg:FQDN_yetanother_isp.fr dseco:has_whois_domain mykg:WhoisDomain_yetanother_isp.fr .
+mykg:FQDN_yetanother_isp.fr dseco:hasName "yetanother_isp.fr." .
+
+
+mykg:FQDN_generique-https.prod.redirect.gslb.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_generique-https.prod.redirect.gslb.internalzone1.org dseco:is_A_to mykg:IP_203.0.113.223 .
+mykg:FQDN_generique-https.prod.redirect.gslb.internalzone1.org dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org .
+mykg:FQDN_generique-https.prod.redirect.gslb.internalzone1.org dseco:hasName "generique-https.prod.redirect.gslb.internalzone1.org." .
+
+
+mykg:FQDN_hpo-main.prod.hporange.gslb.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to mykg:IP_203.0.113.97 ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "hpo-main.prod.hporange.gslb.internalzone1.org." .
+
+
+mykg:FQDN_jeu.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu.example.org.cfy.multis.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "jeu.example.org." .
+
+
+mykg:FQDN_jeu.example.org.cfy.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu.example.org.internalzone2.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "jeu.example.org.cfy.multis.internalzone1.org." .
+
+
+mykg:FQDN_jeu.example.org.internalzone2.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu.webagencymorte.fr ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone2.org ;
+    dseco:hasName "jeu.example.org.internalzone2.org." .
+
+
+mykg:FQDN_jeu.webagencymorte.fr rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to mykg:IP_12.12.12.12 ;
+    dseco:has_whois_domain mykg:WhoisDomain_webagencymorte.fr ;
+    dseco:hasName "jeu.webagencymorte.fr." .
+
+## Web agency morte2 without knowledge of whois domain
+mykg:FQDN_jeumort.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeumort.example.org.internalzone2.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "jeumort.example.org." .
+
+
+mykg:FQDN_jeumort.example.org.internalzone2.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeumort.webagencymorte2.fr ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone2.org ;
+    dseco:hasName "jeumort.example.org.internalzone2.org." .
+
+
+mykg:FQDN_jeu.webagencymorte2.fr rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to mykg:IP_12.12.12.1212 ;
+    dseco:hasName "jeu.webagencymorte2.fr." .
+## End of web agency ---
+
+
+mykg:FQDN_jeu2.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu2.example.org.cfy.multis.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "jeu2.example.org." .
+
+
+mykg:FQDN_jeu2.example.org.cfy.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu2.example.org.webagencyintermediaire.com ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "jeu2.example.org.cfy.multis.internalzone1.org." .
+
+
+mykg:FQDN_jeu2.example.org.webagencyintermediaire.com rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu.example.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_webagencyintermediaire.com ;
+    dseco:hasName "jeu2.example.org.webagencyintermediaire.com." .
+
+
+mykg:FQDN_jeu3.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu3.example.org.cfy.multis.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "jeu3.example.org." .
+
+
+mykg:FQDN_jeu3.example.org.cfy.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "jeu3.example.org.cfy.multis.internalzone1.org." .
+
+
+mykg:FQDN_jeu4.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu4.example.org.cfy.multis.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "jeu4.example.org." .
+
+
+mykg:FQDN_jeu4.example.org.cfy.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_jeu4.example.org.webagencyintermediaire.com ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "jeu4.example.org.cfy.multis.internalzone1.org." .
+
+
+mykg:FQDN_jeu4.example.org.webagencyintermediaire.com rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:has_whois_domain mykg:WhoisDomain_webagencyintermediaire.com ;
+    dseco:hasName "jeu4.example.org.webagencyintermediaire.com." .
+
+
+mykg:FQDN_example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_www.example.org.multis.internalzone2.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "www.example.org." .
+
+
+mykg:FQDN_paas.prod.cachehttp.gslb.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to mykg:IP_198.51.100.227 ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "paas.prod.cachehttp.gslb.internalzone1.org." .
+
+
+mykg:FQDN_people.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_prod-https.redirect.multis.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "people.example.org." .
+
+
+mykg:FQDN_people.example.org.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "people.example.org.multis.internalzone1.org." .
+
+
+mykg:FQDN_prod-https.redirect.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_generique-https.prod.redirect.gslb.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "prod-https.redirect.multis.internalzone1.org." .
+
+
+mykg:FQDN_rien.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_rien.example.org.cfy.multis.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "rien.example.org." .
+
+
+mykg:FQDN_rien.example.org.cfy.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_rien.paas.prod.cachehttp.gslb.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "rien.example.org.cfy.multis.internalzone1.org." .
+
+
+mykg:FQDN_rien.paas.prod.cachehttp.gslb.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "rien.paas.prod.cachehttp.gslb.internalzone1.org." .
+
+mykg:FQDN_www.example.org.multis.internalzone2.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_hpo-main.prod.hporange.gslb.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone2.org ;
+    dseco:hasName "www.example.org.multis.internalzone2.org." .
+
+
+mykg:FQDN_zozo.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_zozo.example.org.cfy.multis.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "zozo.example.org." .
+
+
+mykg:FQDN_zozo.example.org.cfy.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_zozo.paas.prod.cachehttp.gslb.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "zozo.example.org.cfy.multis.internalzone1.org." .
+
+
+mykg:FQDN_zozo.paas.prod.cachehttp.gslb.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to mykg:IP_198.51.100.1 ,
+                  mykg:IP_198.51.100.2 ;
+    dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org ;
+    dseco:hasName "zozo.paas.prod.cachehttp.gslb.internalzone1.org." .
+
+# A loop ---
+mykg:FQDN_boucle.example.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_boucle.example.org.cfy.multis.internalzone1.org ;
+    dseco:has_whois_domain mykg:WhoisDomain_example.org ;
+    dseco:hasName "boucle.example.org." .
+
+mykg:FQDN_boucle.example.org.cfy.multis.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of mykg:FQDN_boucle.example.org ;
+    dseco:hasName "boucle.example.org.cfy.multis.internalzone1.org." .
+# end loop ---
+
+
+# A Fully Qualified Domain Name (FQDN) is defined to point to a resource that is not present in the data.
+mykg:FQDN_papa.example.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_papa.example.org dseco:is_CNAME_of mykg:FQDN_pas_dans_lesdata .
+mykg:FQDN_papa.example.org dseco:has_whois_domain mykg:WhoisDomain_example.org .
+mykg:FQDN_papa.example.org dseco:hasName "papa.example.org." .
+
+
+# uc_ip_hijacking ---
+# A Fully Qualified Domain Name (FQDN) is defined to point to an IP outside our subnets
+mykg:FQDN_outsidesubnets.example.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_outsidesubnets.example.org dseco:is_A_to mykg:IP_199.1.1.1 .
+mykg:FQDN_outsidesubnets.example.org dseco:has_whois_domain mykg:WhoisDomain_example.org .
+mykg:FQDN_outsidesubnets.example.org dseco:hasName "outsidesubnets.example.org." .
+
+# A Fully Qualified Domain Name (FQDN) is defined to point to an IP outside our subnets
+mykg:FQDN_outsidesubnets2.example.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_outsidesubnets2.example.org dseco:is_CNAME_of mykg:FQDN_outsidesubnets2.example.org.gslb.internalzone1.org .
+mykg:FQDN_outsidesubnets2.example.org dseco:has_whois_domain mykg:WhoisDomain_example.org .
+mykg:FQDN_outsidesubnets2.example.org dseco:hasName "outsidesubnets2.example.org." .
+
+mykg:FQDN_outsidesubnets2.example.org.gslb.internalzone1.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_outsidesubnets2.example.org.gslb.internalzone1.org dseco:has_whois_domain mykg:WhoisDomain_internalzone1.org .
+mykg:FQDN_outsidesubnets2.example.org.gslb.internalzone1.org dseco:hasName "outsidesubnets2.example.org.gslb.internalzone1.org." .
+
+mykg:FQDN_outsidesubnets2.example.org.gslb.internalzone1.org dseco:is_A_to mykg:IP_199.1.1.2 .
+# end uc_ip_hijacking ---
+
+# An entry that exists solely in internalzone2.org, with no other records pointing to it,
+# and that has an IN A record.
+mykg:FQDN_christoph.internalzone2.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_christoph.internalzone2.org dseco:is_A_to mykg:IP_1 .
+mykg:FQDN_christoph.internalzone2.org dseco:has_whois_domain mykg:WhoisDomain_internalzone2.org .
+mykg:FQDN_christoph.internalzone2.org dseco:hasName "christoph.internalzone2.org." .
+
+# An entry that exists solely in internalzone2.org, with no other records pointing to it
+# and lacking an IN A record.
+mykg:FQDN_christoph2.internalzone2.org rdf:type owl:NamedIndividual , dseco:FQDN .
+mykg:FQDN_christoph2.internalzone2.org dseco:has_whois_domain mykg:WhoisDomain_internalzone2.org .
+mykg:FQDN_christoph2.internalzone2.org dseco:hasName "christoph2.internalzone2.org." .
+
+########################################################################################################################
+# Whois domains
+########################################################################################################################
+
+mykg:WhoisDomain_yetanother_isp.fr
+    rdf:type owl:NamedIndividual ,
+             dseco:WhoisDomain ;
+    dseco:hasName "yetanother_isp.fr." .
+
+
+mykg:WhoisDomain_internalzone1.org
+    rdf:type owl:NamedIndividual ,
+             dseco:WhoisDomain ;
+    dseco:hasName "internalzone1.org." ;
+    dseco:managedBy mykg:ORGU_int .
+
+
+mykg:WhoisDomain_example.org
+    rdf:type owl:NamedIndividual ,
+             dseco:WhoisDomain ;
+    dseco:hasName "example.org." ;
+    dseco:managedBy mykg:ORGU_top .
+
+
+mykg:WhoisDomain_webagencyintermediaire.com
+    rdf:type owl:NamedIndividual ,
+             dseco:WhoisDomain ;
+    dseco:hasName "webagencyintermediaire.com." .
+
+
+mykg:WhoisDomain_webagencymorte.fr
+    rdf:type owl:NamedIndividual ,
+             dseco:WhoisDomain ;
+    dseco:hasName "webagencymorte.fr." .
+
+
+mykg:WhoisDomain_internalzone2.org
+    rdf:type owl:NamedIndividual ,
+             dseco:WhoisDomain ;
+    dseco:hasName "internalzone2.org." ;
+    dseco:managedBy mykg:ORGU_int .
+
+
+########################################################################################################################
+# IP addresses
+########################################################################################################################
+
+mykg:IP_12.12.12.12 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_12.12.12.12 dseco:hasAddress "12.12.12.12" .
+
+
+mykg:IP_203.0.113.97 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_203.0.113.97 dseco:hasAddress "203.0.113.97" .
+
+
+mykg:IP_203.0.113.223 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_203.0.113.223 dseco:hasAddress "203.0.113.223" .
+
+
+mykg:IP_99.99.1.1 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_99.99.1.1 dseco:hasAddress "99.99.1.1" .
+
+
+mykg:IP_198.51.100.1 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_198.51.100.1 dseco:hasAddress "198.51.100.1" .
+
+
+mykg:IP_198.51.100.2 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_198.51.100.2 dseco:hasAddress "198.51.100.2" .
+
+
+mykg:IP_198.51.100.227 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_198.51.100.227 dseco:hasAddress "198.51.100.227" .
+
+mykg:IP_203.0.113.46 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_203.0.113.46 dseco:hasAddress "203.0.113.46" .
+
+# An IP address outside of our network used in uc_ip_hijacking
+mykg:IP_199.1.1.1 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_199.1.1.1 dseco:hasAddress "199.1.1.1" .
+
+# A second IP address outside of our network used in uc_ip_hijacking
+mykg:IP_199.1.1.2 a owl:NamedIndividual , dseco:IP_Address .
+mykg:IP_199.1.1.2 dseco:hasAddress "199.1.1.2" .
+
+### EOF ################################################################################################################

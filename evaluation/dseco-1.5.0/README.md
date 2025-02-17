@@ -14,10 +14,15 @@ Authoring tests also reflects DNS audit application queries, thus can also serve
 - Implement the test result baseline in `test.csv`
 - Define the scenario satisfied by the test case in [features/test_ontology.feature](features/test_ontology.feature), following the [Gherkin](https://cucumber.io/docs/gherkin/) syntax or the Behave syntax.
 
-### Running unittests
+### Next steps
 
-TBC.
+- Running the feature check <= leverages the tests from the `features` folder, and *test* queries from the `queries` folder.
+- Running unittests <= leverages the *uc* queries from the `queries` folder.
 
-### Running the feature check
+... both steps leverage the [dataset.ttl](datatest.ttl) file from the current folder.
 
-TBC.
+### Notes
+
+- Folder and file names in the subfolders are as follows: `test_xxx` or `uc_xxx`
+  - `uc_xxx` are described in the DSecO paper,
+  - `test_xxx` are just for implementation testing purpose.

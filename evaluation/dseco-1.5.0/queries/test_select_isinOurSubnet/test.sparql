@@ -1,4 +1,4 @@
-# Copyright (c) 2023-2024 Orange. All rights reserved.
+# Copyright (c) 2023-2025 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -17,7 +17,7 @@ SELECT ?ip
 WHERE {
     ?ip a dseco:IP_Address .
     ?ip dseco:hasAddress ?address .
-    FILTER(REGEX(?address, "^(193|81)"))
+    FILTER(REGEX(?address, "^(203.0.113|198.51.100)"))
 }
 # to ensure that the order is maintained, this way testing the ontology or the inferred ontology will do the same.
 ORDER BY ?IP

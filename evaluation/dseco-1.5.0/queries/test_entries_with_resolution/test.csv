@@ -1,0 +1,10 @@
+auto.example.org. paas.prod.cachehttp.gslb.internalzone1.org.
+jeu.example.org. jeu.webagencymorte.fr.
+jeu2.example.org. jeu.webagencymorte.fr.
+jeu3.example.org. jeu3.example.org.cfy.multis.internalzone1.org.
+jeu4.example.org. jeu4.example.org.webagencyintermediaire.com.
+outsidesubnets2.example.org. outsidesubnets2.example.org.gslb.internalzone1.org.
+people.example.org. generique-https.prod.redirect.gslb.internalzone1.org.
+rien.example.org. rien.paas.prod.cachehttp.gslb.internalzone1.org.
+www.example.org. hpo-main.prod.hporange.gslb.internalzone1.org.
+zozo.example.org. zozo.paas.prod.cachehttp.gslb.internalzone1.org.

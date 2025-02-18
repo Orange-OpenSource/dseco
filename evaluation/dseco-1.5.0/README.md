@@ -21,6 +21,9 @@ Authoring tests also reflects DNS audit application queries, thus can also serve
 
 ... both steps leverage the [dataset.ttl](datatest.ttl) file from the current folder.
 
+### Running unittests
+`./unittests.sh` : will run a test for each directory in `queries` directory
+
 ### Notes
 
 - Folder and file names in the subfolders are as follows: `test_xxx` or `uc_xxx`

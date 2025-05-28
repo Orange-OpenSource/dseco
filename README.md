@@ -37,6 +37,15 @@ Based on this identifier, the following links apply for direct access to the DSe
 | Documentation            | https://w3id.org/dseco/doc/        |
 | Evaluation               | https://w3id.org/dseco/evaluation/ |
 
+See also the *Repository Structure* for navigating into this repository:
+```
+dseco
+├───docs <documentation, diagrams and figures>
+├───evaluation <toy example and evaluation tool set>
+├───lib <local storage of third party development tools>
+├───ontology <the DSecO implementation>
+└───tools <supplementary tools for DSecO>
+```
 
 ## Copyright
 

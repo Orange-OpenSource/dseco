@@ -1,0 +1,1 @@
+http://www.example.fr/Human(?h1) ^ http://www.example.fr/Human(?h2) ^ http://www.example.fr/Computer(?c) ^ http://www.example.fr/hasComputer(?h1,?c) ^ http://www.example.fr/isHackedBy(?c,?h2) -> http://www.example.fr/isHackedBy(?h1,?h2)

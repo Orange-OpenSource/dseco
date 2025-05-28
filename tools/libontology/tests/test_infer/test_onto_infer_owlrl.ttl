@@ -1,0 +1,374 @@
+# Copyright (c) 2023-2025 Orange. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+#     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+#     3. All advertising materials mentioning features or use of this software must display the following acknowledgement:
+#     This product includes software developed by Orange.
+#     4. Neither the name of Orange nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Orange "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Orange BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+@prefix : <http://www.example.fr/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.fr> a owl:Ontology ;
+    owl:sameAs <http://www.example.fr> .
+
+:Didier a _:N342364b1f19e449bb60f53d9428edd2b,
+        :Human,
+        owl:Thing ;
+    :hasAge 42 ;
+    :hasComputer :Mac ;
+    owl:sameAs :Didier .
+
+rdf:HTML a rdfs:Datatype ;
+    owl:sameAs rdf:HTML .
+
+rdf:PlainLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:PlainLiteral .
+
+rdf:XMLLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:XMLLiteral .
+
+rdf:first owl:sameAs rdf:first .
+
+rdf:langString a rdfs:Datatype ;
+    owl:sameAs rdf:langString .
+
+rdf:rest owl:sameAs rdf:rest .
+
+rdf:type owl:sameAs rdf:type .
+
+rdfs:Literal a rdfs:Datatype ;
+    owl:sameAs rdfs:Literal .
+
+rdfs:comment a owl:AnnotationProperty ;
+    owl:sameAs rdfs:comment .
+
+rdfs:domain owl:sameAs rdfs:domain .
+
+rdfs:isDefinedBy a owl:AnnotationProperty ;
+    owl:sameAs rdfs:isDefinedBy .
+
+rdfs:label a owl:AnnotationProperty ;
+    owl:sameAs rdfs:label .
+
+rdfs:range owl:sameAs rdfs:range .
+
+rdfs:seeAlso a owl:AnnotationProperty ;
+    owl:sameAs rdfs:seeAlso .
+
+rdfs:subClassOf owl:sameAs rdfs:subClassOf .
+
+rdfs:subPropertyOf owl:sameAs rdfs:subPropertyOf .
+
+xsd:NCName a rdfs:Datatype ;
+    owl:sameAs xsd:NCName .
+
+xsd:NMTOKEN a rdfs:Datatype ;
+    owl:sameAs xsd:NMTOKEN .
+
+xsd:Name a rdfs:Datatype ;
+    owl:sameAs xsd:Name .
+
+xsd:anyURI a rdfs:Datatype ;
+    owl:sameAs xsd:anyURI .
+
+xsd:base64Binary a rdfs:Datatype ;
+    owl:sameAs xsd:base64Binary .
+
+xsd:boolean a rdfs:Datatype ;
+    owl:sameAs xsd:boolean .
+
+xsd:byte a rdfs:Datatype ;
+    owl:sameAs xsd:byte .
+
+xsd:date a rdfs:Datatype ;
+    owl:sameAs xsd:date .
+
+xsd:dateTime a rdfs:Datatype ;
+    owl:sameAs xsd:dateTime .
+
+xsd:dateTimeStamp a rdfs:Datatype ;
+    owl:sameAs xsd:dateTimeStamp .
+
+xsd:decimal a rdfs:Datatype ;
+    owl:sameAs xsd:decimal .
+
+xsd:double a rdfs:Datatype ;
+    owl:sameAs xsd:double .
+
+xsd:float a rdfs:Datatype ;
+    owl:sameAs xsd:float .
+
+xsd:hexBinary a rdfs:Datatype ;
+    owl:sameAs xsd:hexBinary .
+
+xsd:int a rdfs:Datatype ;
+    owl:sameAs xsd:int .
+
+xsd:language a rdfs:Datatype ;
+    owl:sameAs xsd:language .
+
+xsd:long a rdfs:Datatype ;
+    owl:sameAs xsd:long .
+
+xsd:negativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:negativeInteger .
+
+xsd:nonNegativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonNegativeInteger .
+
+xsd:nonPositiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonPositiveInteger .
+
+xsd:normalizedString a rdfs:Datatype ;
+    owl:sameAs xsd:normalizedString .
+
+xsd:positiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:positiveInteger .
+
+xsd:short a rdfs:Datatype ;
+    owl:sameAs xsd:short .
+
+xsd:string a rdfs:Datatype ;
+    owl:sameAs xsd:string .
+
+xsd:time a rdfs:Datatype ;
+    owl:sameAs xsd:time .
+
+xsd:token a rdfs:Datatype ;
+    owl:sameAs xsd:token .
+
+xsd:unsignedByte a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedByte .
+
+xsd:unsignedInt a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedInt .
+
+xsd:unsignedLong a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedLong .
+
+xsd:unsignedShort a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedShort .
+
+owl:backwardCompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:backwardCompatibleWith .
+
+owl:deprecated a owl:AnnotationProperty ;
+    owl:sameAs owl:deprecated .
+
+owl:equivalentClass owl:sameAs owl:equivalentClass .
+
+owl:equivalentProperty owl:sameAs owl:equivalentProperty .
+
+owl:incompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:incompatibleWith .
+
+owl:priorVersion a owl:AnnotationProperty ;
+    owl:sameAs owl:priorVersion .
+
+owl:sameAs owl:sameAs owl:sameAs .
+
+owl:unionOf owl:sameAs owl:unionOf .
+
+owl:versionInfo a owl:AnnotationProperty ;
+    owl:sameAs owl:versionInfo .
+
+swrl:argument1 owl:sameAs swrl:argument1 .
+
+swrl:argument2 owl:sameAs swrl:argument2 .
+
+swrl:body owl:sameAs swrl:body .
+
+swrl:classPredicate owl:sameAs swrl:classPredicate .
+
+swrl:head owl:sameAs swrl:head .
+
+swrl:propertyPredicate owl:sameAs swrl:propertyPredicate .
+
+:Hacker a _:N342364b1f19e449bb60f53d9428edd2b,
+        :Human,
+        owl:Thing ;
+    owl:sameAs :Hacker .
+
+:Mac a _:N342364b1f19e449bb60f53d9428edd2b,
+        :Computer,
+        owl:Thing ;
+    :isHackedBy :Hacker ;
+    owl:sameAs :Mac .
+
+xsd:integer a rdfs:Datatype ;
+    owl:sameAs xsd:integer .
+
+owl:DatatypeProperty owl:sameAs owl:DatatypeProperty .
+
+owl:Ontology owl:sameAs owl:Ontology .
+
+swrl:Imp owl:sameAs swrl:Imp .
+
+:hasAge a owl:DatatypeProperty ;
+    rdfs:domain _:N342364b1f19e449bb60f53d9428edd2b,
+        :Human,
+        owl:Thing ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf :hasAge ;
+    owl:equivalentProperty :hasAge ;
+    owl:sameAs :hasAge .
+
+owl:Nothing a owl:Class ;
+    rdfs:subClassOf _:N342364b1f19e449bb60f53d9428edd2b,
+        :Computer,
+        :Human,
+        owl:Nothing,
+        owl:Thing ;
+    owl:equivalentClass owl:Nothing ;
+    owl:sameAs owl:Nothing .
+
+owl:ObjectProperty owl:sameAs owl:ObjectProperty .
+
+:hasComputer a owl:ObjectProperty ;
+    rdfs:domain _:N342364b1f19e449bb60f53d9428edd2b,
+        :Human,
+        owl:Thing ;
+    rdfs:range _:N342364b1f19e449bb60f53d9428edd2b,
+        :Computer,
+        owl:Thing ;
+    rdfs:subPropertyOf :hasComputer ;
+    owl:equivalentProperty :hasComputer ;
+    owl:sameAs :hasComputer .
+
+() owl:sameAs () .
+
+swrl:ClassAtom owl:sameAs swrl:ClassAtom .
+
+swrl:IndividualPropertyAtom owl:sameAs swrl:IndividualPropertyAtom .
+
+swrl:Variable owl:sameAs swrl:Variable .
+
+<urn:swrl#c> a swrl:Variable ;
+    owl:sameAs <urn:swrl#c> .
+
+<urn:swrl#h1> a swrl:Variable ;
+    owl:sameAs <urn:swrl#h1> .
+
+<urn:swrl#h2> a swrl:Variable ;
+    owl:sameAs <urn:swrl#h2> .
+
+:isHackedBy a owl:ObjectProperty ;
+    rdfs:domain _:N342364b1f19e449bb60f53d9428edd2b,
+        owl:Thing ;
+    rdfs:range _:N342364b1f19e449bb60f53d9428edd2b,
+        :Human,
+        owl:Thing ;
+    rdfs:subPropertyOf :isHackedBy ;
+    owl:equivalentProperty :isHackedBy ;
+    owl:sameAs :isHackedBy .
+
+owl:Class owl:sameAs owl:Class .
+
+:Computer a owl:Class ;
+    rdfs:subClassOf _:N342364b1f19e449bb60f53d9428edd2b,
+        :Computer,
+        owl:Thing ;
+    owl:equivalentClass :Computer ;
+    owl:sameAs :Computer .
+
+owl:AnnotationProperty owl:sameAs owl:AnnotationProperty .
+
+:Human a owl:Class ;
+    rdfs:subClassOf _:N342364b1f19e449bb60f53d9428edd2b,
+        :Human,
+        owl:Thing ;
+    owl:equivalentClass :Human ;
+    owl:sameAs :Human .
+
+owl:Thing a owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass owl:Thing ;
+    owl:sameAs owl:Thing .
+
+rdfs:Datatype owl:sameAs rdfs:Datatype .
+
+_:Nf6631eb3e88542adbcca1d1988afe5aa a swrl:Imp ;
+    owl:sameAs _:Nf6631eb3e88542adbcca1d1988afe5aa ;
+    swrl:body _:N0551598f609d47a59811a6d163741c91 ;
+    swrl:head _:Nefb681f6eee14dd6a45623842f6196c0 .
+
+_:N0551598f609d47a59811a6d163741c91 rdf:first _:Ne9d97d29a67a4beb83200b0dbc08fde7 ;
+    rdf:rest _:Nea6af5b669a7447c826b23506d783e74 ;
+    owl:sameAs _:N0551598f609d47a59811a6d163741c91 .
+
+_:N32d078095eb44c28889726d480ac3453 rdf:first _:N43f6c6cef3284ca39cfab2484cb32ea0 ;
+    rdf:rest _:Necf5d59964b343cd93f59e1567b8fe9f ;
+    owl:sameAs _:N32d078095eb44c28889726d480ac3453 .
+
+_:N394368eecfe445bb9bcd425ac2e13a5c rdf:first :Human ;
+    rdf:rest _:N5bbaa0776a964291abcab510eeeaa88d ;
+    owl:sameAs _:N394368eecfe445bb9bcd425ac2e13a5c .
+
+_:N43f6c6cef3284ca39cfab2484cb32ea0 a swrl:IndividualPropertyAtom ;
+    owl:sameAs _:N43f6c6cef3284ca39cfab2484cb32ea0 ;
+    swrl:argument1 <urn:swrl#h1> ;
+    swrl:argument2 <urn:swrl#c> ;
+    swrl:propertyPredicate :hasComputer .
+
+_:N53ee46011f6d481680cf4b5b60084a7c a swrl:ClassAtom ;
+    owl:sameAs _:N53ee46011f6d481680cf4b5b60084a7c ;
+    swrl:argument1 <urn:swrl#h2> ;
+    swrl:classPredicate :Human .
+
+_:N5bbaa0776a964291abcab510eeeaa88d rdf:first :Computer ;
+    rdf:rest () ;
+    owl:sameAs _:N5bbaa0776a964291abcab510eeeaa88d .
+
+_:Nba7a220570b44cb3a7971e6776632463 a swrl:ClassAtom ;
+    owl:sameAs _:Nba7a220570b44cb3a7971e6776632463 ;
+    swrl:argument1 <urn:swrl#c> ;
+    swrl:classPredicate :Computer .
+
+_:Nc5c29b61102d413ea1a00fb57e2b759d a swrl:IndividualPropertyAtom ;
+    owl:sameAs _:Nc5c29b61102d413ea1a00fb57e2b759d ;
+    swrl:argument1 <urn:swrl#c> ;
+    swrl:argument2 <urn:swrl#h2> ;
+    swrl:propertyPredicate :isHackedBy .
+
+_:Ndc21d214e2b04bc9917b23e933187916 a swrl:IndividualPropertyAtom ;
+    owl:sameAs _:Ndc21d214e2b04bc9917b23e933187916 ;
+    swrl:argument1 <urn:swrl#h1> ;
+    swrl:argument2 <urn:swrl#h2> ;
+    swrl:propertyPredicate :isHackedBy .
+
+_:Nded8a65a94c24922b59ef7eaa783ab32 rdf:first _:Nba7a220570b44cb3a7971e6776632463 ;
+    rdf:rest _:N32d078095eb44c28889726d480ac3453 ;
+    owl:sameAs _:Nded8a65a94c24922b59ef7eaa783ab32 .
+
+_:Ne9d97d29a67a4beb83200b0dbc08fde7 a swrl:ClassAtom ;
+    owl:sameAs _:Ne9d97d29a67a4beb83200b0dbc08fde7 ;
+    swrl:argument1 <urn:swrl#h1> ;
+    swrl:classPredicate :Human .
+
+_:Nea6af5b669a7447c826b23506d783e74 rdf:first _:N53ee46011f6d481680cf4b5b60084a7c ;
+    rdf:rest _:Nded8a65a94c24922b59ef7eaa783ab32 ;
+    owl:sameAs _:Nea6af5b669a7447c826b23506d783e74 .
+
+_:Necf5d59964b343cd93f59e1567b8fe9f rdf:first _:Nc5c29b61102d413ea1a00fb57e2b759d ;
+    rdf:rest () ;
+    owl:sameAs _:Necf5d59964b343cd93f59e1567b8fe9f .
+
+_:Nefb681f6eee14dd6a45623842f6196c0 rdf:first _:Ndc21d214e2b04bc9917b23e933187916 ;
+    rdf:rest () ;
+    owl:sameAs _:Nefb681f6eee14dd6a45623842f6196c0 .
+
+_:N342364b1f19e449bb60f53d9428edd2b a owl:Class ;
+    rdfs:subClassOf _:N342364b1f19e449bb60f53d9428edd2b,
+        owl:Thing ;
+    owl:equivalentClass _:N342364b1f19e449bb60f53d9428edd2b ;
+    owl:sameAs _:N342364b1f19e449bb60f53d9428edd2b ;
+    owl:unionOf _:N394368eecfe445bb9bcd425ac2e13a5c .
+

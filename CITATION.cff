@@ -1,0 +1,39 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  DSecO: Domain Name System (DNS) Data as a Knowledge
+  Graph for Enhanced Security Analysis
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - orcid: 'https://orcid.org/0009-0007-9787-2559'
+    given-names: Didier
+    family-names: Bringer
+    affiliation: Orange
+  - orcid: 'https://orcid.org/0000-0001-5887-899X'
+    affiliation: Orange
+    given-names: Lionel
+    family-names: Tailhardat
+repository-code: 'https://github.com/Orange-OpenSource/dseco'
+url: 'https://w3id.org/dseco'
+abstract: >-
+  The DSecO project is a data model for representing and reasoning
+  on Domain Name System (DNS) data.
+
+  The ontology is developed using web technologies
+  (e.g. RDF, OWL, SKOS) and is intended as a structure
+  for realizing a DNS Knowledge Graph (KG)
+  for administration and security assessment applications.
+keywords:
+  - ontology
+  - networks
+  - network-security
+  - secops
+  - netops
+license: BSD-4-Clause
+version: v1.5.0
+date-released: '2025-01-14'

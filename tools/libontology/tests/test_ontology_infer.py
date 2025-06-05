@@ -105,15 +105,15 @@ class TestOntologyInfer(unittest.TestCase):
         """
         Set up test paths for ontology.
         """
-        self.ontology_path = "./libontology_tests/test_infer/test_onto.ttl"
+        self.ontology_path = "./tests/test_infer/test_onto.ttl"
         self.ontology_infer_hermit_path = (
-            "./libontology_tests/test_infer/test_onto_infer_hermit.ttl"
+            "./tests/test_infer/test_onto_infer_hermit.ttl"
         )
         self.ontology_infer_pellet_path = (
-            "./libontology_tests/test_infer/test_onto_infer_pellet.ttl"
+            "./tests/test_infer/test_onto_infer_pellet.ttl"
         )
         self.ontology_infer_owlrl_path = (
-            "./libontology_tests/test_infer/test_onto_infer_owlrl.ttl"
+            "./tests/test_infer/test_onto_infer_owlrl.ttl"
         )
 
     def test_infer_hermit(self):
@@ -232,7 +232,7 @@ class TestOntologyInfer(unittest.TestCase):
         and that the output matches the expected result.
         """
         # Path for the temporary file where onto_infer will be saved
-        temp_path = "./libontology_tests/test_infer/temp_file.ttl"
+        temp_path = "./tests/test_infer/temp_file.ttl"
 
         # Paths where we'll save temporary XML prior/post convert files
         with (

@@ -38,7 +38,6 @@ help:	## Show this help.
 
 check-ontology:	## Check syntax of ontology files
 	@echo -e "\033[35m > Check turtle syntax  \033[0m - requires TurtleValidator: npm install -g turtle-validator (see https://github.com/IDLabResearch/TurtleValidator)"
-	@find kos/ -type f -name *.ttl -printf "\n%f\n" -exec /usr/local/bin/ttl {} \;
 	@find ontology/ -type f -name *.ttl -printf "\n%f\n" -exec /usr/local/bin/ttl {} \;
 	@echo -e "\033[35m > Done  \033[0m"
 
@@ -59,11 +58,9 @@ doc-widoco:	## Compile documentation (this task relies on both local and remote 
 	  -Dhttps.proxyHost=${PROXY_SRV} \
 	  -Dhttps.proxyPort=${PROXY_PORT} \
 	  -jar ${WIDOCO_BIN} \
+	  -confFile docs/dseco-ontology.widoco \
 	  -ontFile ontology/dseco-latest.ttl \
 	  -outFolder docs/DSecO \
-	  -saveConfig docs/dseco-ontology.widoco \
-	  -rewriteAll \
-	  -getOntologyMetadata \
 	  -includeImportedOntologies \
 	  -ignoreIndividuals \
 	  -webVowl \

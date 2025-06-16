@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns="http://www.example.fr/cve#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://www.example.fr/cve#contains_CVE">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.fr/cve#Machine"/>
+    <rdfs:range rdf:resource="http://www.example.fr/cve#CVE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#apache22">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.example.fr/cve#Package"/>
+    <has_CVE rdf:resource="http://www.example.fr/cve#CVE1212"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#CVE1212">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.example.fr/cve#CVE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#has_CVE">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.fr/cve#Package"/>
+    <rdfs:range rdf:resource="http://www.example.fr/cve#CVE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#www2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.example.fr/cve#Machine"/>
+    <mcontains rdf:resource="http://www.example.fr/cve#apache22"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#www1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.example.fr/cve#Machine"/>
+    <mcontains rdf:resource="http://www.example.fr/cve#apache12"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#Package">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#mcontains">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.example.fr/cve#Machine"/>
+    <rdfs:range rdf:resource="http://www.example.fr/cve#Package"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#CVE">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#apache12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.example.fr/cve#Package"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.example.fr/cve#Machine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

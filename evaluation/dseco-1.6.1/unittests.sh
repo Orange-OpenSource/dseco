@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #
 # Copyright (c) 2025. Orange. All rights reserved.
 #
@@ -103,6 +102,5 @@ print_message info "concatene : export I4=${inf4}"
 print_message info "concatene : export I5=${inf5}"
 print_message info "concatene : export F1=${final_ontology_temp_file}"
 print_message info 'libontology-query --ontology $F1  --query  queries/test_list_all_IP_Address/test.sparql'
-
 
 # The cleanup will be triggered by the trap on script exit

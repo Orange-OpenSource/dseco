@@ -228,7 +228,7 @@ Alignment holds for the following vocabulary releases:
                     a owl:Class
                 ] ;
     rdfs:range observable:AutonomousSystem ;
-    vs:term_status "unstable" ;
+    vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
         # Example of using hasAS property
@@ -245,7 +245,7 @@ Alignment holds for the following vocabulary releases:
     rdfs:comment "Un subnet associé à une adresse IP."@fr ;
     rdfs:domain observable:IPAddress ;
     rdfs:range observable:NetworkSubnet ;
-    vs:term_status "unstable" ;
+    vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
         # Example of using is_part_of property
@@ -292,7 +292,7 @@ Cela signifie que :hasName peut être utilisée avec des instances de la classe 
     rdfs:range xsd:string ;
     rdfs:comment "The country where the entity is located."@en ;
     rdfs:comment "Le pays où se trouve l'entité."@fr ;
-    vs:term_status "unstable" ;
+    vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
         # Example of using hasCountry property

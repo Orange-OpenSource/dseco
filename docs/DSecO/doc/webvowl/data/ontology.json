@@ -2,17 +2,23 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "fr", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://purl.org/vocommons/voaf", "http://www.w3.org/2002/07/owl", "http://www.w3.org/ns/org", "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/dseco/ontology", "https://unifiedcyberontology.org/ontology/uco/observable", "http://www.w3.org/2001/XMLSchema" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://purl.org/vocommons/voaf", "https://ontology.unifiedcyberontology.org/uco/observable", "http://www.w3.org/ns/org", "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/dseco/ontology", "http://www.w3.org/ns/shacl", "http://www.w3.org/2001/XMLSchema" ],
     "title" : {
       "en" : "The DNS Security Ontology"
     },
     "iri" : "https://w3id.org/dseco/ontology/",
-    "version" : "v1.5.0",
+    "version" : "v1.6.1",
     "author" : [ "Didier Bringer (https://orcid.org/0009-0007-9787-2559)" ],
     "description" : {
-      "en" : "The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.\nThe ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.\n\nAlignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).\nDirections for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.\nAlignment holds for the following vocabulary releases:\n\n- [ORG](https://www.w3.org/TR/vocab-org/) 0.8\n- [UCO](https://github.com/ucoProject/uco) Release-0.8.0\n"
+      "en" : "The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.\nThe ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.\n\nAlignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).\nDirections for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.\nAlignment holds for the following vocabulary releases:\n\n- [ORG](https://www.w3.org/TR/vocab-org/) 0.8\n- [UCO](https://github.com/ucoProject/uco) 1.4.0\n"
     },
     "other" : {
+      "priorVersion" : [ {
+        "identifier" : "priorVersion",
+        "language" : "undefined",
+        "value" : "file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0",
+        "type" : "iri"
+      } ],
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
@@ -22,13 +28,13 @@
       "changeNote" : [ {
         "identifier" : "changeNote",
         "language" : "en",
-        "value" : "Changes in v1.5.0:\n\n- Added owl:Ontology details, including creator, preferredNamespacePrefix, and so on.\n- Added rdfs:isDefinedBy to the ontology classes and properties.\n- Added vs:term_status to the ontology classes and properties.\n- Added rdfs:comment to the ontology classes and properties for auto-documentation.\n\n",
+        "value" : "Changes in v1.6.1:\n\n- Added rename dseco:whoisdomain in dseco:ZONE\n- Added observable:IPAddress observable:IPAddressFacet\n- Added observable:IPv4Address observable:IPv6Address\n- Added observable:NetworkSubnet , observable:IPAddress dseco:is_part_of observable:NetworkSubnet\n- Added observable:AutonomousSystem core:hasFacet observable:AutonomousSystemFacet\n- Added observable:IPAddress :hasAS observable:AutonomousSystem\n- Added observable:NetworkSubnet dseco:hasAS observable:AutonomousSystem\n\n",
         "type" : "label"
       } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
-        "value" : "v1.5.0",
+        "value" : "v1.6.1",
         "type" : "label"
       } ],
       "title" : [ {
@@ -54,6 +60,11 @@
         "language" : "undefined",
         "value" : "Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)",
         "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Antoine Cawet",
+        "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
         "identifier" : "preferredNamespacePrefix",
@@ -61,17 +72,17 @@
         "value" : "dseco",
         "type" : "label"
       } ],
-      "modified" : [ {
-        "identifier" : "modified",
-        "language" : "undefined",
-        "value" : "2025-01-16",
-        "type" : "label"
-      } ],
       "publisher" : [ {
         "identifier" : "publisher",
         "language" : "undefined",
         "value" : "https://www.orange.com/",
         "type" : "iri"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2025-06-14",
+        "type" : "label"
       } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
@@ -95,110 +106,176 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "10",
-    "type" : "owl:equivalentClass"
-  }, {
-    "id" : "2",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "11",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "4",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "5",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "15",
-    "type" : "rdfs:Datatype"
+    "id" : "6",
+    "type" : "owl:Class"
   }, {
     "id" : "7",
-    "type" : "owl:Thing"
+    "type" : "owl:Class"
   }, {
-    "id" : "16",
-    "type" : "rdfs:Literal"
+    "id" : "10",
+    "type" : "owl:Class"
   }, {
-    "id" : "1",
-    "type" : "owl:equivalentClass"
-  }, {
-    "id" : "20",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "9",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "19",
+    "id" : "11",
     "type" : "owl:Class"
   }, {
     "id" : "12",
-    "type" : "owl:Class"
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "13",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "1",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "2",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "9",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "17",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "20",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "5",
     "type" : "owl:Class"
   }, {
-    "id" : "27",
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
-    "iri" : "https://unifiedcyberontology.org/ontology/uco/observable#IPAddress",
-    "baseIri" : "https://unifiedcyberontology.org/ontology/uco/observable",
+    "iri" : "https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet",
+    "baseIri" : "https://ontology.unifiedcyberontology.org/uco/observable",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "IPAddress"
+      "IRI-based" : "NetworkSubnet"
     },
-    "attributes" : [ "equivalent", "external" ],
-    "id" : "10"
+    "attributes" : [ "external" ],
+    "id" : "6"
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "2",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "11",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
+    "iri" : "http://www.w3.org/ns/shacl#NodeShape",
+    "baseIri" : "http://www.w3.org/ns/shacl",
     "instances" : 0,
-    "union" : [ "12", "13" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "4"
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "5",
     "label" : {
-      "IRI-based" : "string"
-    }
+      "IRI-based" : "NodeShape"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/dseco/ontology/CountryShape",
+      "baseIri" : "https://w3id.org/dseco/ontology",
+      "annotations" : {
+        "targetClass" : [ {
+          "identifier" : "targetClass",
+          "language" : "undefined",
+          "value" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress",
+          "type" : "iri"
+        } ],
+        "property" : [ {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483651",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "SHACL shape for hasCountry."
+      },
+      "labels" : {
+        "IRI-based" : "CountryShape"
+      }
+    }, {
+      "iri" : "https://w3id.org/dseco/ontology/managedByShape",
+      "baseIri" : "https://w3id.org/dseco/ontology",
+      "annotations" : {
+        "targetClass" : [ {
+          "identifier" : "targetClass",
+          "language" : "undefined",
+          "value" : "https://w3id.org/dseco/ontology/ZONE",
+          "type" : "iri"
+        } ],
+        "property" : [ {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483648",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "SHACL shape for managedBy."
+      },
+      "labels" : {
+        "IRI-based" : "managedByShape"
+      }
+    }, {
+      "iri" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystemShape",
+      "baseIri" : "https://ontology.unifiedcyberontology.org/uco/observable",
+      "annotations" : {
+        "targetClass" : [ {
+          "identifier" : "targetClass",
+          "language" : "undefined",
+          "value" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress",
+          "type" : "iri"
+        } ],
+        "property" : [ {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483649",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "SHACL shape for hasAS."
+      },
+      "labels" : {
+        "IRI-based" : "AutonomousSystemShape"
+      }
+    }, {
+      "iri" : "https://w3id.org/dseco/ontology/hasOrguShape",
+      "baseIri" : "https://w3id.org/dseco/ontology",
+      "annotations" : {
+        "targetClass" : [ {
+          "identifier" : "targetClass",
+          "language" : "undefined",
+          "value" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem",
+          "type" : "iri"
+        } ],
+        "property" : [ {
+          "identifier" : "property",
+          "language" : "undefined",
+          "value" : "_:genid2147483650",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "SHACL shape for hasOrgu."
+      },
+      "labels" : {
+        "IRI-based" : "hasOrguShape"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "7"
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "15",
-    "label" : {
-      "IRI-based" : "boolean"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "7",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "16",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "https://w3id.org/dseco/ontology/IP_Address",
-    "equivalent" : [ "10" ],
+    "iri" : "https://w3id.org/dseco/ontology/ZONE",
     "baseIri" : "https://w3id.org/dseco/ontology",
     "instances" : 0,
     "annotations" : {
@@ -213,30 +290,86 @@
         "language" : "undefined",
         "value" : "stable",
         "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of a ZONE instance\n:ZONE_example.com a :ZONE .\n",
+        "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "IP_Address",
-      "undefined" : "IP_Address"
+      "IRI-based" : "ZONE",
+      "undefined" : "ZONE"
     },
     "comment" : {
-      "en" : "An ip address."
+      "en" : "A domain zone in DNS context. A DNS zone is an administrative subdivision of the DNS namespace."
     },
-    "attributes" : [ "equivalent" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress",
+    "baseIri" : "https://ontology.unifiedcyberontology.org/uco/observable",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "IPAddress"
+    },
+    "attributes" : [ "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem",
+    "baseIri" : "https://ontology.unifiedcyberontology.org/uco/observable",
+    "id" : "12"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "13",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "14", "10" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "20",
+    "id" : "16",
     "label" : {
       "IRI-based" : "boolean"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
     "id" : "9",
     "label" : {
-      "IRI-based" : "integer"
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "17",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "6", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "21",
+    "label" : {
+      "IRI-based" : "boolean"
     }
   }, {
     "iri" : "http://www.w3.org/ns/org#OrganizationalUnit",
@@ -246,7 +379,16 @@
       "IRI-based" : "OrganizationalUnit"
     },
     "attributes" : [ "external" ],
-    "id" : "19"
+    "id" : "5"
+  }, {
+    "iri" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem",
+    "baseIri" : "https://ontology.unifiedcyberontology.org/uco/observable",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AutonomousSystem"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4"
   }, {
     "iri" : "https://w3id.org/dseco/ontology/FQDN",
     "baseIri" : "https://w3id.org/dseco/ontology",
@@ -263,6 +405,12 @@
         "language" : "undefined",
         "value" : "stable",
         "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of a FQDN instance\n:FQDN_example.com a :FQDN .\n",
+        "type" : "label"
       } ]
     },
     "label" : {
@@ -272,33 +420,25 @@
     "comment" : {
       "en" : "Fully Qualified Domain Name."
     },
-    "id" : "12"
+    "id" : "14"
   }, {
-    "iri" : "https://w3id.org/dseco/ontology/WhoisDomain",
-    "baseIri" : "https://w3id.org/dseco/ontology",
+    "iri" : "https://ontology.unifiedcyberontology.org/uco/observable/IPv6Address",
+    "baseIri" : "https://ontology.unifiedcyberontology.org/uco/observable",
     "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://w3id.org/dseco/ontology/",
-        "type" : "iri"
-      } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
-        "type" : "label"
-      } ]
-    },
     "label" : {
-      "IRI-based" : "WhoisDomain",
-      "undefined" : "WhoisDomain"
+      "IRI-based" : "IPv6Address"
     },
-    "comment" : {
-      "en" : "Beware a WhoisDomain here is not a dns zone strictly speaking, here it is a domain of the form name.tLD that answer to a whois query."
+    "attributes" : [ "external" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address",
+    "baseIri" : "https://ontology.unifiedcyberontology.org/uco/observable",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "IPv4Address"
     },
-    "id" : "13"
+    "attributes" : [ "external" ],
+    "id" : "26"
   }, {
     "iri" : "http://purl.org/vocommons/voaf#Vocabulary",
     "baseIri" : "http://purl.org/vocommons/voaf",
@@ -312,31 +452,25 @@
       "labels" : { }
     } ],
     "attributes" : [ "external" ],
-    "id" : "27"
+    "id" : "31"
   } ],
   "property" : [ {
     "id" : "0",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "3",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "6",
     "type" : "owl:objectProperty"
   }, {
     "id" : "8",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "14",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "17",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "18",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "21",
+    "id" : "19",
     "type" : "owl:objectProperty"
   }, {
     "id" : "22",
@@ -346,16 +480,22 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "24",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "26",
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/dseco/ontology/hasAddress",
+    "iri" : "https://w3id.org/dseco/ontology/hasName",
     "baseIri" : "https://w3id.org/dseco/ontology",
     "range" : "2",
     "annotations" : {
@@ -370,17 +510,27 @@
         "language" : "undefined",
         "value" : "stable",
         "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using hasName property\n:FQDN_example.com a :FQDN ;\n    :hasName \"example.com.\"^^xsd:string .\n\n# Can also be used with ZONE\n:ZONE_example.org a :ZONE ;\n    :hasName \"example.org.\"^^xsd:string .\n",
+        "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasAddress",
-      "undefined" : "hasAddress"
+      "IRI-based" : "hasName",
+      "undefined" : "hasName"
     },
     "domain" : "1",
+    "comment" : {
+      "en" : "The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B.\nThis means that :hasName can be used with instances of class A or class B.",
+      "fr" : "Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B.\nCela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B."
+    },
     "attributes" : [ "functional", "datatype" ],
     "id" : "0"
   }, {
-    "iri" : "https://w3id.org/dseco/ontology/hasName",
+    "iri" : "https://w3id.org/dseco/ontology/hasOrgu",
     "baseIri" : "https://w3id.org/dseco/ontology",
     "range" : "5",
     "annotations" : {
@@ -395,49 +545,26 @@
         "language" : "undefined",
         "value" : "stable",
         "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasName",
-      "undefined" : "hasName"
-    },
-    "domain" : "4",
-    "comment" : {
-      "en" : "The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B. This means that :hasName can be used with instances of class A or class B.",
-      "fr" : "Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B. Cela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B."
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "3"
-  }, {
-    "iri" : "https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of",
-    "baseIri" : "https://w3id.org/dseco/ontology",
-    "range" : "7",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://w3id.org/dseco/ontology/",
-        "type" : "iri"
       } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "stable",
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using hasOrgu property\n:AS_64496 a observable:AutonomousSystem ;\n    :hasOrgu :ORGU_network_provider .\n",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "is_CNAME_of_CNAME_of",
-      "undefined" : "is_CNAME_of_CNAME_of"
+      "IRI-based" : "hasOrgu",
+      "undefined" : "hasOrgu"
     },
-    "domain" : "7",
+    "domain" : "4",
     "comment" : {
-      "en" : "To test inferences."
+      "en" : "An AS belongs to an organizational Unit."
     },
     "attributes" : [ "object" ],
-    "id" : "6"
+    "id" : "3"
   }, {
-    "iri" : "https://w3id.org/dseco/ontology/hasASN",
+    "iri" : "https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of",
     "baseIri" : "https://w3id.org/dseco/ontology",
     "range" : "9",
     "annotations" : {
@@ -450,25 +577,30 @@
       "term_status" : [ {
         "identifier" : "term_status",
         "language" : "undefined",
-        "value" : "unstable",
+        "value" : "stable",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using is_CNAME_of_CNAME_of property\n:FQDN_example.com a :FQDN ;\n    :is_CNAME_of_CNAME_of :FQDN_example2.com .\n",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasASN",
-      "undefined" : "hasASN"
+      "IRI-based" : "is_CNAME_of_CNAME_of",
+      "undefined" : "is_CNAME_of_CNAME_of"
     },
-    "domain" : "1",
+    "domain" : "9",
     "comment" : {
-      "en" : "The Autonomous System Number (ASN) associated with a network entity.",
-      "fr" : "L'Autonomous System Number (ASN) associé à une entité."
+      "en" : "To test inferences."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "object" ],
     "id" : "8"
   }, {
     "iri" : "https://w3id.org/dseco/ontology/isinOurSubnet",
     "baseIri" : "https://w3id.org/dseco/ontology",
-    "range" : "15",
+    "range" : "16",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -480,6 +612,12 @@
         "identifier" : "term_status",
         "language" : "undefined",
         "value" : "unstable",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using isinOurSubnet property\n:IP_198.51.100.1 a observable:IPAddress ;\n    :isinOurSubnet \"true\"^^xsd:boolean .\n",
         "type" : "label"
       } ]
     },
@@ -487,16 +625,16 @@
       "IRI-based" : "isinOurSubnet",
       "undefined" : "isinOurSubnet"
     },
-    "domain" : "1",
+    "domain" : "11",
     "comment" : {
       "en" : "True if the IP is in our subnets. It is populated by a INSERT WHERE query."
     },
     "attributes" : [ "functional", "datatype" ],
-    "id" : "14"
+    "id" : "15"
   }, {
     "iri" : "https://w3id.org/dseco/ontology/is_CNAME_of",
     "baseIri" : "https://w3id.org/dseco/ontology",
-    "range" : "12",
+    "range" : "14",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -508,6 +646,12 @@
         "identifier" : "term_status",
         "language" : "undefined",
         "value" : "stable",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using is_CNAME_of property\n:FQDN_alias.example.com a :FQDN ;\n    :is_CNAME_of :FQDN_target.example.com .\n",
         "type" : "label"
       } ]
     },
@@ -515,13 +659,13 @@
       "IRI-based" : "is_CNAME_of",
       "undefined" : "is_CNAME_of"
     },
-    "domain" : "12",
+    "domain" : "14",
     "attributes" : [ "object" ],
-    "id" : "17"
+    "id" : "18"
   }, {
     "iri" : "https://w3id.org/dseco/ontology/managedBy",
     "baseIri" : "https://w3id.org/dseco/ontology",
-    "range" : "19",
+    "range" : "5",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -534,20 +678,26 @@
         "language" : "undefined",
         "value" : "stable",
         "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using managedBy property\n:ZONE_example.com a :ZONE ;\n    :managedBy :ORGU_internal .\n",
+        "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "managedBy",
       "undefined" : "managedBy"
     },
-    "domain" : "13",
+    "domain" : "10",
     "comment" : {
       "en" : "The Agent or Owner that can change entries in the zone."
     },
     "attributes" : [ "object" ],
-    "id" : "18"
+    "id" : "19"
   }, {
-    "iri" : "https://w3id.org/dseco/ontology/has_whois_domain",
+    "iri" : "https://w3id.org/dseco/ontology/hasCountry",
     "baseIri" : "https://w3id.org/dseco/ontology",
     "range" : "13",
     "annotations" : {
@@ -562,30 +712,11 @@
         "language" : "undefined",
         "value" : "stable",
         "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "has_whois_domain",
-      "undefined" : "has_whois_domain"
-    },
-    "domain" : "12",
-    "attributes" : [ "functional", "object" ],
-    "id" : "21"
-  }, {
-    "iri" : "https://w3id.org/dseco/ontology/hasCountry",
-    "baseIri" : "https://w3id.org/dseco/ontology",
-    "range" : "11",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://w3id.org/dseco/ontology/",
-        "type" : "iri"
       } ],
-      "term_status" : [ {
-        "identifier" : "term_status",
-        "language" : "undefined",
-        "value" : "unstable",
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using hasCountry property\n:IP_203.0.113.1 a observable:IPAddress ;\n    :hasCountry \"FR\"^^xsd:string .\n",
         "type" : "label"
       } ]
     },
@@ -593,7 +724,7 @@
       "IRI-based" : "hasCountry",
       "undefined" : "hasCountry"
     },
-    "domain" : "1",
+    "domain" : "11",
     "comment" : {
       "en" : "The country where the entity is located.",
       "fr" : "Le pays où se trouve l'entité."
@@ -601,9 +732,9 @@
     "attributes" : [ "functional", "datatype" ],
     "id" : "22"
   }, {
-    "iri" : "https://w3id.org/dseco/ontology/is_A_to",
+    "iri" : "https://w3id.org/dseco/ontology/is_part_of",
     "baseIri" : "https://w3id.org/dseco/ontology",
-    "range" : "1",
+    "range" : "6",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -616,19 +747,95 @@
         "language" : "undefined",
         "value" : "stable",
         "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using is_part_of property\n:IP_12.12.12.1 a observable:IPAddress ;\n    :is_part_of <:SUBNET_12.12.12.0/24> .\n",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "is_part_of",
+      "undefined" : "is_part_of"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "A network subnet associated to an IP address.",
+      "fr" : "Un subnet associé à une adresse IP."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://w3id.org/dseco/ontology/hasAS",
+    "baseIri" : "https://w3id.org/dseco/ontology",
+    "range" : "17",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/dseco/ontology/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using hasAS property\n<:SUBNET_12.12.12.0/24> a observable:NetworkSubnet ;\n    :hasAS :AS_64496 .\n",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasAS",
+      "undefined" : "hasAS"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "The Autonomous System Number (ASN) associated with a network entity.",
+      "fr" : "L'Autonomous System Number (ASN) associé à une entité."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://w3id.org/dseco/ontology/is_A_to",
+    "baseIri" : "https://w3id.org/dseco/ontology",
+    "range" : "26",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/dseco/ontology/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using is_A_to property\n:FQDN_example.com a :FQDN ;\n    :is_A_to :IP_192.0.2.1 .\n",
+        "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "is_A_to",
       "undefined" : "is_A_to"
     },
-    "domain" : "12",
+    "domain" : "14",
     "attributes" : [ "object" ],
-    "id" : "23"
+    "id" : "25"
   }, {
     "iri" : "https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg",
     "baseIri" : "https://w3id.org/dseco/ontology",
-    "range" : "20",
+    "range" : "21",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -641,32 +848,28 @@
         "language" : "undefined",
         "value" : "unstable",
         "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using FQDN_ends_in_exampleorg property\n:FQDN_www.example.org a :FQDN ;\n    :FQDN_ends_in_exampleorg \"true\"^^xsd:boolean .\n",
+        "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "FQDN_ends_in_exampleorg",
       "undefined" : "FQDN_ends_in_exampleorg"
     },
-    "domain" : "12",
+    "domain" : "14",
     "comment" : {
       "en" : "This property is designed here for illustrative purposes. It is populated by an INSERT WHERE."
     },
     "attributes" : [ "functional", "datatype" ],
-    "id" : "24"
+    "id" : "27"
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
-    "baseIri" : "http://www.w3.org/2002/07/owl",
-    "range" : "16",
-    "label" : {
-      "IRI-based" : "topDataProperty"
-    },
-    "domain" : "7",
-    "attributes" : [ "datatype", "external" ],
-    "id" : "25"
-  }, {
-    "iri" : "https://w3id.org/dseco/ontology/is_AAAA_to",
+    "iri" : "https://w3id.org/dseco/ontology/is_in_zone",
     "baseIri" : "https://w3id.org/dseco/ontology",
-    "range" : "1",
+    "range" : "10",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -679,14 +882,51 @@
         "language" : "undefined",
         "value" : "stable",
         "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using is_in_zone property\n:FQDN_example.com a :FQDN ;\n    :is_in_zone :ZONE_example.com .\n",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "is_in_zone",
+      "undefined" : "is_in_zone"
+    },
+    "domain" : "14",
+    "attributes" : [ "functional", "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/dseco/ontology/is_AAAA_to",
+    "baseIri" : "https://w3id.org/dseco/ontology",
+    "range" : "30",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/dseco/ontology/",
+        "type" : "iri"
+      } ],
+      "term_status" : [ {
+        "identifier" : "term_status",
+        "language" : "undefined",
+        "value" : "stable",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "\n# Example of using is_AAAA_to property\n:FQDN_example.com a :FQDN ;\n    :is_AAAA_to :IP_::1 .\n",
+        "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "is_AAAA_to",
       "undefined" : "is_AAAA_to"
     },
-    "domain" : "12",
+    "domain" : "14",
     "attributes" : [ "object" ],
-    "id" : "26"
+    "id" : "29"
   } ]
 }

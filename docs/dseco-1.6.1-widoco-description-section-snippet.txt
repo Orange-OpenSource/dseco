@@ -1,0 +1,13 @@
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">The DNS Security Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.
+The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.
+
+Alignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).
+Directions for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.
+Alignment holds for the following vocabulary releases:
+
+- [ORG](https://www.w3.org/TR/vocab-org/) 0.8
+- [UCO](https://github.com/ucoProject/uco) 1.4.0
+</span><img src="https://github.com/Orange-OpenSource/dseco/raw/main/docs/diagrams/dns-kg-workflow.png"></div>

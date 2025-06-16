@@ -1,12 +1,79 @@
 [ {
-  "@id" : "_:genid3",
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+    }, {
+      "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid10",
+  "http://www.w3.org/ns/shacl#datatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/ns/shacl#flags" : [ {
+    "@value" : "i"
+  } ],
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#name" : [ {
+    "@value" : "Country"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/hasCountry"
+  } ],
+  "http://www.w3.org/ns/shacl#pattern" : [ {
+    "@value" : "^[A-Z]+$"
+  } ]
+}, {
+  "@id" : "_:genid11",
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "An ASN can belong to only one Orgu."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/hasOrgu"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "A ZONE instance can have only one value for managedBy."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/managedBy"
+  } ]
+}, {
+  "@id" : "_:genid6",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "https://w3id.org/dseco/ontology/FQDN"
     }, {
-      "@id" : "https://w3id.org/dseco/ontology/WhoisDomain"
+      "@id" : "https://w3id.org/dseco/ontology/ZONE"
     } ]
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#name" : [ {
+    "@value" : "Autonomous System Number"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/hasAS"
   } ]
 }, {
   "@id" : "http://purl.org/dc/terms/contributor",
@@ -54,18 +121,78 @@
   "@id" : "http://www.w3.org/2004/02/skos/core#changeNote",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#example",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://www.w3.org/ns/org#OrganizationalUnit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://unifiedcyberontology.org/ontology/uco/observable#IPAddress",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/IP_Address"
+  "@id" : "http://www.w3.org/ns/shacl#NodeShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#datatype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#flags",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#maxCount",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#message",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#path",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#pattern",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#property",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#targetClass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystemShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SHACL shape for hasAS."
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid9"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
   } ]
+}, {
+  "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPv6Address",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/contributor" : [ {
+    "@value" : "Antoine Cawet"
+  }, {
     "@value" : "Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)"
   } ],
   "http://purl.org/dc/terms/creator" : [ {
@@ -73,7 +200,7 @@
   } ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
-    "@value" : "The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.\nThe ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.\n\nAlignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).\nDirections for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.\nAlignment holds for the following vocabulary releases:\n\n- [ORG](https://www.w3.org/TR/vocab-org/) 0.8\n- [UCO](https://github.com/ucoProject/uco) Release-0.8.0\n"
+    "@value" : "The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.\nThe ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.\n\nAlignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).\nDirections for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.\nAlignment holds for the following vocabulary releases:\n\n- [ORG](https://www.w3.org/TR/vocab-org/) 0.8\n- [UCO](https://github.com/ucoProject/uco) 1.4.0\n"
   } ],
   "http://purl.org/dc/terms/issued" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
@@ -84,7 +211,7 @@
   } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2025-01-16"
+    "@value" : "2025-06-14"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@id" : "https://www.orange.com/"
@@ -108,15 +235,34 @@
   "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
     "@id" : "https://w3id.org/dseco/doc/"
   } ],
-  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+  "http://www.w3.org/2002/07/owl#priorVersion" : [ {
     "@id" : "file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.5.0"
   } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "file:/home/rgky0185/IdeaProjects/public/dseco/ontology/dseco-1.6.1"
+  } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "v1.5.0"
+    "@value" : "v1.6.1"
   } ],
   "http://www.w3.org/2004/02/skos/core#changeNote" : [ {
     "@language" : "en",
-    "@value" : "Changes in v1.5.0:\n\n- Added owl:Ontology details, including creator, preferredNamespacePrefix, and so on.\n- Added rdfs:isDefinedBy to the ontology classes and properties.\n- Added vs:term_status to the ontology classes and properties.\n- Added rdfs:comment to the ontology classes and properties for auto-documentation.\n\n"
+    "@value" : "Changes in v1.6.1:\n\n- Added rename dseco:whoisdomain in dseco:ZONE\n- Added observable:IPAddress observable:IPAddressFacet\n- Added observable:IPv4Address observable:IPv6Address\n- Added observable:NetworkSubnet , observable:IPAddress dseco:is_part_of observable:NetworkSubnet\n- Added observable:AutonomousSystem core:hasFacet observable:AutonomousSystemFacet\n- Added observable:IPAddress :hasAS observable:AutonomousSystem\n- Added observable:NetworkSubnet dseco:hasAS observable:AutonomousSystem\n\n"
+  } ]
+}, {
+  "@id" : "https://w3id.org/dseco/ontology/CountryShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SHACL shape for hasCountry."
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid10"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/FQDN",
@@ -133,6 +279,10 @@
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of a FQDN instance\n:FQDN_example.com a :FQDN .\n"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg",
@@ -155,42 +305,34 @@
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "unstable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using FQDN_ends_in_exampleorg property\n:FQDN_www.example.org a :FQDN ;\n    :FQDN_ends_in_exampleorg \"true\"^^xsd:boolean .\n"
   } ]
 }, {
-  "@id" : "https://w3id.org/dseco/ontology/IP_Address",
+  "@id" : "https://w3id.org/dseco/ontology/ZONE",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "An ip address."
+    "@value" : "A domain zone in DNS context. A DNS zone is an administrative subdivision of the DNS namespace."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/dseco/ontology/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "IP_Address"
+    "@value" : "ZONE"
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
-  } ]
-}, {
-  "@id" : "https://w3id.org/dseco/ontology/WhoisDomain",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
     "@language" : "en",
-    "@value" : "Beware a WhoisDomain here is not a dns zone strictly speaking, here it is a domain of the form name.tLD that answer to a whois query."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "WhoisDomain"
-  } ],
-  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
-    "@value" : "stable"
+    "@value" : "\n# Example of a ZONE instance\n:ZONE_example.com a :ZONE .\n"
   } ]
 }, {
-  "@id" : "https://w3id.org/dseco/ontology/hasASN",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@id" : "https://w3id.org/dseco/ontology/hasAS",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "fr",
     "@value" : "L'Autonomous System Number (ASN) associé à une entité."
@@ -199,40 +341,23 @@
     "@value" : "The Autonomous System Number (ASN) associated with a network entity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/IP_Address"
+    "@id" : "_:genid1"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/dseco/ontology/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "hasASN"
+    "@value" : "hasAS"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ],
-  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
-    "@value" : "unstable"
-  } ]
-}, {
-  "@id" : "https://w3id.org/dseco/ontology/hasAddress",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/IP_Address"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "hasAddress"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using hasAS property\n<:SUBNET_12.12.12.0/24> a observable:NetworkSubnet ;\n    :hasAS :AS_64496 .\n"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/hasCountry",
@@ -245,7 +370,7 @@
     "@value" : "The country where the entity is located."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/IP_Address"
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/dseco/ontology/"
@@ -257,20 +382,24 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
-    "@value" : "unstable"
+    "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using hasCountry property\n:IP_203.0.113.1 a observable:IPAddress ;\n    :hasCountry \"FR\"^^xsd:string .\n"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/hasName",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "fr",
-    "@value" : "Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B. Cela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B."
+    "@value" : "Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B.\nCela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B."
   }, {
     "@language" : "en",
-    "@value" : "The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B. This means that :hasName can be used with instances of class A or class B."
+    "@value" : "The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B.\nThis means that :hasName can be used with instances of class A or class B."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid3"
+    "@id" : "_:genid6"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/dseco/ontology/"
@@ -283,24 +412,52 @@
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using hasName property\n:FQDN_example.com a :FQDN ;\n    :hasName \"example.com.\"^^xsd:string .\n\n# Can also be used with ZONE\n:ZONE_example.org a :ZONE ;\n    :hasName \"example.org.\"^^xsd:string .\n"
   } ]
 }, {
-  "@id" : "https://w3id.org/dseco/ontology/has_whois_domain",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@id" : "https://w3id.org/dseco/ontology/hasOrgu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An AS belongs to an organizational Unit."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/FQDN"
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/dseco/ontology/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "has_whois_domain"
+    "@value" : "hasOrgu"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/WhoisDomain"
+    "@id" : "http://www.w3.org/ns/org#OrganizationalUnit"
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using hasOrgu property\n:AS_64496 a observable:AutonomousSystem ;\n    :hasOrgu :ORGU_network_provider .\n"
+  } ]
+}, {
+  "@id" : "https://w3id.org/dseco/ontology/hasOrguShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SHACL shape for hasOrgu."
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid11"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/is_AAAA_to",
@@ -315,10 +472,14 @@
     "@value" : "is_AAAA_to"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/IP_Address"
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPv6Address"
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using is_AAAA_to property\n:FQDN_example.com a :FQDN ;\n    :is_AAAA_to :IP_::1 .\n"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/is_A_to",
@@ -333,10 +494,14 @@
     "@value" : "is_A_to"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/IP_Address"
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address"
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using is_A_to property\n:FQDN_example.com a :FQDN ;\n    :is_A_to :IP_192.0.2.1 .\n"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/is_CNAME_of",
@@ -355,6 +520,10 @@
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using is_CNAME_of property\n:FQDN_alias.example.com a :FQDN ;\n    :is_CNAME_of :FQDN_target.example.com .\n"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of",
@@ -378,6 +547,61 @@
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using is_CNAME_of_CNAME_of property\n:FQDN_example.com a :FQDN ;\n    :is_CNAME_of_CNAME_of :FQDN_example2.com .\n"
+  } ]
+}, {
+  "@id" : "https://w3id.org/dseco/ontology/is_in_zone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/FQDN"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is_in_zone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/ZONE"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using is_in_zone property\n:FQDN_example.com a :FQDN ;\n    :is_in_zone :ZONE_example.com .\n"
+  } ]
+}, {
+  "@id" : "https://w3id.org/dseco/ontology/is_part_of",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A network subnet associated to an IP address."
+  }, {
+    "@language" : "fr",
+    "@value" : "Un subnet associé à une adresse IP."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is_part_of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using is_part_of property\n:IP_12.12.12.1 a observable:IPAddress ;\n    :is_part_of <:SUBNET_12.12.12.0/24> .\n"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/isinOurSubnet",
@@ -387,7 +611,7 @@
     "@value" : "True if the IP is in our subnets. It is populated by a INSERT WHERE query."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/IP_Address"
+    "@id" : "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/dseco/ontology/"
@@ -400,6 +624,10 @@
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "unstable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using isinOurSubnet property\n:IP_198.51.100.1 a observable:IPAddress ;\n    :isinOurSubnet \"true\"^^xsd:boolean .\n"
   } ]
 }, {
   "@id" : "https://w3id.org/dseco/ontology/managedBy",
@@ -409,7 +637,7 @@
     "@value" : "The Agent or Owner that can change entries in the zone."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/dseco/ontology/WhoisDomain"
+    "@id" : "https://w3id.org/dseco/ontology/ZONE"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/dseco/ontology/"
@@ -422,5 +650,25 @@
   } ],
   "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
     "@value" : "stable"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "en",
+    "@value" : "\n# Example of using managedBy property\n:ZONE_example.com a :ZONE ;\n    :managedBy :ORGU_internal .\n"
+  } ]
+}, {
+  "@id" : "https://w3id.org/dseco/ontology/managedByShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SHACL shape for managedBy."
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid12"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://w3id.org/dseco/ontology/ZONE"
   } ]
 } ]

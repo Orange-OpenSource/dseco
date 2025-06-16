@@ -1,0 +1,5 @@
+AS1 https://w3id.org/dseco/mykg/SUBNET_12.12.12.0/24
+AS1 https://w3id.org/dseco/mykg/SUBNET_198.51.100.0/24
+AS1 https://w3id.org/dseco/mykg/SUBNET_203.0.113.0/24
+AS2 https://w3id.org/dseco/mykg/SUBNET_199.1.1.0/24
+AS2 https://w3id.org/dseco/mykg/SUBNET_::3/40

@@ -94,9 +94,9 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of a FQDN instance
-        :FQDN_example.com a :FQDN .
-    """@en ;
+# Example of a FQDN instance
+:FQDN_example.com a :FQDN .
+"""@en ;
 .
 
 :ZONE
@@ -106,9 +106,9 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of a ZONE instance
-        :ZONE_example.com a :ZONE .
-    """@en ;
+# Example of a ZONE instance
+:ZONE_example.com a :ZONE .
+"""@en ;
 .
 
 
@@ -124,10 +124,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using is_CNAME_of property
-        :FQDN_alias.example.com a :FQDN ;
-            :is_CNAME_of :FQDN_target.example.com .
-    """@en ;
+# Example of using is_CNAME_of property
+:FQDN_alias.example.com a :FQDN ;
+    :is_CNAME_of :FQDN_target.example.com .
+"""@en ;
 .
 
 :is_A_to
@@ -138,10 +138,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using is_A_to property
-        :FQDN_example.com a :FQDN ;
-            :is_A_to :IP_192.0.2.1 .
-    """@en ;
+# Example of using is_A_to property
+:FQDN_example.com a :FQDN ;
+    :is_A_to :IP_192.0.2.1 .
+"""@en ;
 .
 
 :is_AAAA_to
@@ -152,10 +152,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using is_AAAA_to property
-        :FQDN_example.com a :FQDN ;
-            :is_AAAA_to :IP_::1 .
-    """@en ;
+# Example of using is_AAAA_to property
+:FQDN_example.com a :FQDN ;
+    :is_AAAA_to :IP_::1 .
+"""@en ;
 .
 
 :is_in_zone
@@ -167,10 +167,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using is_in_zone property
-        :FQDN_example.com a :FQDN ;
-            :is_in_zone :ZONE_example.com .
-    """@en ;
+# Example of using is_in_zone property
+:FQDN_example.com a :FQDN ;
+    :is_in_zone :ZONE_example.com .
+"""@en ;
 .
 
 :is_CNAME_of_CNAME_of
@@ -181,10 +181,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using is_CNAME_of_CNAME_of property
-        :FQDN_example.com a :FQDN ;
-            :is_CNAME_of_CNAME_of :FQDN_example2.com .
-    """@en ;
+# Example of using is_CNAME_of_CNAME_of property
+:FQDN_example.com a :FQDN ;
+    :is_CNAME_of_CNAME_of :FQDN_example2.com .
+"""@en ;
 .
 
 :managedBy
@@ -196,10 +196,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using managedBy property
-        :ZONE_example.com a :ZONE ;
-            :managedBy :ORGU_internal .
-    """@en ;
+# Example of using managedBy property
+:ZONE_example.com a :ZONE ;
+    :managedBy :ORGU_internal .
+"""@en ;
 .
 
 :hasOrgu
@@ -211,10 +211,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using hasOrgu property
-        :AS_64496 a observable:AutonomousSystem ;
-            :hasOrgu :ORGU_network_provider .
-    """@en ;
+# Example of using hasOrgu property
+:AS_64496 a observable:AutonomousSystem ;
+    :hasOrgu :ORGU_network_provider .
+"""@en ;
 .
 
 :hasAS
@@ -231,10 +231,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using hasAS property
-        <:SUBNET_12.12.12.0/24> a observable:NetworkSubnet ;
-            :hasAS :AS_64496 .
-    """@en ;
+# Example of using hasAS property
+<:SUBNET_12.12.12.0/24> a observable:NetworkSubnet ;
+    :hasAS :AS_64496 .
+"""@en ;
 .
 
 :is_part_of
@@ -248,10 +248,10 @@ Alignment holds for the following vocabulary releases:
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using is_part_of property
-        :IP_12.12.12.1 a observable:IPAddress ;
-            :is_part_of <:SUBNET_12.12.12.0/24> .
-    """@en ;
+# Example of using is_part_of property
+:IP_12.12.12.1 a observable:IPAddress ;
+    :is_part_of <:SUBNET_12.12.12.0/24> .
+"""@en ;
 .
 
 #################################################################
@@ -274,14 +274,14 @@ Cela signifie que :hasName peut être utilisée avec des instances de la classe 
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using hasName property
-        :FQDN_example.com a :FQDN ;
-            :hasName "example.com."^^xsd:string .
+# Example of using hasName property
+:FQDN_example.com a :FQDN ;
+    :hasName "example.com."^^xsd:string .
 
-        # Can also be used with ZONE
-        :ZONE_example.org a :ZONE ;
-            :hasName "example.org."^^xsd:string .
-    """@en ;
+# Can also be used with ZONE
+:ZONE_example.org a :ZONE ;
+    :hasName "example.org."^^xsd:string .
+"""@en ;
 .
 
 :hasCountry
@@ -295,10 +295,10 @@ Cela signifie que :hasName peut être utilisée avec des instances de la classe 
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using hasCountry property
-        :IP_203.0.113.1 a observable:IPAddress ;
-            :hasCountry "FR"^^xsd:string .
-    """@en ;
+# Example of using hasCountry property
+:IP_203.0.113.1 a observable:IPAddress ;
+    :hasCountry "FR"^^xsd:string .
+"""@en ;
 .
 
 :isinOurSubnet
@@ -311,10 +311,10 @@ Cela signifie que :hasName peut être utilisée avec des instances de la classe 
     vs:term_status "unstable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using isinOurSubnet property
-        :IP_198.51.100.1 a observable:IPAddress ;
-            :isinOurSubnet "true"^^xsd:boolean .
-    """@en ;
+# Example of using isinOurSubnet property
+:IP_198.51.100.1 a observable:IPAddress ;
+    :isinOurSubnet "true"^^xsd:boolean .
+"""@en ;
 .
 
 :FQDN_ends_in_exampleorg
@@ -327,10 +327,10 @@ Cela signifie que :hasName peut être utilisée avec des instances de la classe 
     vs:term_status "unstable" ;
     rdfs:isDefinedBy dseco: ;
     skos:example """
-        # Example of using FQDN_ends_in_exampleorg property
-        :FQDN_www.example.org a :FQDN ;
-            :FQDN_ends_in_exampleorg "true"^^xsd:boolean .
-    """@en ;
+# Example of using FQDN_ends_in_exampleorg property
+:FQDN_www.example.org a :FQDN ;
+    :FQDN_ends_in_exampleorg "true"^^xsd:boolean .
+"""@en ;
 .
 
 

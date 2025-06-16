@@ -52,8 +52,8 @@ def step_impl(context):
     # Application du raisonnement OWL-RL
     owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(context.graph)
 
-@when("I run SPARQL query located at {sparql_query_file} to gather entries with WhoisDomain is example.org")
-@when("I run SPARQL query located at {sparql_query_file} to gather entries with WhoisDomain is example.org and their final resolution")
+@when("I run SPARQL query located at {sparql_query_file} to gather entries with ZONE is example.org")
+@when("I run SPARQL query located at {sparql_query_file} to gather entries with ZONE is example.org and their final resolution")
 @when("I run SPARQL query located at {sparql_query_file} to gather FQDN belongings to zone example.org and that a intermediary or final witch is not managed by Org top nor Org int")
 @when("I run SPARQL query located at {sparql_query_file} to gather entries of example.org that do not resolve at all at the end")
 @when("I run SPARQL query located at {sparql_query_file} to gather entries managedBy Org int that do not have a corresponding in Org top")

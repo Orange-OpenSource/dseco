@@ -1,0 +1,511 @@
+# Copyright (c) 2024-2025. Orange. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+#     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+#     3. All advertising materials mentioning features or use of this software must display the following acknowledgement:
+#       This product includes software developed by Orange.
+#     4. Neither the name of Orange nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Orange "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Orange BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# === PREFIXES ================================================================
+
+# --- Basic ---
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Domain specific ---
+@prefix org: <http://www.w3.org/ns/org#> .  # The Organization Ontology
+
+# --- Application specific ---
+@prefix dseco: <https://w3id.org/dseco/ontology/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+# kg with individuals is mykg
+@prefix mykg: <https://w3id.org/dseco/mykg/> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+##################################################################
+#
+# facts are written one by one, so doing it line by line is really useful 
+#  i do not manage ; or , . one line for one fact
+#  then in the inference it will be factorized
+#
+##################################################################
+
+# Hereunder, orgu for ZONE
+<https://w3id.org/dseco/mykg/ORGU_int> a owl:NamedIndividual, org:OrganizationalUnit .
+<https://w3id.org/dseco/mykg/ORGU_top> a owl:NamedIndividual, org:OrganizationalUnit .
+
+# Hereunder, orgu for AS
+<https://w3id.org/dseco/mykg/ORGU_malicious> a owl:NamedIndividual, org:OrganizationalUnit .
+<https://w3id.org/dseco/mykg/ORGU_friendly> a owl:NamedIndividual, org:OrganizationalUnit .
+
+
+<https://w3id.org/dseco/mykg/FQDN_auto.example.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_auto.example.org> dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_auto.example.org.cfy.multis.internalzone1.org> .
+<https://w3id.org/dseco/mykg/FQDN_auto.example.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> .
+<https://w3id.org/dseco/mykg/FQDN_auto.example.org> dseco:hasName "auto.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_auto.example.org.cfy.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_auto.example.org.cfy.multis.internalzone1.org> dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_paas.prod.cachehttp.gslb.internalzone1.org> .
+<https://w3id.org/dseco/mykg/FQDN_auto.example.org.cfy.multis.internalzone1.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> .
+<https://w3id.org/dseco/mykg/FQDN_auto.example.org.cfy.multis.internalzone1.org> dseco:hasName "auto.example.org.cfy.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_yetanother_isp.fr> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_yetanother_isp.fr> dseco:is_A_to <https://w3id.org/dseco/mykg/IP_99.99.1.1> .
+<https://w3id.org/dseco/mykg/FQDN_yetanother_isp.fr> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_yetanother_isp.fr> .
+<https://w3id.org/dseco/mykg/FQDN_yetanother_isp.fr> dseco:hasName "yetanother_isp.fr."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_generique-https.prod.redirect.gslb.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_generique-https.prod.redirect.gslb.internalzone1.org> dseco:is_A_to <https://w3id.org/dseco/mykg/IP_203.0.113.223> .
+<https://w3id.org/dseco/mykg/FQDN_generique-https.prod.redirect.gslb.internalzone1.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> .
+<https://w3id.org/dseco/mykg/FQDN_generique-https.prod.redirect.gslb.internalzone1.org> dseco:hasName "generique-https.prod.redirect.gslb.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_hpo-main.prod.hporange.gslb.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to <https://w3id.org/dseco/mykg/IP_203.0.113.97> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "hpo-main.prod.hporange.gslb.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu.example.org.cfy.multis.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "jeu.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu.example.org.cfy.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu.example.org.internalzone2.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "jeu.example.org.cfy.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu.example.org.internalzone2.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu.webagencymorte.fr> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone2.org> ;
+    dseco:hasName "jeu.example.org.internalzone2.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu.webagencymorte.fr> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to <https://w3id.org/dseco/mykg/IP_12.12.12.12> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_webagencymorte.fr> ;
+    dseco:hasName "jeu.webagencymorte.fr."^^xsd:string .
+
+
+
+
+## begin web agency morte2 without zone
+
+<https://w3id.org/dseco/mykg/FQDN_jeumort.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeumort.example.org.internalzone2.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "jeumort.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeumort.example.org.internalzone2.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeumort.webagencymorte2.fr> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone2.org> ;
+    dseco:hasName "jeumort.example.org.internalzone2.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu.webagencymorte2.fr> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to <https://w3id.org/dseco/mykg/IP_12.12.12.12> ;
+    dseco:hasName "jeu.webagencymorte2.fr."^^xsd:string .
+
+## end web agency morte2 without zone
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu2.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu2.example.org.cfy.multis.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "jeu2.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu2.example.org.cfy.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu2.example.org.webagencyintermediaire.com> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "jeu2.example.org.cfy.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu2.example.org.webagencyintermediaire.com> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu.example.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_webagencyintermediaire.com> ;
+    dseco:hasName "jeu2.example.org.webagencyintermediaire.com."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu3.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu3.example.org.cfy.multis.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "jeu3.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu3.example.org.cfy.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "jeu3.example.org.cfy.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu4.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu4.example.org.cfy.multis.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "jeu4.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu4.example.org.cfy.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_jeu4.example.org.webagencyintermediaire.com> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "jeu4.example.org.cfy.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_jeu4.example.org.webagencyintermediaire.com> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_webagencyintermediaire.com> ;
+    dseco:hasName "jeu4.example.org.webagencyintermediaire.com."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_www.example.org.multis.internalzone2.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "www.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_paas.prod.cachehttp.gslb.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to <https://w3id.org/dseco/mykg/IP_198.51.100.227> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "paas.prod.cachehttp.gslb.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_people.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_prod-https.redirect.multis.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "people.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_people.example.org.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "people.example.org.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_prod-https.redirect.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_generique-https.prod.redirect.gslb.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "prod-https.redirect.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_rien.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_rien.example.org.cfy.multis.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "rien.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_rien.example.org.cfy.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_rien.paas.prod.cachehttp.gslb.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "rien.example.org.cfy.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_rien.paas.prod.cachehttp.gslb.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "rien.paas.prod.cachehttp.gslb.internalzone1.org."^^xsd:string .
+
+<https://w3id.org/dseco/mykg/FQDN_www.example.org.multis.internalzone2.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_hpo-main.prod.hporange.gslb.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone2.org> ;
+    dseco:hasName "www.example.org.multis.internalzone2.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_zozo.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_zozo.example.org.cfy.multis.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "zozo.example.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_zozo.example.org.cfy.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_zozo.paas.prod.cachehttp.gslb.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "zozo.example.org.cfy.multis.internalzone1.org."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/FQDN_zozo.paas.prod.cachehttp.gslb.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to <https://w3id.org/dseco/mykg/IP_198.51.100.1> ,
+                  <https://w3id.org/dseco/mykg/IP_198.51.100.2> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> ;
+    dseco:hasName "zozo.paas.prod.cachehttp.gslb.internalzone1.org."^^xsd:string .
+
+# a loop
+<https://w3id.org/dseco/mykg/FQDN_boucle.example.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_boucle.example.org.cfy.multis.internalzone1.org> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> ;
+    dseco:hasName "boucle.example.org."^^xsd:string .
+
+<https://w3id.org/dseco/mykg/FQDN_boucle.example.org.cfy.multis.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_boucle.example.org> ;
+    dseco:hasName "boucle.example.org.cfy.multis.internalzone1.org."^^xsd:string .
+
+# end loop
+
+
+
+# A Fully Qualified Domain Name (FQDN) is defined to point to a resource that is not present in the data.
+<https://w3id.org/dseco/mykg/FQDN_papa.example.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_papa.example.org> dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_pas_dans_lesdata> .
+<https://w3id.org/dseco/mykg/FQDN_papa.example.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> .
+<https://w3id.org/dseco/mykg/FQDN_papa.example.org> dseco:hasName "papa.example.org."^^xsd:string .
+
+
+# uc_ip_hijacking
+# A Fully Qualified Domain Name (FQDN) is defined to point to an IP outside our subnets
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets.example.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets.example.org> dseco:is_A_to <https://w3id.org/dseco/mykg/IP_199.1.1.1> .
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets.example.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> .
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets.example.org> dseco:hasName "outsidesubnets.example.org."^^xsd:string .
+
+# A Fully Qualified Domain Name (FQDN) is defined to point to an IP outside our subnets
+
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org> dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org.gslb.internalzone1.org> .
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> .
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org> dseco:hasName "outsidesubnets2.example.org."^^xsd:string .
+
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org.gslb.internalzone1.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org.gslb.internalzone1.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone1.org> .
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org.gslb.internalzone1.org> dseco:hasName "outsidesubnets2.example.org.gslb.internalzone1.org."^^xsd:string .
+
+<https://w3id.org/dseco/mykg/FQDN_outsidesubnets2.example.org.gslb.internalzone1.org> dseco:is_A_to <https://w3id.org/dseco/mykg/IP_199.1.1.2> .
+
+# end uc_ip_hijacking
+
+
+# uc_ip_hijacking_filter
+# A Fully Qualified Domain Name (FQDN) is defined to point to an IP outside our subnets
+
+<https://w3id.org/dseco/mykg/FQDN_malicious.example.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_malicious.example.org> dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_malicious.example.org.internalzone3.org> .
+<https://w3id.org/dseco/mykg/FQDN_malicious.example.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_example.org> .
+<https://w3id.org/dseco/mykg/FQDN_malicious.example.org> dseco:hasName "malicious.example.org."^^xsd:string .
+
+<https://w3id.org/dseco/mykg/FQDN_malicious.example.org.internalzone3.org> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_CNAME_of <https://w3id.org/dseco/mykg/FQDN_malicious.webagencymorte.fr> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone3.org> ;
+    dseco:hasName "malicious.example.org.internalzone3.org."^^xsd:string .
+
+<https://w3id.org/dseco/mykg/FQDN_malicious.webagencymorte.fr> rdf:type owl:NamedIndividual , dseco:FQDN ;
+    dseco:is_A_to <https://w3id.org/dseco/mykg/IP_199.1.1.3> ;
+    dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_webagencymorte.fr> ;
+    dseco:hasName "malicious.webagencymorte.fr."^^xsd:string .
+
+# end uc_ip_hijacking_filter
+
+
+
+# An entry that exists solely in internalzone2.org, with no other records pointing to it,
+# and that has an IN A record.
+<https://w3id.org/dseco/mykg/FQDN_christoph.internalzone2.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_christoph.internalzone2.org> dseco:is_A_to <https://w3id.org/dseco/mykg/IP_1> .
+<https://w3id.org/dseco/mykg/FQDN_christoph.internalzone2.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone2.org> .
+<https://w3id.org/dseco/mykg/FQDN_christoph.internalzone2.org> dseco:hasName "christoph.internalzone2.org."^^xsd:string .
+
+# An entry that exists solely in internalzone2.org, with no other records pointing to it
+# and lacking an IN A record.
+<https://w3id.org/dseco/mykg/FQDN_christoph2.internalzone2.org> rdf:type owl:NamedIndividual , dseco:FQDN .
+<https://w3id.org/dseco/mykg/FQDN_christoph2.internalzone2.org> dseco:is_in_zone <https://w3id.org/dseco/mykg/ZONE_internalzone2.org> .
+<https://w3id.org/dseco/mykg/FQDN_christoph2.internalzone2.org> dseco:hasName "christoph2.internalzone2.org."^^xsd:string .
+
+#################################
+# Zones
+#################################
+
+
+<https://w3id.org/dseco/mykg/ZONE_yetanother_isp.fr>
+    rdf:type owl:NamedIndividual ,
+             dseco:ZONE ;
+    dseco:hasName "yetanother_isp.fr."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/ZONE_internalzone1.org>
+    rdf:type owl:NamedIndividual ,
+             dseco:ZONE ;
+    dseco:hasName "internalzone1.org."^^xsd:string ;
+    dseco:managedBy <https://w3id.org/dseco/mykg/ORGU_int> .
+
+
+<https://w3id.org/dseco/mykg/ZONE_example.org>
+    rdf:type owl:NamedIndividual ,
+             dseco:ZONE ;
+    dseco:hasName "example.org."^^xsd:string ;
+    dseco:managedBy <https://w3id.org/dseco/mykg/ORGU_top> .
+
+
+<https://w3id.org/dseco/mykg/ZONE_webagencyintermediaire.com>
+    rdf:type owl:NamedIndividual ,
+             dseco:ZONE ;
+    dseco:hasName "webagencyintermediaire.com."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/ZONE_webagencymorte.fr>
+    rdf:type owl:NamedIndividual ,
+             dseco:ZONE ;
+    dseco:hasName "webagencymorte.fr."^^xsd:string .
+
+
+<https://w3id.org/dseco/mykg/ZONE_internalzone2.org>
+    rdf:type owl:NamedIndividual ,
+             dseco:ZONE ;
+    dseco:hasName "internalzone2.org."^^xsd:string ;
+    dseco:managedBy <https://w3id.org/dseco/mykg/ORGU_int> .
+
+<https://w3id.org/dseco/mykg/ZONE_internalzone3.org>
+    rdf:type owl:NamedIndividual ,
+             dseco:ZONE ;
+    dseco:hasName "internalzone3.org."^^xsd:string ;
+    dseco:managedBy <https://w3id.org/dseco/mykg/ORGU_int> .
+
+
+
+#################################
+# Les IP
+#################################
+
+<https://w3id.org/dseco/mykg/IP_12.12.12.12> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_12.12.12.12> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "12.12.12.12" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_12.12.12.0/24> .
+                    
+
+<https://w3id.org/dseco/mykg/IP_203.0.113.46> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_203.0.113.46> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "203.0.113.46" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_203.0.113.0/24> .
+
+<https://w3id.org/dseco/mykg/IP_203.0.113.97> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_203.0.113.97> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "203.0.113.97" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_203.0.113.0/24> .
+
+
+<https://w3id.org/dseco/mykg/IP_203.0.113.223> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_203.0.113.223> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "203.0.113.223" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_203.0.113.0/24> .
+
+<https://w3id.org/dseco/mykg/IP_99.99.1.1> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_99.99.1.1> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "99.99.1.1" ;
+                    ] .
+
+
+<https://w3id.org/dseco/mykg/IP_198.51.100.1> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_198.51.100.1> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "198.51.100.1" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_198.51.100.0/24> .
+
+
+<https://w3id.org/dseco/mykg/IP_198.51.100.2> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_198.51.100.2> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "198.51.100.2" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_198.51.100.0/24> .
+
+
+<https://w3id.org/dseco/mykg/IP_198.51.100.227> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_198.51.100.227> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "198.51.100.227" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_198.51.100.0/24> .
+
+# an IP address outside of our network used in uc_ip_hijacking
+<https://w3id.org/dseco/mykg/IP_199.1.1.1> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_199.1.1.1> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "199.1.1.1" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_199.1.1.0/24> .
+
+# an second IP address outside of our network used in uc_ip_hijacking
+<https://w3id.org/dseco/mykg/IP_199.1.1.2> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_199.1.1.2> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "199.1.1.2" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_199.1.1.0/24> .
+
+# an IP address outside of our network used in uc_ip_hijacking_filter
+<https://w3id.org/dseco/mykg/IP_199.1.1.3> a owl:NamedIndividual , observable:IPAddress, observable:IPv4Address .
+<https://w3id.org/dseco/mykg/IP_199.1.1.3> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "199.1.1.3" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_199.1.1.0/24> .
+
+<https://w3id.org/dseco/mykg/IP_::3> a owl:NamedIndividual , observable:IPAddress, observable:IPv6Address .
+<https://w3id.org/dseco/mykg/IP_::3> core:hasFacet [
+                        a observable:IPAddressFacet ;
+                        observable:addressValue "::3" ;
+                    ] ;
+                    dseco:is_part_of <https://w3id.org/dseco/mykg/SUBNET_::3/40> .
+                 
+
+
+#################################
+# Les ASN
+#################################
+
+<https://w3id.org/dseco/mykg/AS_1>  a owl:NamedIndividual , observable:AutonomousSystem .
+<https://w3id.org/dseco/mykg/AS_1> core:hasFacet [
+                        a observable:AutonomousSystemFacet ;
+                        observable:asHandle "AS1" ;
+                    ] .
+<https://w3id.org/dseco/mykg/AS_1> dseco:hasOrgu <https://w3id.org/dseco/mykg/ORGU_friendly> .
+<https://w3id.org/dseco/mykg/AS_1> dseco:originates <https://w3id.org/dseco/mykg/SUBNET_12.12.12.0/24> .
+
+<https://w3id.org/dseco/mykg/AS_2>  a owl:NamedIndividual , observable:AutonomousSystem .
+<https://w3id.org/dseco/mykg/AS_2> core:hasFacet [
+                        a observable:AutonomousSystemFacet ;
+                        observable:asHandle "AS2" ;
+                    ] .
+<https://w3id.org/dseco/mykg/AS_2> dseco:hasOrgu <https://w3id.org/dseco/mykg/ORGU_malicious> .
+
+
+#################################
+# Les Network Subnets
+#################################
+
+<https://w3id.org/dseco/mykg/SUBNET_12.12.12.0/24> a owl:NamedIndividual , observable:NetworkSubnet ;
+                                                dseco:hasAS <https://w3id.org/dseco/mykg/AS_1> .
+
+<https://w3id.org/dseco/mykg/SUBNET_203.0.113.0/24> a owl:NamedIndividual , observable:NetworkSubnet ;
+                                                dseco:hasAS <https://w3id.org/dseco/mykg/AS_1> .
+
+<https://w3id.org/dseco/mykg/SUBNET_198.51.100.0/24> a owl:NamedIndividual , observable:NetworkSubnet ;
+                                                dseco:hasAS <https://w3id.org/dseco/mykg/AS_1> .
+
+<https://w3id.org/dseco/mykg/SUBNET_::3/40> a owl:NamedIndividual , observable:NetworkSubnet ;
+                                                dseco:hasAS <https://w3id.org/dseco/mykg/AS_2> .
+
+<https://w3id.org/dseco/mykg/SUBNET_199.1.1.0/24> a owl:NamedIndividual , observable:NetworkSubnet ;
+                                                dseco:hasAS <https://w3id.org/dseco/mykg/AS_2> .
+
+# === EOF =====================================================================

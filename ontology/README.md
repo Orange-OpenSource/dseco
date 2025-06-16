@@ -32,7 +32,7 @@ When releasing a new version of the ontology,
 	```shell
 	# From the ontology directory
 	ln -s -f dseco-<MAJOR.MINOR>/dseco.ttl dseco-latest.ttl
-	# e.g. ln -s -f dseco-1.5/dseco.ttl dseco-latest.ttl
+	# e.g. ln -s -f dseco-1.6.1/dseco.ttl dseco-latest.ttl
 	```
 
 Direct reference to a versioned ontology implementation also makes use of the *dseco* identifier.

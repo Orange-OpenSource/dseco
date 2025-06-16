@@ -8,4 +8,5 @@ Overall, it demonstrates the feasibility of providing a unified view of DNS reco
 See sub-folders for each specific DSecO release.
 
 * [DSecO v1.5.0](dseco-1.5.0)
+* [DSecO v1.6.1](dseco-1.6.1)
 

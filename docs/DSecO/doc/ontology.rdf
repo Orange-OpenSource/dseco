@@ -32,7 +32,7 @@ Alignment holds for the following vocabulary releases:
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-06-14</terms:modified>
         <terms:publisher rdf:resource="https://www.orange.com/"/>
         <terms:title xml:lang="en">The DNS Security Ontology</terms:title>
-        <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/draft"/>
+        <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/peerReviewed"/>
         <vann:preferredNamespacePrefix>dseco</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/dseco/ontology/</vann:preferredNamespaceUri>
         <rdfs:seeAlso rdf:resource="https://w3id.org/dseco/doc/"/>

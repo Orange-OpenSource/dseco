@@ -9,7 +9,7 @@
 <https://w3id.org/dseco/ontology/> <http://purl.org/dc/terms/modified> "2025-06-14"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/dseco/ontology/> <http://purl.org/dc/terms/publisher> <https://www.orange.com/> .
 <https://w3id.org/dseco/ontology/> <http://purl.org/dc/terms/title> "The DNS Security Ontology"@en .
-<https://w3id.org/dseco/ontology/> <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> .
+<https://w3id.org/dseco/ontology/> <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/peerReviewed> .
 <https://w3id.org/dseco/ontology/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "dseco" .
 <https://w3id.org/dseco/ontology/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/dseco/ontology/" .
 <https://w3id.org/dseco/ontology/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://w3id.org/dseco/doc/> .

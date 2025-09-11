@@ -26,7 +26,7 @@ Alignment holds for the following vocabulary releases:
                                     <http://purl.org/dc/terms/modified> "2025-06-14"^^xsd:date ;
                                     <http://purl.org/dc/terms/publisher> <https://www.orange.com/> ;
                                     <http://purl.org/dc/terms/title> "The DNS Security Ontology"@en ;
-                                    <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> ;
+                                    <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/peerReviewed> ;
                                     <http://purl.org/vocab/vann/preferredNamespacePrefix> "dseco" ;
                                     <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/dseco/ontology/" ;
                                     rdfs:seeAlso <https://w3id.org/dseco/doc/> ;

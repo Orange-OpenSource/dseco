@@ -221,7 +221,7 @@
     "@value" : "The DNS Security Ontology"
   } ],
   "http://purl.org/ontology/bibo/status" : [ {
-    "@id" : "http://purl.org/ontology/bibo/status/draft"
+    "@id" : "http://purl.org/ontology/bibo/status/peerReviewed"
   } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@value" : "dseco"

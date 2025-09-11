@@ -56,7 +56,7 @@ Alignment holds for the following vocabulary releases:
 - [ORG](https://www.w3.org/TR/vocab-org/) 0.8
 - [UCO](https://github.com/ucoProject/uco) 1.4.0
 """@en ;
-    bibo:status <http://purl.org/ontology/bibo/status/draft> ;  # https://www.dublincore.org/specifications/bibo/bibo/bibo.rdf.xml#
+    bibo:status <http://purl.org/ontology/bibo/status/peerReviewed> ;  # https://www.dublincore.org/specifications/bibo/bibo/bibo.rdf.xml#
     dcterms:creator "Didier Bringer (https://orcid.org/0009-0007-9787-2559)" ;  # Didier Bringer
     dcterms:contributor "Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)" ;  # Lionel Tailhardat
     dcterms:contributor "Antoine Cawet" ;  # Antoine Cawet
@@ -75,7 +75,7 @@ Alignment holds for the following vocabulary releases:
 - Added observable:AutonomousSystem core:hasFacet observable:AutonomousSystemFacet
 - Added observable:IPAddress :hasAS observable:AutonomousSystem
 - Added observable:NetworkSubnet dseco:hasAS observable:AutonomousSystem
-
+- Modified bibo:status from draft to peerReviewed
 """@en ;
     owl:versionInfo "v1.6.1" ;
     owl:versionIRI <dseco-1.6.1> ;

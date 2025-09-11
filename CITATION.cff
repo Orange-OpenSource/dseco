@@ -37,3 +37,17 @@ keywords:
 license: BSD-4-Clause
 version: v1.6.1
 date-released: '2025-06-14'
+preferred-citation:
+  type: article
+  authors:
+  - orcid: 'https://orcid.org/0009-0007-9787-2559'
+    given-names: Didier
+    family-names: Bringer
+    affiliation: Orange
+  - orcid: 'https://orcid.org/0000-0001-5887-899X'
+    family-names: Tailhardat
+    given-names: Lionel
+    affiliation: Orange
+  journal: "IEEE Transactions on Networking"
+  title: "DSecO: Domain Name System (DNS) Data as a Knowledge Graph for Enhanced Security Analysis"
+  year: 2025

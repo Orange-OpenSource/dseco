@@ -4,15 +4,15 @@ The **DSecO** project is a data model for representing and reasoning on Domain N
 The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (DNS-KG) for administration and security assessment applications.
 The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.
 
-Cite:
+The content of this code repository accompanies the research project explained in the following paper:
 
 ```bibtex
-@misc{dseco-2025,
-  title        = {{DSecO: Domain Name System (DNS) Data as a Knowledge Graph for Enhanced Security Analysis}},
+@article{dseco-2025,
   author       = {{Didier Bringer} and {Lionel Tailhardat}},
-  year         = {2025},
-  howpublished = {\url{https://hal.science/hal-04887392}},
-  note         = {RefId: hal-04887392}
+  title        = {{DSecO: Domain Name System (DNS) Data as a Knowledge Graph for Enhanced Security Analysis}},
+  journal      = {IEEE Transactions on Networking},
+  year         = 2025,
+  doi          = {10.1109/TON.2025.3598374},
 }
 ```
 

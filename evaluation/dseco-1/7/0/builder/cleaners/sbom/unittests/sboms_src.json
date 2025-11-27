@@ -1,0 +1,72 @@
+[
+  {
+    "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.6",
+    "metadata": {
+      "timestamp": "2025-04-01T11:01:31Z",
+      "tools": {
+        "components": [
+          {
+            "type": "application",
+            "author": "anchore",
+            "name": "obscur <xxxxxx@orange.com>"
+          }
+        ]
+      },
+      "component": {
+        "bom-ref": "1f64e1d1bf1f93a105336aa2999e53a71840ecbb9730508dc3468b9bd177662b",
+        "type": "container",
+        "name": "ext-registryk8sio-docker.artifactory.orgtop/kube-proxy:v1.25.16",
+        "version": "sha256:658764d13da5e3016553d0ddbbf28ef2f176891ae713972f5880524cb2234c35"
+      },
+      "properties": []
+    }
+  },
+  {
+    "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.6",
+    "serialNumber": "urn:uuid:6a3085b1-fc60-4f2d-a9a0-07ecdb08ba2f",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2025-08-05T07:29:42Z",
+      "tools": {
+        "components": [
+          {
+            "type": "application",
+            "author": "anchore",
+            "name": "obscur <xxxxxx@orange.com>",
+            "version": "1.2.18-1"
+          }
+        ]
+      },
+      "component": {
+        "bom-ref": "09c1d0e97a943735e6db0ebc2c41781c8a87d02af20c58d81b50e8b0d815f2b3",
+        "type": "container",
+        "name": "dockerproxy.repos.tech.orgtop/memcached:latest",
+        "version": "sha256:0b7e302f4c6a6d4db0bb365f63c1444ef91550fd52e3e5b49a4990493ec3a404"
+      }
+    },
+    "components": [
+      {
+        "bom-ref": "a66d6d9c50b785cf87bb45e5dbfe4cd0271ff52aa34e589385b8b5ed15cbfa58",
+        "type": "library",
+        "publisher": "Debian Adduser Developers <adduser@packages.debian.org>",
+        "name": "adduser",
+        "version": "3.134",
+        "cpe": "cpe:2.3:a:adduser:adduser:3.134:*:*:*:*:*:*:*",
+        "purl": "pkg:deb/debian/adduser@3.134?arch=all&distro=debian-12"
+      },
+      {
+        "bom-ref": "667f75d783d78b3159525f5c81c767418b4dc047787a4d25d0edb37bae6469ea",
+        "type": "library",
+        "publisher": "APT Development Team <deity@lists.debian.org>",
+        "name": "apt",
+        "version": "2.6.1",
+        "cpe": "cpe:2.3:a:apt:apt:2.6.1:*:*:*:*:*:*:*",
+        "purl": "pkg:deb/debian/apt@2.6.1?arch=amd64&distro=debian-12"
+      }
+    ]
+  }
+]

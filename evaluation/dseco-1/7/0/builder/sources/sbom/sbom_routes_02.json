@@ -1,0 +1,42 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:804361ef-201c-474c-8ad9-0e9787c15931",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-04-13T04:48:33Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "author": "anchore",
+          "name": "xxxxx <xxxxxxx@orange.com>"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "1213",
+      "type": "container",
+      "name": "mycontainer-for-fqdn1_and_fqdn2",
+      "version": "sha256:1111111"
+    },
+    "properties": [
+      {
+        "name": "Routes",
+        "value": "fqdn3.from_sbom_data"
+      },
+      {
+        "name": "internal_id",
+        "value": "5870"
+      },
+      {
+        "name": "com.orange.repository.orangecarto/id",
+        "value": "10001212"
+      }
+
+    ]
+  },
+  "components": [],
+  "vulnerabilities": []
+}

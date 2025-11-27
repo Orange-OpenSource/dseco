@@ -6,7 +6,7 @@ See sub-folders for specific content:
 ```
 /docs/
 ├───diagrams <shared diagrams and figures>
-└───widoco <Widoco generated documentation>
+└───DSecO.doc <Widoco generated documentation>
 ```
 
 Useful references:

@@ -1,0 +1,74 @@
+#
+# Copyright (c) 2025. Orange. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+#     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+#     3. All advertising materials mentioning features or use of this software must display the following acknowledgement:
+#       This product includes software developed by Orange.
+#     4. Neither the name of Orange nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Orange "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Orange BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+#
+# mapping of the routes from the sbom
+# the logic here is to create different mapping, one for each need
+# in order to have simple mappings
+
+# this one will use sbom_routes_01.json sbom_routes_02.json
+# that will be converted in sbom_routes.json by the retriever
+
+
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix mykg: <https://w3id.org/dseco/mykg/> .
+@prefix dseco: <https://w3id.org/dseco/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Mapping 
+mykg:MappingRoutes a rml:LogicalSource ;
+    rml:source "${TMPDIR}/sbom_routes_sha.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$[*].metadata" .
+
+mykg:Triples_FQDN_is_hosted_by_COMPONENT a rr:TriplesMap ;
+    rml:logicalSource mykg:MappingRoutes ; 
+    rr:subjectMap [
+        rr:template "https://w3id.org/dseco/mykg/FQDN_{properties[?(@.name=='Routes')].value}" ;
+        rr:class dseco:FQDN ;
+        rr:class owl:NamedIndividual ;
+    ] ;
+    rr:predicateObjectMap [
+         rr:predicate dseco:is_hosted_by ;
+         rr:objectMap [
+            rr:template "https://w3id.org/dseco/mykg/COMPONENT_{component.bom_ref_sha}" ;
+        ] ;
+    ] .
+
+# TriplesMap pour extraire le champ bom_ref_sha du composant
+mykg:Triples_COMPONENT a rr:TriplesMap ;
+    rml:logicalSource mykg:MappingRoutes ;
+    rr:subjectMap [
+        rr:template "https://w3id.org/dseco/mykg/COMPONENT_{component.bom_ref_sha}" ;
+        rr:class dseco:COMPONENT ;
+        rr:class owl:NamedIndividual ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate dseco:hasBomRef ;
+        rr:objectMap [ 
+            rml:reference "{metadata.component.bom-ref}" ; rr:datatype xsd:string;
+        ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate dseco:hasServiceId ;
+        rr:objectMap [ 
+            rml:reference "properties[?(@.name=='com.orange.repository.orangecarto/id')].value" ; rr:datatype xsd:string;
+        ] ;
+    ] .

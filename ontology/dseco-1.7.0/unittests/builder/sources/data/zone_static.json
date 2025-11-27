@@ -1,0 +1,16 @@
+[
+    {
+        "managedByInt": "internalzone1.org."
+    },
+    
+    {
+        "managedByInt": "internalzone2.org."
+    },
+    {
+        "managedByInt": "internalzone3.org."
+    },
+    {
+        "managedByTop": "example.org."
+    }
+
+]

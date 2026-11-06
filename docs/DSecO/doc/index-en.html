@@ -74,7 +74,7 @@ $(function(){
 <dd>Antoine Cawet, (<a href="https://www.orange.com/">Orange</a>)</dd><dd><a href="https://orcid.org/0000-0001-5887-899X">Lionel Tailhardat</a>, (<a href="https://www.orange.com/">Orange</a>)</dd>
 
 <dt>Publisher:</dt>
-<dd><a href="https://www.orange.com/">https://www.orange.com/</a>, (<a href="null">null</a>)</dd>
+<dd><a href="https://www.orange.com/">https://www.orange.com/</a>, (<a href="https://www.orange.com/">Orange</a>)</dd>
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://spdx.org/licenses/BSD-4-Clause" target="_blank"><img src="https://img.shields.io/badge/License-https://spdx.org/licenses/BSD_4_Clause-blue.svg" alt="https://spdx.org/licenses/BSD-4-Clause" /></a>
 <a href="https://spdx.org/licenses/BSD-4-Clause" rel="license" target="_blank">
 <img src="null" style="border-width:0" alt="License" />
@@ -208,7 +208,8 @@ This ontology has the following classes and properties.</span>
 </div>
    
 
-<!--CROSSREF SECTION-->
+
+   <!--CROSSREF SECTION-->
    <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for The DNS Security Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by The DNS Security Ontology.
 <div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
@@ -486,7 +487,7 @@ based on sbom.json
       <p>
          <strong>IRI:</strong> https://w3id.org/dseco/ontology/ZONE</p>
       <div class="comment">
-         <span class="markdown">A domain zone in DNS context. A DNS zone is an administrative subdivision of the DNS namespace.</span>
+         <span class="markdown">A domain zone in DNS context. A DNS zone is an administrative suvdivision of the DNS namespace.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -1073,7 +1074,7 @@ based on sbom.json
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1121,9 +1122,7 @@ based on sbom.json
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
-                  target="_blank"
-                  title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+               <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1176,10 +1175,7 @@ based on sbom.json
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/managedBy</p>
-      <div class="comment">
-         <span class="markdown">The Agent or Owner that can change entries in the zone.</span>
-      </div>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_included_in</p>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -1203,14 +1199,12 @@ based on sbom.json
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/ns/org#OrganizationalUnit"
-                  target="_blank"
-                  title="http://www.w3.org/ns/org#OrganizationalUnit">organizational unit</a>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1497,7 +1491,7 @@ based on sbom.json
       <p>
          <strong>IRI:</strong> https://w3id.org/dseco/ontology/FQDNEndsInExampleorg</p>
       <div class="comment">
-         <span class="markdown">This property is designed here for illustrative purposes. It is populated by an INSERT WHERE.</span>
+         <span class="markdown">A network subnet associated to an ip address.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -1525,21 +1519,24 @@ based on sbom.json
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+                  target="_blank"
+                  title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+               <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
                   target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+                  title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasAS">
-      <h3>hasAS<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+   <div class="entity" id="managedBy">
+      <h3>managedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>

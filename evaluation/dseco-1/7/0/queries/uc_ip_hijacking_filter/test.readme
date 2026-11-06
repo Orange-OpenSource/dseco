@@ -1,0 +1,2 @@
+names pointing to IP that are outside our subnets
+and have an ASN which are not in a filtered list of "friendly" ASN

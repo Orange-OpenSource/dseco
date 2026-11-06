@@ -1,0 +1,542 @@
+# Copyright (c) 2023-2025 Orange. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+#     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+#     3. All advertising materials mentioning features or use of this software must display the following acknowledgement:
+#     This product includes software developed by Orange.
+#     4. Neither the name of Orange nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Orange "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Orange BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# === PREFIXES ================================================================
+
+# --- Basic ---
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:	<http://www.w3.org/ns/shacl#> .
+
+# --- Ontology management ---
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# --- Domain specific ---
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> . # Unified Cybersecurity Ontology (UCO)
+@prefix org: <http://www.w3.org/ns/org#> .  # The Organization Ontology
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+
+# --- security-ontology ---
+@prefix dseco: <https://w3id.org/dseco/ontology/> .
+@prefix : <https://w3id.org/dseco/ontology/> .
+
+# =============================================================================
+
+<https://w3id.org/dseco/ontology/>
+    a voaf:Vocabulary, owl:Ontology ;
+    dcterms:title "The DNS Security Ontology"@en ;
+    dcterms:description """The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.
+The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.
+
+Alignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).
+Directions for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.
+Alignment holds for the following vocabulary releases:
+
+- [ORG](https://www.w3.org/TR/vocab-org/) 0.8
+- [UCO](https://github.com/ucoProject/uco) Release-0.8.0
+"""@en ;
+    bibo:status <http://purl.org/ontology/bibo/status/draft> ;  # https://www.dublincore.org/specifications/bibo/bibo/bibo.rdf.xml#
+    dcterms:creator "Didier Bringer (https://orcid.org/0009-0007-9787-2559)" ;  # Didier Bringer : 0009-0007-9787-2559
+    dcterms:contributor "Lionel Tailhardat (https://orcid.org/0000-0001-5887-899X)" ;  # Lionel Tailhardat
+    dcterms:publisher <https://www.orange.com/> ;
+    dcterms:license <https://spdx.org/licenses/BSD-4-Clause> ;
+    vann:preferredNamespacePrefix "dseco" ;
+    vann:preferredNamespaceUri "https://w3id.org/dseco/ontology/" ;  # See https://dgarijo.github.io/Widoco/doc/bestPractices/index-en.html
+    dcterms:issued "2022-05-10"^^xsd:date ;
+    dcterms:modified "2025-11-25"^^xsd:date ;
+    skos:changeNote """Changes in v1.7.0:
+
+- Added rename dseco:whoisdomain in dseco:ZONE
+- Added observable:IPAddress observable:IPAddressFacet 
+- Added observable:IPv4Address observable:IPv6Address
+- Added dseco:is_part_of, observable:NetworkSubnet 
+- Added observable:IPAddress dseco:is_part_of observable:NetworkSubnet
+- Added observable:AutonomousSystem core:hasFacet observable:AutonomousSystemFacet
+- Added observable:IPAddress dseco:hasAS observable:AutonomousSystem
+- Added observable:NetworkSubnet dseco:hasAS observable:AutonomousSystem 
+- Added observable:AutonomousSystem dseco::originates observable:NetworkSubnet
+- Added dseco:CVE
+- Added dseco:COMPONENT 
+- Added dseco:FQDN  dseco:is_hosted_by dseco:COMPONENT
+- Added dseco:COMPONENT dseco:is_included_in dseco:COMPONENT
+- Added dseco:COMPONENT dseco:dependsOn dseco:COMPONENT
+- Added dseco:COMPONENT :hasServiceId xsd:string
+- Added dseco:COMPONENT :hasBomRef xsd:string
+- Added skos:example in each Classe or Property
+- Added SHACL shapes for new properties
+- Added rmls mappings to build the toy dataset
+
+
+
+"""@en ;
+    owl:versionInfo "v1.7.0" ;
+    owl:versionIRI <dseco-1.7.0> ;
+    owl:priorVersion <ontology/dseco-1.6.1> ;
+    rdfs:seeAlso <https://w3id.org/dseco/doc/> ;
+.
+
+#################################################################
+#    Classes
+#################################################################
+
+:FQDN
+    a owl:Class ;
+    rdfs:label "FQDN" ;
+    rdfs:comment "Fully Qualified Domain Name."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of a FQDN instance
+                :FQDN_example.com a :FQDN .
+                """@en ;
+.
+
+:ZONE
+    a owl:Class ;
+    rdfs:label "ZONE" ;
+    rdfs:comment "A domain zone in DNS context. A DNS zone is an administrative suvdivision of the DNS namespace."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of a ZONE instance
+                :ZONE_example.com a :ZONE .
+                """@en ;
+.
+
+
+:CVE
+    a owl:Class ;
+    rdfs:label "CVE" ;
+    rdfs:comment "A CVE (Common Vulnerability Exposure)."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of a CVE instance
+                :CVE_2025-1212 a :CVE .
+                """@en ;
+.
+
+:COMPONENT
+    a owl:Class ;
+    rdfs:label "COMPONENT" ;
+    rdfs:comment "A COMPONENT is able of hosting a FQDN, a COMPONENT is made of other COMPONENT s."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of a COMPONENT instance
+                :COMPONENT_1212 a :COMPONENT .
+                based on sbom.json
+                """@en ;
+.
+
+:DisjointClasses a owl:AllDisjointClasses ;
+    owl:members (
+        :FQDN 
+        :ZONE 
+        :CVE 
+        :COMPONENT 
+        observable:NetworkSubnet 
+        observable:IPAddress 
+        observable:AutonomousSystem 
+        org:OrganizationalUnit
+        ) .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+
+:is_CNAME_of
+    a owl:ObjectProperty ;
+    rdfs:label "is_CNAME_of" ;
+    rdfs:domain :FQDN ;
+    rdfs:range :FQDN ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using is_CNAME_of property
+                :FQDN_alias.example.com a :FQDN ;
+                    :is_CNAME_of :FQDN_target.example.com .
+                """@en ;
+.
+
+:is_A_to
+    a owl:ObjectProperty ;
+    rdfs:label "is_A_to" ;
+    rdfs:domain :FQDN ;
+    rdfs:range observable:IPv4Address ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using is_A_to property
+                :FQDN_example.com a :FQDN ;
+                    :is_A_to :IP_192.0.2.1 .
+                """@en ;
+.
+
+:is_AAAA_to
+    a owl:ObjectProperty ;
+    rdfs:label "is_AAAA_to" ;
+    rdfs:domain :FQDN ;
+    rdfs:range observable:IPv6Address ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using is_AAAA_to property
+                :FQDN_example.com a :FQDN ;
+                    :is_AAAA_to :IP_::1 .
+                """@en ;
+.
+
+:is_in_zone
+    a owl:FunctionalProperty , # A functional property is a property that can have only one (unique) value y for each instance x
+        owl:ObjectProperty ; 
+    rdfs:label "is_in_zone" ;
+    rdfs:domain :FQDN ;
+    rdfs:range :ZONE ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using is_in_zone property
+                :FQDN_example.com a :FQDN ;
+                    :is_in_zone :ZONE_example.com .
+                """@en ;
+.
+
+:is_CNAME_of_CNAME_of
+    a owl:ObjectProperty ;
+    rdfs:label "is_CNAME_of_CNAME_of" ;
+    rdfs:comment "To test inferences."@en ;
+    owl:propertyChainAxiom (:is_CNAME_of :is_CNAME_of) ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using is_CNAME_of_CNAME_of property
+                :FQDN_example.com a :FQDN ;
+                    :is_CNAME_of_CNAME_of :FQDN_example2.com .
+                """@en ;
+.
+
+:managedBy
+    a owl:ObjectProperty ;
+    rdfs:label "managedBy" ;
+    rdfs:domain :ZONE ;
+    rdfs:range org:OrganizationalUnit ;
+    rdfs:comment "The Agent or Owner that can change entries in the zone."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using managedBy property
+                :ZONE_example.com a :ZONE ;
+                    :managedBy :ORGU_internal .
+                """@en ;
+.
+
+:hasOrgu
+    a owl:ObjectProperty ;
+    rdfs:label "hasOrgu" ;
+    rdfs:domain observable:AutonomousSystem ;
+    rdfs:range org:OrganizationalUnit ;
+    rdfs:comment "An AS belongs to an organizational Unit."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using hasOrgu property
+                :AS_64496 a observable:AutonomousSystem ;
+                    :hasOrgu :ORGU_network_provider .
+                """@en ;
+.
+
+:hasAS
+    a owl:FunctionalProperty ,
+        owl:ObjectProperty ;
+    owl:inverseOf :originates ;   
+    rdfs:label "hasAS" ;
+    rdfs:comment "The Autonomous System Number (ASN) associated with a network entity."@en ;
+    rdfs:comment "L'Autonomous System Number (ASN) associé à une entité."@fr ;
+    rdfs:domain [ 
+                    owl:unionOf (observable:IPAddress observable:NetworkSubnet) ;
+                    a owl:Class
+                ] ;
+    rdfs:range observable:AutonomousSystem ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using hasAS property
+                <:SUBNET_12.12.12.0/24> a observable:NetworkSubnet ;
+                    :hasAS :AS_64496 .
+                """@en ;
+.
+
+:originates
+    a owl:ObjectProperty ;
+    owl:inverseOf :hasAS ; 
+    rdfs:label "originates" ;
+    rdfs:comment "A network entity associated with an Autonomous system."@en ;
+    rdfs:comment "Une entité associée à un système autonome."@fr ;
+    rdfs:domain observable:AutonomousSystem ;
+    rdfs:range [ 
+                    owl:unionOf (observable:IPAddress observable:NetworkSubnet) ;
+                    a owl:Class
+                ] ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using originates property
+                :AS_64496 a observable:AutonomousSystem ;
+                    :originates  <:SUBNET_12.12.12.0/24>.
+                """@en ;
+.
+
+
+ 
+:is_part_of
+    a owl:FunctionalProperty ,
+        owl:ObjectProperty ;
+    rdfs:label "is_part_of" ;
+    rdfs:comment "A network subnet associated to an ip address."@en ;
+    rdfs:comment "Un subnet associé à une adresse ip."@fr ;
+    rdfs:domain observable:IPAddress ;
+    rdfs:range observable:NetworkSubnet ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using is_part_of property
+                :IP_12.12.12.1 a observable:IPAddress ;
+                    :is_part_of <:SUBNET_12.12.12.0/24> .
+                """@en ;
+.
+
+:is_hosted_by
+    a owl:ObjectProperty ;
+    rdfs:label "is_hosted_by" ;
+    rdfs:domain :FQDN ;
+    rdfs:range :COMPONENT ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using is_hosted_by property
+                :FQDN_alias.example.com a :FQDN ;
+                    :is_hosted_by :COMPONENT_1212 .
+                """@en ;
+.
+
+:is_included_in
+    a owl:ObjectProperty ;
+    rdfs:label "is_included_in" ;
+    rdfs:domain :COMPONENT ;
+    rdfs:range :COMPONENT ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using is_included_in property
+                :COMPONENT_1212 a :COMPONENT ;
+                    :is_included_in :COMPONENT_3434 .
+                """@en ;
+.
+
+:dependsOn
+    a owl:ObjectProperty ;
+    rdfs:label "dependsOn" ;
+    rdfs:domain :COMPONENT ;
+    rdfs:range :COMPONENT ;
+    rdfs:comment "A COMPONENT depends on another COMPONENT."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using dependsOn property
+                :COMPONENT_1212 a :COMPONENT ;
+                    :dependsOn :COMPONENT_3434 .
+                """@en ;
+.
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+:hasName
+    a owl:FunctionalProperty ,
+        owl:DatatypeProperty ;
+    rdfs:label "hasName" ;
+    rdfs:comment "The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B. This means that :hasName can be used with instances of class A or class B."@en ;
+    rdfs:comment "Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B. Cela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B."@fr ;
+    rdfs:domain [ 
+                    owl:unionOf (:FQDN :ZONE) ;
+                    a owl:Class
+                ] ;
+    rdfs:range xsd:string ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using hasName property
+                :FQDN_example.com a :FQDN ;
+                    :hasName "example.com."^^xsd:string .
+                
+                # Can also be used with ZONE
+                :ZONE_example.org a :ZONE ;
+                    :hasName "example.org."^^xsd:string .
+                """@en ;
+.
+
+:hasCountry
+    a owl:FunctionalProperty ,
+        owl:DatatypeProperty ;
+    rdfs:label "hasCountry" ;
+    rdfs:domain observable:IPAddress ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The country where the entity is located."@en ;
+    rdfs:comment "Le pays où se trouve l'entité."@fr ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using hasCountry property
+                :IP_203.0.113.1 a observable:IPAddress ;
+                    :hasCountry "FR"^^xsd:string .
+                """@en ;
+.
+
+:isinOurSubnet
+    a owl:FunctionalProperty ,
+        owl:DatatypeProperty ;
+    rdfs:label "isinOurSubnet" ;
+    rdfs:domain observable:IPAddress ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "True if the IP is in our subnets. It is populated by a INSERT WHERE query."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using isinOurSubnet property
+                :IP_198.51.100.1 a observable:IPAddress ;
+                    :isinOurSubnet "true"^^xsd:boolean .
+                """@en ;
+.
+
+:FQDN_ends_in_exampleorg
+    a owl:FunctionalProperty ,
+        owl:DatatypeProperty ;
+    rdfs:label "FQDN_ends_in_exampleorg" ;
+    rdfs:domain :FQDN ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "This property is designed here for illustrative purposes. It is populated by an INSERT WHERE."@en ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using FQDN_ends_in_exampleorg property
+                :FQDN_www.example.org a :FQDN ;
+                    :FQDN_ends_in_exampleorg "true"^^xsd:boolean .
+                """@en ;
+.
+
+:hasServiceId
+    a owl:DatatypeProperty ;
+    rdfs:label "hasServiceId" ;
+    rdfs:domain [ 
+                    owl:unionOf (:FQDN :COMPONENT) ;
+                    a owl:Class
+                ] ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The service ID associated with the FQDN."@en ;
+    rdfs:comment "L'identifiant de service associé au FQDN."@fr ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using hasServiceId property
+                :FQDN_www.example.org a :FQDN ;
+                    :hasServiceId "123"^^xsd:string .
+                """@en ;
+.
+
+:hasBomRef a owl:FunctionalProperty,
+    owl:DatatypeProperty ;
+    rdfs:label "hasBomRef" ;
+    rdfs:domain :COMPONENT ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The BOM reference associated with the component."@en ;
+    rdfs:comment "La référence BOM associée au composant."@fr ;
+    vs:term_status "stable" ;
+    rdfs:isDefinedBy dseco: ;
+    skos:example """
+                # Example of using hasBomRef property
+                :COMPONENT_example a :COMPONENT ;
+                    :hasBomRef "BOM-12345"^^xsd:string .
+                """@en ;
+.
+
+#################################################################
+#    SHACL Shapes
+#################################################################
+
+observable:AutonomousSystemShape
+    a sh:NodeShape ;
+    rdfs:comment "SHACL shape for hasAS."@en ;
+    sh:targetClass [ 
+                    owl:unionOf (observable:IPAddress observable:NetworkSubnet) ;
+                    a owl:Class
+                ] ;
+    sh:property [
+                    sh:path :hasAS ;
+                    sh:name "Autonomous System Number" ;
+                    sh:maxCount 1
+                ] 
+.
+
+:CountryShape
+    a sh:NodeShape ;
+    rdfs:comment "SHACL shape for hasCountry."@en ;
+    sh:targetClass observable:IPAddress ;
+    sh:property [
+                  sh:path :hasCountry ;
+                  sh:datatype xsd:string ;
+                  sh:name "Country" ;
+                  sh:maxCount 1 ;
+                  sh:pattern "^[A-Z]+$" ; # Assuming country codes are in two-letter ISO format (or "UNKNOWN")
+                  sh:flags "i" # Case insensitive matching
+                ] 
+.
+
+:managedByShape
+    a sh:NodeShape ;
+    rdfs:comment "SHACL shape for managedBy."@en ;
+    sh:targetClass :ZONE ;
+    sh:property [
+        sh:path :managedBy ;
+        sh:maxCount 1 ;
+        sh:message "A ZONE instance can have only one value for managedBy." ;
+    ] 
+.
+
+:hasOrguShape
+    a sh:NodeShape ;
+    rdfs:comment "SHACL shape for hasOrgu."@en ;
+    sh:targetClass observable:AutonomousSystem ;
+    sh:property [
+        sh:path :hasOrgu ;
+        sh:maxCount 1 ;
+        sh:message "An ASN can belong to only one Orgu." ;
+    ] 
+.
+
+# === EOF =====================================================================

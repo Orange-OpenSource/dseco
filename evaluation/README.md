@@ -9,4 +9,5 @@ See sub-folders for each specific DSecO release.
 
 * [DSecO v1.5.0](dseco-1.5.0)
 * [DSecO v1.6.1](dseco-1.6.1)
+* [DSecO v1.7.0](dseco-1.7.0)
 

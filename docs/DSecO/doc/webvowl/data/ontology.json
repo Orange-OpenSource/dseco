@@ -161,7 +161,7 @@
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "14",
+    "id" : "69",
     "type" : "owl:Class"
   }, {
     "id" : "71",
@@ -329,8 +329,13 @@
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "47",
     "label" : {
-      "IRI-based" : "boolean"
-    }
+      "IRI-based" : "CVE",
+      "undefined" : "CVE"
+    },
+    "comment" : {
+      "en" : "A CVE (Common Vulnerability Exposure)."
+    },
+    "id" : "16"
   }, {
     "iri" : "http://www.w3.org/ns/org#OrganizationalUnit",
     "baseIri" : "http://www.w3.org/ns/org",

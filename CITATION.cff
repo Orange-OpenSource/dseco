@@ -35,8 +35,8 @@ keywords:
   - secops
   - netops
 license: BSD-4-Clause
-version: v1.6.1
-date-released: '2025-06-14'
+version: v2.0.0
+date-released: '2026-11-03'
 preferred-citation:
   type: article
   authors:

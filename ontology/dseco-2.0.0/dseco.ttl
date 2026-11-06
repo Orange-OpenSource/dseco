@@ -67,7 +67,22 @@ Alignment holds for the following vocabulary releases:
     dcterms:modified "2026-06-03"^^xsd:date ;
     skos:changeNote """Changes in v2.0.0:
 
-
+- Used only camelCase for properties : list of properties and their changes:
+    - is_CNAME_of -> isCNAMEOf
+    - is_A_to -> isATo
+    - is_AAAA_to -> isAAAATo
+    - resolves_to -> resolvesTo
+    - is_in_zone -> isInZONE
+    - is_CNAME_of_CNAME_of -> isCNAMEOfCNAMEOf
+    - is_part_of -> isPartOf
+    - is_hosted_by -> isHostedBy
+    - is_included_in -> isIncludedIn
+    - isinOurSubnet -> isInOurSubnet
+    - FQDN_ends_in_exampleorg -> FQDNEndsInExampleorg
+    - answers_on_port_443 -> answersOnPort443
+    - answers_on_port_80 -> answersOnPort80
+    - answers_on_port -> answersOnPort)
+- Deleted TAG and hasTag and replaced it by knownFrom and ORGU_team_GCP
 """@en ;
     owl:versionInfo "v2.0.0" ;
     owl:versionIRI <dseco-2.0.0> ;
@@ -83,24 +98,24 @@ Alignment holds for the following vocabulary releases:
     a owl:Class ;
     rdfs:label "FQDN" ;
     rdfs:comment "Fully Qualified Domain Name."@en ;
+    rdfs:comment "Un fully qualified domain name (FQDN, ou nom de domaine pleinement qualifié) est un nom de domaine qui donne la position exacte de son noeud dans l'arborescence DNS en indiquant tous les domaines de niveau supérieur."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of a FQDN instance
-                :FQDN_example.com a :FQDN .
-                """@en ;
+    skos:example """# Example of a FQDN instance
+:FQDN_example.com a :FQDN .
+"""@en ;
 .
 
 :ZONE
     a owl:Class ;
     rdfs:label "ZONE" ;
-    rdfs:comment "A domain zone in DNS context. A DNS zone is an administrative suvdivision of the DNS namespace."@en ;
+    rdfs:comment "A domain zone in DNS context. A DNS zone is an administrative subdivision of the DNS namespace."@en ;
+    rdfs:comment "Une zone de domaine dans le contexte du DNS. Une zone DNS est une subdivision administrative de l’espace de noms DNS."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of a ZONE instance
-                :ZONE_example.com a :ZONE .
-                """@en ;
+    skos:example """# Example of a ZONE instance
+:ZONE_example.com a :ZONE .
+"""@en ;
 .
 
 
@@ -110,35 +125,34 @@ Alignment holds for the following vocabulary releases:
     rdfs:comment "A CVE (Common Vulnerability Exposure)."@en ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of a CVE instance
-                :CVE_2025-1212 a :CVE .
-                """@en ;
+    skos:example """# Example of a CVE instance
+:CVE_2025-1212 a :CVE .
+"""@en ;
 .
 
 :COMPONENT
     a owl:Class ;
     rdfs:label "COMPONENT" ;
-    rdfs:comment "A COMPONENT is able of hosting a FQDN, a COMPONENT is made of other COMPONENT s."@en ;
+    rdfs:comment "A COMPONENT is able of hosting a FQDN, a COMPONENT is made of other COMPONENTs."@en ;
+    rdfs:comment "Un COMPONENT peut héberger un FQDN et est constitué d’autres COMPONENTs."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of a COMPONENT instance
-                :COMPONENT_1212 a :COMPONENT .
-                based on sbom.json
-                """@en ;
+    skos:example """# Example of a COMPONENT instance
+:COMPONENT_1212 a :COMPONENT .
+based on sbom.json
+"""@en ;
 .
 
 :SERVICEID
     a owl:Class ;
     rdfs:label "SERVICEID" ;
     rdfs:comment "A SERVICEID is an identifier of a service, it is associated to a FQDN and can be used to link security indicators."@en ;
+    rdfs:comment "Un SERVICEID est un identifiant de service associé à un FQDN et pouvant servir à relier des indicateurs de sécurité."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of a SERVICEID instance
-                :SERVICEID_1 a :SERVICEID .
-                """@en ;
+    skos:example """# Example of a SERVICEID instance
+:SERVICEID_1 a :SERVICEID .
+"""@en ;
 .
 
 
@@ -169,11 +183,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range :FQDN ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isCNAMEOf property
-                :FQDN_alias.example.com a :FQDN ;
-                    :isCNAMEOf :FQDN_target.example.com .
-                """@en ;
+    skos:example """# Example of using isCNAMEOf property
+:FQDN_alias.example.com a :FQDN ;
+    :isCNAMEOf :FQDN_target.example.com .
+"""@en ;
 .
 
 :isATo
@@ -184,11 +197,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range observable:IPv4Address ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isATo property
-                :FQDN_example.com a :FQDN ;
-                    :isATo :IP_192.0.2.1 .
-                """@en ;
+    skos:example """# Example of using isATo property
+:FQDN_example.com a :FQDN ;
+    :isATo :IP_192.0.2.1 .
+"""@en ;
 .
 
 :isAAAATo
@@ -199,11 +211,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range observable:IPv6Address ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isAAAATo property
-                :FQDN_example.com a :FQDN ;
-                    :isAAAATo :IP_::1 .
-                """@en ;
+    skos:example """# Example of using isAAAATo property
+:FQDN_example.com a :FQDN ;
+    :isAAAATo :IP_::1 .
+"""@en ;
 .
 
 :resolvesTo
@@ -213,11 +224,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range observable:IPAddress ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using resolvesTo property
-                :FQDN_example.com a :FQDN ;
-                    :resolvesTo :IP_::2 .
-                """@en ;
+    skos:example """# Example of using resolvesTo property
+:FQDN_example.com a :FQDN ;
+    :resolvesTo :IP_::2 .
+"""@en ;
 .
 
 :isInZONE
@@ -228,25 +238,24 @@ Alignment holds for the following vocabulary releases:
     rdfs:range :ZONE ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isInZONE property
-                :FQDN_example.com a :FQDN ;
-                    :isInZONE :ZONE_example.com .
-                """@en ;
+    skos:example """# Example of using isInZONE property
+:FQDN_example.com a :FQDN ;
+    :isInZONE :ZONE_example.com .
+"""@en ;
 .
 
 :isCNAMEOfCNAMEOf
     a owl:ObjectProperty ;
     rdfs:label "isCNAMEOfCNAMEOf" ;
     rdfs:comment "To test inferences."@en ;
+    rdfs:comment "Pour tester les inférences."@fr ;
     owl:propertyChainAxiom (:isCNAMEOf :isCNAMEOf) ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isCNAMEOfCNAMEOf property
-                :FQDN_example.com a :FQDN ;
-                    :isCNAMEOfCNAMEOf :FQDN_example2.com .
-                """@en ;
+    skos:example """# Example of using isCNAMEOfCNAMEOf property
+:FQDN_example.com a :FQDN ;
+    :isCNAMEOfCNAMEOf :FQDN_example2.com .
+"""@en ;
 .
 
 :managedBy
@@ -255,13 +264,13 @@ Alignment holds for the following vocabulary releases:
     rdfs:domain :ZONE ;
     rdfs:range org:OrganizationalUnit ;
     rdfs:comment "The Agent or Owner that can change entries in the zone."@en ;
+    rdfs:comment "L’agent (Agent) ou le propriétaire (Owner) autorisé à modifier les entrées de la zone."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using managedBy property
-                :ZONE_example.com a :ZONE ;
-                    :managedBy :ORGU_internal .
-                """@en ;
+    skos:example """# Example of using managedBy property
+:ZONE_example.com a :ZONE ;
+    :managedBy :ORGU_internal .
+"""@en ;
 .
 
 :hasOrgu
@@ -269,14 +278,14 @@ Alignment holds for the following vocabulary releases:
     rdfs:label "hasOrgu" ;
     rdfs:domain observable:AutonomousSystem ;
     rdfs:range org:OrganizationalUnit ;
-    rdfs:comment "An AS belongs to an organizational Unit."@en ;
+    rdfs:comment "An AS belongs to an organizational unit."@en ;
+    rdfs:comment "Un AS appartient à une unité organisationnelle."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using hasOrgu property
-                :AS_64496 a observable:AutonomousSystem ;
-                    :hasOrgu :ORGU_network_provider .
-                """@en ;
+    skos:example """# Example of using hasOrgu property
+:AS_64496 a observable:AutonomousSystem ;
+    :hasOrgu :ORGU_network_provider .
+"""@en ;
 .
 
 :hasAS
@@ -293,19 +302,18 @@ Alignment holds for the following vocabulary releases:
     rdfs:range observable:AutonomousSystem ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using hasAS property
-                <:SUBNET_12.12.12.0/24> a observable:NetworkSubnet ;
-                    :hasAS :AS_64496 .
-                """@en ;
+    skos:example """# Example of using hasAS property
+<:SUBNET_12.12.12.0/24> a observable:NetworkSubnet ;
+    :hasAS :AS_64496 .
+"""@en ;
 .
 
 :originates
     a owl:ObjectProperty ;
     owl:inverseOf :hasAS ; 
     rdfs:label "originates" ;
-    rdfs:comment "A network entity associated with an Autonomous system."@en ;
-    rdfs:comment "Une entité associée à un système autonome."@fr ;
+    rdfs:comment "A network entity associated with an Autonomous System."@en ;
+    rdfs:comment "Une entité associée à un système autonome (AS)."@fr ;
     rdfs:domain observable:AutonomousSystem ;
     rdfs:range [ 
                     owl:unionOf (observable:IPAddress observable:NetworkSubnet) ;
@@ -313,11 +321,10 @@ Alignment holds for the following vocabulary releases:
                 ] ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using originates property
-                :AS_64496 a observable:AutonomousSystem ;
-                    :originates  <:SUBNET_12.12.12.0/24>.
-                """@en ;
+    skos:example """# Example of using originates property
+:AS_64496 a observable:AutonomousSystem ;
+    :originates  <:SUBNET_12.12.12.0/24>.
+"""@en ;
 .
 
 
@@ -332,11 +339,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range observable:NetworkSubnet ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isPartOf property
-                :IP_12.12.12.1 a observable:IPAddress ;
-                    :isPartOf <:SUBNET_12.12.12.0/24> .
-                """@en ;
+    skos:example """# Example of using isPartOf property
+:IP_12.12.12.1 a observable:IPAddress ;
+    :isPartOf <:SUBNET_12.12.12.0/24> .
+"""@en ;
 .
 
 :isHostedBy
@@ -346,11 +352,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range :COMPONENT ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isHostedBy property
-                :FQDN_alias.example.com a :FQDN ;
-                    :isHostedBy :COMPONENT_1212 .
-                """@en ;
+    skos:example """# Example of using isHostedBy property
+:FQDN_alias.example.com a :FQDN ;
+    :isHostedBy :COMPONENT_1212 .
+"""@en ;
 .
 
 :isIncludedIn
@@ -360,11 +365,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range :COMPONENT ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isIncludedIn property
-                :COMPONENT_1212 a :COMPONENT ;
-                    :isIncludedIn :COMPONENT_3434 .
-                """@en ;
+    skos:example """# Example of using isIncludedIn property
+:COMPONENT_1212 a :COMPONENT ;
+    :isIncludedIn :COMPONENT_3434 .
+"""@en ;
 .
 
 :dependsOn
@@ -373,13 +377,13 @@ Alignment holds for the following vocabulary releases:
     rdfs:domain :COMPONENT ;
     rdfs:range :COMPONENT ;
     rdfs:comment "A COMPONENT depends on another COMPONENT."@en ;
+    rdfs:comment "Un COMPONENT dépend d’un autre COMPONENT."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using dependsOn property
-                :COMPONENT_1212 a :COMPONENT ;
-                    :dependsOn :COMPONENT_3434 .
-                """@en ;
+    skos:example """# Example of using dependsOn property
+:COMPONENT_1212 a :COMPONENT ;
+    :dependsOn :COMPONENT_3434 .
+"""@en ;
 .
 
 :knownFrom
@@ -387,13 +391,13 @@ Alignment holds for the following vocabulary releases:
     rdfs:label "knownFrom" ;
     rdfs:range org:OrganizationalUnit ;
     rdfs:comment "An entity is known from an organizational unit."@en ;
+    rdfs:comment "Une entité est connue d’une unité organisationnelle."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using knownFrom property
-                :IP_12.12.12.1 a observable:IPAddress ;
-                    :knownFrom :OrganizationalUnit_1 .
-                """@en ;
+    skos:example """# Example of using knownFrom property
+:IP_12.12.12.1 a observable:IPAddress ;
+    :knownFrom :OrganizationalUnit_1 .
+"""@en ;
 .
 
 
@@ -408,15 +412,14 @@ Alignment holds for the following vocabulary releases:
     rdfs:range xsd:string ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using hasName property
-                :FQDN_example.com a :FQDN ;
-                    :hasName "example.com."^^xsd:string .
-                
-                # Can also be used with ZONE
-                :ZONE_example.org a :ZONE ;
-                    :hasName "example.org."^^xsd:string .
-                """@en ;
+    skos:example """# Example of using hasName property
+:FQDN_example.com a :FQDN ;
+    :hasName "example.com."^^xsd:string .
+
+# Can also be used with ZONE
+:ZONE_example.org a :ZONE ;
+    :hasName "example.org."^^xsd:string .
+"""@en ;
 .
 
 :hasCountry
@@ -429,11 +432,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:comment "Le pays où se trouve l'entité."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using hasCountry property
-                :IP_203.0.113.1 a observable:IPAddress ;
-                    :hasCountry "FR"^^xsd:string .
-                """@en ;
+    skos:example """# Example of using hasCountry property
+:IP_203.0.113.1 a observable:IPAddress ;
+    :hasCountry "FR"^^xsd:string .
+"""@en ;
 .
 
 :isInOurSubnet
@@ -443,13 +445,13 @@ Alignment holds for the following vocabulary releases:
     rdfs:domain observable:IPAddress ;
     rdfs:range xsd:boolean ;
     rdfs:comment "True if the IP is in our subnets. It is populated by a INSERT WHERE query."@en ;
+    rdfs:comment "Vrai si l’adresse IP se trouve dans nos sous-réseaux. Ce champ est renseigné à l’aide d’une requête INSERT ... WHERE."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using isInOurSubnet property
-                :IP_198.51.100.1 a observable:IPAddress ;
-                    :isInOurSubnet "true"^^xsd:boolean .
-                """@en ;
+    skos:example """# Example of using isInOurSubnet property
+:IP_198.51.100.1 a observable:IPAddress ;
+    :isInOurSubnet "true"^^xsd:boolean .
+"""@en ;
 .
 
 :FQDNEndsInExampleorg
@@ -459,13 +461,13 @@ Alignment holds for the following vocabulary releases:
     rdfs:domain :FQDN ;
     rdfs:range xsd:boolean ;
     rdfs:comment "This property is designed here for illustrative purposes. It is populated by an INSERT WHERE."@en ;
+    rdfs:comment "Cette propriété est définie ici à des fins d’illustration. Elle est renseignée à l’aide d’une requête INSERT ... WHERE."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using FQDNEndsInExampleorg property
-                :FQDN_www.example.org a :FQDN ;
-                    :FQDNEndsInExampleorg "true"^^xsd:boolean .
-                """@en ;
+    skos:example """# Example of using FQDNEndsInExampleorg property
+:FQDN_www.example.org a :FQDN ;
+    :FQDNEndsInExampleorg "true"^^xsd:boolean .
+"""@en ;
 .
 
 :hasServiceId
@@ -480,11 +482,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:comment "L'identifiant de service associé au FQDN."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using hasServiceId property
-                :FQDN_www.example.org a :FQDN ;
-                    :hasServiceId :SERVICEID_123 .
-                """@en ;
+    skos:example """# Example of using hasServiceId property
+:FQDN_www.example.org a :FQDN ;
+    :hasServiceId :SERVICEID_123 .
+"""@en ;
 .
 
 :hasBomRef a owl:FunctionalProperty,
@@ -496,11 +497,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:comment "La référence BOM associée au composant."@fr ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using hasBomRef property
-                :COMPONENT_example a :COMPONENT ;
-                    :hasBomRef "BOM-12345"^^xsd:string .
-                """@en ;
+    skos:example """# Example of using hasBomRef property
+:COMPONENT_example a :COMPONENT ;
+    :hasBomRef "BOM-12345"^^xsd:string .
+"""@en ;
 .
 
 :answersOnPort443
@@ -512,11 +512,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range xsd:boolean ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using answersOnPort443 property
-                :FQDN_www.example.org a :FQDN ;
-                    :answersOnPort443 "true"^^xsd:boolean .
-                """@en ;
+    skos:example """# Example of using answersOnPort443 property
+:FQDN_www.example.org a :FQDN ;
+    :answersOnPort443 "true"^^xsd:boolean .
+"""@en ;
 .
 
 :answersOnPort80
@@ -528,11 +527,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range xsd:boolean ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using answersOnPort80 property
-                :FQDN_www.example.org a :FQDN ;
-                    :answersOnPort80 "true"^^xsd:boolean .
-                """@en ;
+    skos:example """# Example of using answersOnPort80 property
+:FQDN_www.example.org a :FQDN ;
+    :answersOnPort80 "true"^^xsd:boolean .
+"""@en ;
 .
 
 :answersOnPort
@@ -543,11 +541,10 @@ Alignment holds for the following vocabulary releases:
     rdfs:range xsd:boolean ;
     vs:term_status "stable" ;
     rdfs:isDefinedBy dseco: ;
-    skos:example """
-                # Example of using answersOnPort property
-                :FQDN_www.example.org a :FQDN ;
-                    :answersOnPort "true"^^xsd:boolean .
-                """@en ;
+    skos:example """# Example of using answersOnPort property
+:FQDN_www.example.org a :FQDN ;
+    :answersOnPort "true"^^xsd:boolean .
+"""@en ;
 .
 
 #################################################################

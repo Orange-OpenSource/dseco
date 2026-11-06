@@ -1,7 +1,7 @@
 [project]
 name = "dseco-2-0-0"
 version = "2.0.0"
-description = "Add your description here"
+description = "Toolset for the DNS Security Ontology (DSecO), a data model for representing and reasoning on Domain Name System (DNS) data."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

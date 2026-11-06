@@ -38,6 +38,7 @@ Based on this identifier, the following links apply for direct access to the DSe
 | Evaluation               | https://w3id.org/dseco/evaluation/ |
 
 See also the *Repository Structure* for navigating into this repository:
+
 ```
 dseco
 ├───docs <documentation, diagrams and figures>
@@ -49,7 +50,7 @@ dseco
 
 ## Copyright
 
-Copyright (c) 2023-2025, Orange. All rights reserved.
+Copyright (c) 2023-2026, Orange. All rights reserved.
 
 ## License
 

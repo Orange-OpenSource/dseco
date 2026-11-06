@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/dseco/ontology/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/dseco/ontology/","name":"The DNS Security Ontology", "headline":"The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.", "datePublished":"2025-06-14", "version":"v1.6.1", "license":"https://spdx.org/licenses/BSD-4-Clause", "author":[{"@type":"Person","name":"Didier Bringer","url":"https://orcid.org/0009-0007-9787-2559"}], "contributor":[{"@type":"Person","name":"Antoine Cawet"},{"@type":"Person","name":"Lionel Tailhardat","url":"https://orcid.org/0000-0001-5887-899X"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/dseco/ontology/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/dseco/ontology/","name":"The DNS Security Ontology", "headline":"The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.", "datePublished":"2026-11-03", "version":"v2.0.0", "license":"https://spdx.org/licenses/BSD-4-Clause", "author":[{"@type":"Person","name":"Didier Bringer","url":"https://orcid.org/0009-0007-9787-2559"}], "contributor":[{"@type":"Person","name":"Antoine Cawet"},{"@type":"Person","name":"Lionel Tailhardat","url":"https://orcid.org/0000-0001-5887-899X"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -55,18 +55,18 @@ $(function(){
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
 <h1>The DNS Security Ontology</h1>
-<h2>Release 2025-06-14</h2>
+<h2>Release 2026-11-03</h2>
 
 
 <dl>
 <dt>This version:</dt>
-<dd><a href="https://w3id.org/dseco/ontology/dseco-1.6.1">https://w3id.org/dseco/ontology/dseco-1.6.1</a></dd>
+<dd><a href="https://w3id.org/dseco/ontology/dseco-2.0.0">https://w3id.org/dseco/ontology/dseco-2.0.0</a></dd>
 <dt>Latest version:</dt>
 <dd><a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a></dd>
 <dt>Previous version:</dt>
-<dd><a href="https://w3id.org/dseco/ontology/dseco-1.5.0">https://w3id.org/dseco/ontology/dseco-1.5.0</a></dd>
+<dd><a href="https://w3id.org/dseco/ontology/dseco-1.8.3">https://w3id.org/dseco/ontology/dseco-1.8.3</a></dd>
 <dt>Revision:</dt>
-<dd>v1.6.1</dd>
+<dd>v2.0.0</dd>
 <dt>Authors:</dt>
 <dd><a href="https://orcid.org/0009-0007-9787-2559">Didier Bringer</a>, (<a href="https://www.orange.com/">Orange</a>)</dd>
 
@@ -81,7 +81,9 @@ $(function(){
 </a>
 <br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Didier Bringer (https://orcid.org/0009-0007-9787-2559). The DNS Security Ontology. Revision: v1.6.1. Retrieved from: https://w3id.org/dseco/ontology/</dd>
+<dd>Didier Bringer. The DNS Security Ontology. Revision: v2.0.0. Retrieved from: https://w3id.org/dseco/ontology/</dd>
+<dt>DOI:</dt>
+<dd><a href="http://dx.doi.org/10.1109/TON.2025.3598374"><img src ="https://img.shields.io/badge/DOI-10.1109/TON.2025.3598374-blue.svg" alt="10.1109/TON.2025.3598374" /></a></dd>
 </dl>
 
 <a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -99,12 +101,24 @@ This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
 <ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
+      <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+   </li>
+   <li>
+      <a href="#CVE" title="https://w3id.org/dseco/ontology/CVE">CVE</a>
+   </li>
+   <li>
       <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+   </li>
+   <li>
+      <a href="#SERVICEID" title="https://w3id.org/dseco/ontology/SERVICEID">SERVICEID</a>
    </li>
    <li>
       <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#dependsOn" title="https://w3id.org/dseco/ontology/dependsOn">dependsOn</a>
+   </li>
    <li>
       <a href="#hasAS" title="https://w3id.org/dseco/ontology/hasAS">
          <span>hasAS</span>
@@ -114,36 +128,67 @@ This ontology has the following classes and properties.</span>
       <a href="#hasOrgu" title="https://w3id.org/dseco/ontology/hasOrgu">hasOrgu</a>
    </li>
    <li>
-      <a href="#is_A_to" title="https://w3id.org/dseco/ontology/is_A_to">is_A_to</a>
+      <a href="#hasServiceId" title="https://w3id.org/dseco/ontology/hasServiceId">hasServiceId</a>
    </li>
    <li>
-      <a href="#is_AAAA_to" title="https://w3id.org/dseco/ontology/is_AAAA_to">is_AAAA_to</a>
+      <a href="#isAAAATo" title="https://w3id.org/dseco/ontology/isAAAATo">isAAAATo</a>
    </li>
    <li>
-      <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+      <a href="#isATo" title="https://w3id.org/dseco/ontology/isATo">isATo</a>
    </li>
    <li>
-      <a href="#is_CNAME_of_CNAME_of"
-         title="https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of">is_CNAME_of_CNAME_of</a>
+      <a href="#isCNAMEOf" title="https://w3id.org/dseco/ontology/isCNAMEOf">isCNAMEOf</a>
    </li>
    <li>
-      <a href="#is_in_zone" title="https://w3id.org/dseco/ontology/is_in_zone">is_in_zone</a>
+      <a href="#isCNAMEOfCNAMEOf" title="https://w3id.org/dseco/ontology/isCNAMEOfCNAMEOf">isCNAMEOfCNAMEOf</a>
    </li>
    <li>
-      <a href="#is_part_of" title="https://w3id.org/dseco/ontology/is_part_of">is_part_of</a>
+      <a href="#isHostedBy" title="https://w3id.org/dseco/ontology/isHostedBy">isHostedBy</a>
+   </li>
+   <li>
+      <a href="#isIncludedIn" title="https://w3id.org/dseco/ontology/isIncludedIn">isIncludedIn</a>
+   </li>
+   <li>
+      <a href="#isInZONE" title="https://w3id.org/dseco/ontology/isInZONE">isInZONE</a>
+   </li>
+   <li>
+      <a href="#isPartOf" title="https://w3id.org/dseco/ontology/isPartOf">isPartOf</a>
+   </li>
+   <li>
+      <a href="#knownFrom" title="https://w3id.org/dseco/ontology/knownFrom">knownFrom</a>
    </li>
    <li>
       <a href="#managedBy" title="https://w3id.org/dseco/ontology/managedBy">managedBy</a>
    </li>
+   <li>
+      <a href="#originates" title="https://w3id.org/dseco/ontology/originates">originates</a>
+   </li>
+   <li>
+      <a href="#resolvesTo" title="https://w3id.org/dseco/ontology/resolvesTo">
+         <span>resolvesTo</span>
+      </a>
+   </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
-      <a href="#FQDN_ends_in_exampleorg"
-         title="https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg">FQDN_ends_in_exampleorg</a>
+      <a href="#answersOnPort" title="https://w3id.org/dseco/ontology/answersOnPort">answersOnPort</a>
+   </li>
+   <li>
+      <a href="#answersOnPort443" title="https://w3id.org/dseco/ontology/answersOnPort443">answersOnPort443</a>
+   </li>
+   <li>
+      <a href="#answersOnPort80" title="https://w3id.org/dseco/ontology/answersOnPort80">answersOnPort80</a>
+   </li>
+   <li>
+      <a href="#FQDNEndsInExampleorg"
+         title="https://w3id.org/dseco/ontology/FQDNEndsInExampleorg">FQDNEndsInExampleorg</a>
    </li>
    <li>
       <a href="#hasAS" title="https://w3id.org/dseco/ontology/hasAS">
          <span>hasAS</span>
       </a>
+   </li>
+   <li>
+      <a href="#hasBomRef" title="https://w3id.org/dseco/ontology/hasBomRef">hasBomRef</a>
    </li>
    <li>
       <a href="#hasCountry" title="https://w3id.org/dseco/ontology/hasCountry">hasCountry</a>
@@ -152,24 +197,16 @@ This ontology has the following classes and properties.</span>
       <a href="#hasName" title="https://w3id.org/dseco/ontology/hasName">hasName</a>
    </li>
    <li>
-      <a href="#isinOurSubnet" title="https://w3id.org/dseco/ontology/isinOurSubnet">isinOurSubnet</a>
+      <a href="#isInOurSubnet" title="https://w3id.org/dseco/ontology/isInOurSubnet">isInOurSubnet</a>
+   </li>
+   <li>
+      <a href="#resolvesTo" title="https://w3id.org/dseco/ontology/resolvesTo">
+         <span>resolvesTo</span>
+      </a>
    </li>
 </ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
 </div>
-
-   <!--DESCRIPTION SECTION-->
-   <div id="description"><h2 id="desc" class="list">The DNS Security Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-
-      <span class="markdown">The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data.
-The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.
-
-Alignment with third parties vocabularies is implemented on a per class or per property basis when relevant (e.g. with `rdfs:subClassOf`, `owl:equivalentClass`).
-Directions for direct instanciation of these vocabularies are provided for cases where implementing a class/property alignment is redundant.
-Alignment holds for the following vocabulary releases:
-
-- [ORG](https://www.w3.org/TR/vocab-org/) 0.8
-- [UCO](https://github.com/ucoProject/uco) 1.4.0
-</span><img src="https://github.com/Orange-OpenSource/dseco/raw/main/docs/diagrams/dns-kg-workflow.png"></div>
+   
 
 <!--CROSSREF SECTION-->
    <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for The DNS Security Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -178,12 +215,140 @@ This section provides details for each class and property defined by The DNS Sec
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
+         <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+      </li>
+      <li>
+         <a href="#CVE" title="https://w3id.org/dseco/ontology/CVE">CVE</a>
+      </li>
+      <li>
          <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+      </li>
+      <li>
+         <a href="#SERVICEID" title="https://w3id.org/dseco/ontology/SERVICEID">SERVICEID</a>
       </li>
       <li>
          <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
       </li>
    </ul>
+   <div class="entity" id="COMPONENT">
+      <h3>COMPONENT<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/COMPONENT</p>
+      <div class="comment">
+         <span class="markdown">A COMPONENT is able of hosting a FQDN, a COMPONENT is made of other COMPONENTs.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of a COMPONENT instance
+:COMPONENT_1212 a :COMPONENT .
+based on sbom.json
+</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#dependsOn" title="https://w3id.org/dseco/ontology/dependsOn">dependsOn</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasBomRef" title="https://w3id.org/dseco/ontology/hasBomRef">hasBomRef</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#isIncludedIn" title="https://w3id.org/dseco/ontology/isIncludedIn">isIncludedIn</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#dependsOn" title="https://w3id.org/dseco/ontology/dependsOn">dependsOn</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isHostedBy" title="https://w3id.org/dseco/ontology/isHostedBy">isHostedBy</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isIncludedIn" title="https://w3id.org/dseco/ontology/isIncludedIn">isIncludedIn</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/org#OrganizationalUnit"
+               target="_blank"
+               title="http://www.w3.org/ns/org#OrganizationalUnit">organizational unit</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem">autonomous system</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CVE" title="https://w3id.org/dseco/ontology/CVE">CVE</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SERVICEID" title="https://w3id.org/dseco/ontology/SERVICEID">SERVICEID</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://w3id.org/dseco/ontology/TAG"
+               target="_blank"
+               title="https://w3id.org/dseco/ontology/TAG">t a g</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CVE">
+      <h3>CVE<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/CVE</p>
+      <div class="comment">
+         <span class="markdown">A CVE (Common Vulnerability Exposure).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of a CVE instance
+:CVE_2025-1212 a :CVE .
+</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/org#OrganizationalUnit"
+               target="_blank"
+               title="http://www.w3.org/ns/org#OrganizationalUnit">organizational unit</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem">autonomous system</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SERVICEID" title="https://w3id.org/dseco/ontology/SERVICEID">SERVICEID</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://w3id.org/dseco/ontology/TAG"
+               target="_blank"
+               title="https://w3id.org/dseco/ontology/TAG">t a g</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="FQDN">
       <h3>FQDN<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -207,8 +372,7 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of a FQDN instance
+            <pre># Example of a FQDN instance
 :FQDN_example.com a :FQDN .
 </pre>
          </dd>
@@ -216,18 +380,101 @@ This section provides details for each class and property defined by The DNS Sec
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#FQDN_ends_in_exampleorg"
-               title="https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg">FQDN_ends_in_exampleorg</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#is_AAAA_to" title="https://w3id.org/dseco/ontology/is_AAAA_to">is_AAAA_to</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#is_A_to" title="https://w3id.org/dseco/ontology/is_A_to">is_A_to</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#is_in_zone" title="https://w3id.org/dseco/ontology/is_in_zone">is_in_zone</a>
+            <a href="#FQDNEndsInExampleorg"
+               title="https://w3id.org/dseco/ontology/FQDNEndsInExampleorg">FQDNEndsInExampleorg</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#answersOnPort" title="https://w3id.org/dseco/ontology/answersOnPort">answersOnPort</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#answersOnPort443" title="https://w3id.org/dseco/ontology/answersOnPort443">answersOnPort443</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#answersOnPort80" title="https://w3id.org/dseco/ontology/answersOnPort80">answersOnPort80</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#isAAAATo" title="https://w3id.org/dseco/ontology/isAAAATo">isAAAATo</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isATo" title="https://w3id.org/dseco/ontology/isATo">isATo</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isCNAMEOf" title="https://w3id.org/dseco/ontology/isCNAMEOf">isCNAMEOf</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isHostedBy" title="https://w3id.org/dseco/ontology/isHostedBy">isHostedBy</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isInZONE" title="https://w3id.org/dseco/ontology/isInZONE">isInZONE</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#resolvesTo" title="https://w3id.org/dseco/ontology/resolvesTo">resolvesTo</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+            <a href="#isCNAMEOf" title="https://w3id.org/dseco/ontology/isCNAMEOf">isCNAMEOf</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/org#OrganizationalUnit"
+               target="_blank"
+               title="http://www.w3.org/ns/org#OrganizationalUnit">organizational unit</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem">autonomous system</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CVE" title="https://w3id.org/dseco/ontology/CVE">CVE</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SERVICEID" title="https://w3id.org/dseco/ontology/SERVICEID">SERVICEID</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://w3id.org/dseco/ontology/TAG"
+               target="_blank"
+               title="https://w3id.org/dseco/ontology/TAG">t a g</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SERVICEID">
+      <h3>SERVICEID<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/SERVICEID</p>
+      <div class="comment">
+         <span class="markdown">A SERVICEID is an identifier of a service, it is associated to a FQDN and can be used to link security indicators.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of a SERVICEID instance
+:SERVICEID_1 a :SERVICEID .
+</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasServiceId" title="https://w3id.org/dseco/ontology/hasServiceId">hasServiceId</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/org#OrganizationalUnit"
+               target="_blank"
+               title="http://www.w3.org/ns/org#OrganizationalUnit">organizational unit</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem">autonomous system</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CVE" title="https://w3id.org/dseco/ontology/CVE">CVE</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://w3id.org/dseco/ontology/TAG"
+               target="_blank"
+               title="https://w3id.org/dseco/ontology/TAG">t a g</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -254,8 +501,7 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of a ZONE instance
+            <pre># Example of a ZONE instance
 :ZONE_example.com a :ZONE .
 </pre>
          </dd>
@@ -268,14 +514,38 @@ This section provides details for each class and property defined by The DNS Sec
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#is_in_zone" title="https://w3id.org/dseco/ontology/is_in_zone">is_in_zone</a>
+            <a href="#isInZONE" title="https://w3id.org/dseco/ontology/isInZONE">isInZONE</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/org#OrganizationalUnit"
+               target="_blank"
+               title="http://www.w3.org/ns/org#OrganizationalUnit">organizational unit</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem">autonomous system</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>, <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
+               target="_blank"
+               title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CVE" title="https://w3id.org/dseco/ontology/CVE">CVE</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SERVICEID" title="https://w3id.org/dseco/ontology/SERVICEID">SERVICEID</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://w3id.org/dseco/ontology/TAG"
+               target="_blank"
+               title="https://w3id.org/dseco/ontology/TAG">t a g</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
+      <li>
+         <a href="#dependsOn" title="https://w3id.org/dseco/ontology/dependsOn">dependsOn</a>
+      </li>
       <li>
          <a href="#hasAS" title="https://w3id.org/dseco/ontology/hasAS">
             <span>hasAS</span>
@@ -285,28 +555,91 @@ This section provides details for each class and property defined by The DNS Sec
          <a href="#hasOrgu" title="https://w3id.org/dseco/ontology/hasOrgu">hasOrgu</a>
       </li>
       <li>
-         <a href="#is_A_to" title="https://w3id.org/dseco/ontology/is_A_to">is_A_to</a>
+         <a href="#hasServiceId" title="https://w3id.org/dseco/ontology/hasServiceId">hasServiceId</a>
       </li>
       <li>
-         <a href="#is_AAAA_to" title="https://w3id.org/dseco/ontology/is_AAAA_to">is_AAAA_to</a>
+         <a href="#isAAAATo" title="https://w3id.org/dseco/ontology/isAAAATo">isAAAATo</a>
       </li>
       <li>
-         <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+         <a href="#isATo" title="https://w3id.org/dseco/ontology/isATo">isATo</a>
       </li>
       <li>
-         <a href="#is_CNAME_of_CNAME_of"
-            title="https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of">is_CNAME_of_CNAME_of</a>
+         <a href="#isCNAMEOf" title="https://w3id.org/dseco/ontology/isCNAMEOf">isCNAMEOf</a>
       </li>
       <li>
-         <a href="#is_in_zone" title="https://w3id.org/dseco/ontology/is_in_zone">is_in_zone</a>
+         <a href="#isCNAMEOfCNAMEOf" title="https://w3id.org/dseco/ontology/isCNAMEOfCNAMEOf">isCNAMEOfCNAMEOf</a>
       </li>
       <li>
-         <a href="#is_part_of" title="https://w3id.org/dseco/ontology/is_part_of">is_part_of</a>
+         <a href="#isHostedBy" title="https://w3id.org/dseco/ontology/isHostedBy">isHostedBy</a>
+      </li>
+      <li>
+         <a href="#isIncludedIn" title="https://w3id.org/dseco/ontology/isIncludedIn">isIncludedIn</a>
+      </li>
+      <li>
+         <a href="#isInZONE" title="https://w3id.org/dseco/ontology/isInZONE">isInZONE</a>
+      </li>
+      <li>
+         <a href="#isPartOf" title="https://w3id.org/dseco/ontology/isPartOf">isPartOf</a>
+      </li>
+      <li>
+         <a href="#knownFrom" title="https://w3id.org/dseco/ontology/knownFrom">knownFrom</a>
       </li>
       <li>
          <a href="#managedBy" title="https://w3id.org/dseco/ontology/managedBy">managedBy</a>
       </li>
+      <li>
+         <a href="#originates" title="https://w3id.org/dseco/ontology/originates">originates</a>
+      </li>
+      <li>
+         <a href="#resolvesTo" title="https://w3id.org/dseco/ontology/resolvesTo">
+            <span>resolvesTo</span>
+         </a>
+      </li>
    </ul>
+   <div class="entity" id="dependsOn">
+      <h3>dependsOn<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/dependsOn</p>
+      <div class="comment">
+         <span class="markdown">A COMPONENT depends on another COMPONENT.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using dependsOn property
+:COMPONENT_1212 a :COMPONENT ;
+    :dependsOn :COMPONENT_3434 .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasAS">
       <h3>hasAS<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -315,21 +648,30 @@ This section provides details for each class and property defined by The DNS Sec
       <p>
          <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasAS</p>
       <div class="description">
-         <p>
-            <strong>has characteristics:
-                </strong> functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
                <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
                   target="_blank"
-                  title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>
-               <sup class="type-c" title="class">c</sup> 
+                  title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a> 
                <span class="logic">or</span> 
                <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
                   target="_blank"
                   title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#originates" title="https://w3id.org/dseco/ontology/originates">originates</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#isPartOf" title="https://w3id.org/dseco/ontology/isPartOf">isPartOf</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#hasAS" title="https://w3id.org/dseco/ontology/hasAS">hasAS</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>is also defined as</dt>
             <dd>
@@ -346,7 +688,7 @@ This section provides details for each class and property defined by The DNS Sec
       <p>
          <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasOrgu</p>
       <div class="comment">
-         <span class="markdown">An AS belongs to an organizational Unit.</span>
+         <span class="markdown">An AS belongs to an organizational unit.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -361,8 +703,7 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using hasOrgu property
+            <pre># Example of using hasOrgu property
 :AS_64496 a observable:AutonomousSystem ;
     :hasOrgu :ORGU_network_provider .
 </pre>
@@ -386,13 +727,16 @@ This section provides details for each class and property defined by The DNS Sec
          </dl>
       </div>
    </div>
-   <div class="entity" id="is_A_to">
-      <h3>is_A_to<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasServiceId">
+      <h3>hasServiceId<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_A_to</p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasServiceId</p>
+      <div class="comment">
+         <span class="markdown">The service ID associated with the FQDN.</span>
+      </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -406,10 +750,9 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using is_A_to property
-:FQDN_example.com a :FQDN ;
-    :is_A_to :IP_192.0.2.1 .
+            <pre># Example of using hasServiceId property
+:FQDN_www.example.org a :FQDN ;
+    :hasServiceId :SERVICEID_123 .
 </pre>
          </dd>
       </dl>
@@ -417,26 +760,27 @@ This section provides details for each class and property defined by The DNS Sec
          <dl>
             <dt>has domain</dt>
             <dd>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address"
-                  target="_blank"
-                  title="https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address">i pv4 address</a>
+               <a href="#SERVICEID" title="https://w3id.org/dseco/ontology/SERVICEID">SERVICEID</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="is_AAAA_to">
-      <h3>is_AAAA_to<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="isAAAATo">
+      <h3>isAAAATo<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_AAAA_to</p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isAAAATo</p>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -450,15 +794,19 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using is_AAAA_to property
+            <pre># Example of using isAAAATo property
 :FQDN_example.com a :FQDN ;
-    :is_AAAA_to :IP_::1 .
+    :isAAAATo :IP_::1 .
 </pre>
          </dd>
       </dl>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#resolvesTo" title="https://w3id.org/dseco/ontology/resolvesTo">resolvesTo</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
@@ -474,13 +822,13 @@ This section provides details for each class and property defined by The DNS Sec
          </dl>
       </div>
    </div>
-   <div class="entity" id="is_CNAME_of">
-      <h3>is_CNAME_of<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="isATo">
+      <h3>isATo<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_CNAME_of</p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isATo</p>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -494,10 +842,57 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using is_CNAME_of property
+            <pre># Example of using isATo property
+:FQDN_example.com a :FQDN ;
+    :isATo :IP_192.0.2.1 .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#resolvesTo" title="https://w3id.org/dseco/ontology/resolvesTo">resolvesTo</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address"
+                  target="_blank"
+                  title="https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address">i pv4 address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isCNAMEOf">
+      <h3>isCNAMEOf<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isCNAMEOf</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using isCNAMEOf property
 :FQDN_alias.example.com a :FQDN ;
-    :is_CNAME_of :FQDN_target.example.com .
+    :isCNAMEOf :FQDN_target.example.com .
 </pre>
          </dd>
       </dl>
@@ -516,13 +911,13 @@ This section provides details for each class and property defined by The DNS Sec
          </dl>
       </div>
    </div>
-   <div class="entity" id="is_CNAME_of_CNAME_of">
-      <h3>is_CNAME_of_CNAME_of<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="isCNAMEOfCNAMEOf">
+      <h3>isCNAMEOfCNAMEOf<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of</p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isCNAMEOfCNAMEOf</p>
       <div class="comment">
          <span class="markdown">To test inferences.</span>
       </div>
@@ -539,10 +934,9 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using is_CNAME_of_CNAME_of property
+            <pre># Example of using isCNAMEOfCNAMEOf property
 :FQDN_example.com a :FQDN ;
-    :is_CNAME_of_CNAME_of :FQDN_example2.com .
+    :isCNAMEOfCNAMEOf :FQDN_example2.com .
 </pre>
          </dd>
       </dl>
@@ -550,22 +944,22 @@ This section provides details for each class and property defined by The DNS Sec
          <dl>
             <dt>has sub-property chains</dt>
             <dd>
-               <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+               <a href="#isCNAMEOf" title="https://w3id.org/dseco/ontology/isCNAMEOf">isCNAMEOf</a>
                <sup class="type-op" title="object property">op</sup> 
                <span class="logic">o</span> 
-               <a href="#is_CNAME_of" title="https://w3id.org/dseco/ontology/is_CNAME_of">is_CNAME_of</a>
+               <a href="#isCNAMEOf" title="https://w3id.org/dseco/ontology/isCNAMEOf">isCNAMEOf</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="is_in_zone">
-      <h3>is_in_zone<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="isHostedBy">
+      <h3>isHostedBy<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_in_zone</p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isHostedBy</p>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -579,10 +973,91 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using is_in_zone property
+            <pre># Example of using isHostedBy property
+:FQDN_alias.example.com a :FQDN ;
+    :isHostedBy :COMPONENT_1212 .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isIncludedIn">
+      <h3>isIncludedIn<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isIncludedIn</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using isIncludedIn property
+:COMPONENT_1212 a :COMPONENT ;
+    :isIncludedIn :COMPONENT_3434 .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isInZONE">
+      <h3>isInZONE<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isInZONE</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using isInZONE property
 :FQDN_example.com a :FQDN ;
-    :is_in_zone :ZONE_example.com .
+    :isInZONE :ZONE_example.com .
 </pre>
          </dd>
       </dl>
@@ -604,15 +1079,15 @@ This section provides details for each class and property defined by The DNS Sec
          </dl>
       </div>
    </div>
-   <div class="entity" id="is_part_of">
-      <h3>is_part_of<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="isPartOf">
+      <h3>isPartOf<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/is_part_of</p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isPartOf</p>
       <div class="comment">
-         <span class="markdown">A network subnet associated to an IP address.</span>
+         <span class="markdown">A network subnet associated to an ip address.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -627,10 +1102,9 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using is_part_of property
+            <pre># Example of using isPartOf property
 :IP_12.12.12.1 a observable:IPAddress ;
-    :is_part_of &lt;:SUBNET_12.12.12.0/24&gt; .
+    :isPartOf &lt;:SUBNET_12.12.12.0/24&gt; .
 </pre>
          </dd>
       </dl>
@@ -644,13 +1118,53 @@ This section provides details for each class and property defined by The DNS Sec
                <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
                   target="_blank"
                   title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>
-               <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
                   target="_blank"
                   title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="knownFrom">
+      <h3>knownFrom<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/knownFrom</p>
+      <div class="comment">
+         <span class="markdown">An entity is known from an organizational unit.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using knownFrom property
+:IP_12.12.12.1 a observable:IPAddress ;
+    :knownFrom :OrganizationalUnit_1 .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/org#OrganizationalUnit"
+                  target="_blank"
+                  title="http://www.w3.org/ns/org#OrganizationalUnit">organizational unit</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -679,8 +1193,7 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using managedBy property
+            <pre># Example of using managedBy property
 :ZONE_example.com a :ZONE ;
     :managedBy :ORGU_internal .
 </pre>
@@ -703,17 +1216,112 @@ This section provides details for each class and property defined by The DNS Sec
          </dl>
       </div>
    </div>
+   <div class="entity" id="originates">
+      <h3>originates<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/originates</p>
+      <div class="comment">
+         <span class="markdown">A network entity associated with an Autonomous System.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using originates property
+:AS_64496 a observable:AutonomousSystem ;
+    :originates  &lt;:SUBNET_12.12.12.0/24&gt;.
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem"
+                  target="_blank"
+                  title="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem">autonomous system</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+                  target="_blank"
+                  title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a> 
+               <span class="logic">or</span> 
+               <a href="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet"
+                  target="_blank"
+                  title="https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">network subnet</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasAS" title="https://w3id.org/dseco/ontology/hasAS">hasAS</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="resolvesTo">
+      <h3>resolvesTo<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/resolvesTo</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#isAAAATo" title="https://w3id.org/dseco/ontology/isAAAATo">isAAAATo</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#isATo" title="https://w3id.org/dseco/ontology/isATo">isATo</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#resolvesTo">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#FQDN_ends_in_exampleorg"
-            title="https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg">FQDN_ends_in_exampleorg</a>
+         <a href="#answersOnPort" title="https://w3id.org/dseco/ontology/answersOnPort">answersOnPort</a>
+      </li>
+      <li>
+         <a href="#answersOnPort443" title="https://w3id.org/dseco/ontology/answersOnPort443">answersOnPort443</a>
+      </li>
+      <li>
+         <a href="#answersOnPort80" title="https://w3id.org/dseco/ontology/answersOnPort80">answersOnPort80</a>
+      </li>
+      <li>
+         <a href="#FQDNEndsInExampleorg"
+            title="https://w3id.org/dseco/ontology/FQDNEndsInExampleorg">FQDNEndsInExampleorg</a>
       </li>
       <li>
          <a href="#hasAS" title="https://w3id.org/dseco/ontology/hasAS">
             <span>hasAS</span>
          </a>
+      </li>
+      <li>
+         <a href="#hasBomRef" title="https://w3id.org/dseco/ontology/hasBomRef">hasBomRef</a>
       </li>
       <li>
          <a href="#hasCountry" title="https://w3id.org/dseco/ontology/hasCountry">hasCountry</a>
@@ -722,16 +1330,172 @@ This section provides details for each class and property defined by The DNS Sec
          <a href="#hasName" title="https://w3id.org/dseco/ontology/hasName">hasName</a>
       </li>
       <li>
-         <a href="#isinOurSubnet" title="https://w3id.org/dseco/ontology/isinOurSubnet">isinOurSubnet</a>
+         <a href="#isInOurSubnet" title="https://w3id.org/dseco/ontology/isInOurSubnet">isInOurSubnet</a>
+      </li>
+      <li>
+         <a href="#resolvesTo" title="https://w3id.org/dseco/ontology/resolvesTo">
+            <span>resolvesTo</span>
+         </a>
       </li>
    </ul>
-   <div class="entity" id="FQDN_ends_in_exampleorg">
-      <h3>FQDN_ends_in_exampleorg<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="answersOnPort">
+      <h3>answersOnPort<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg</p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/answersOnPort</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using answersOnPort property
+:FQDN_www.example.org a :FQDN ;
+    :answersOnPort "true"^^xsd:boolean .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#answersOnPort443" title="https://w3id.org/dseco/ontology/answersOnPort443">answersOnPort443</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#answersOnPort80" title="https://w3id.org/dseco/ontology/answersOnPort80">answersOnPort80</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="answersOnPort443">
+      <h3>answersOnPort443<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/answersOnPort443</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using answersOnPort443 property
+:FQDN_www.example.org a :FQDN ;
+    :answersOnPort443 "true"^^xsd:boolean .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#answersOnPort" title="https://w3id.org/dseco/ontology/answersOnPort">answersOnPort</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="answersOnPort80">
+      <h3>answersOnPort80<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/answersOnPort80</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using answersOnPort80 property
+:FQDN_www.example.org a :FQDN ;
+    :answersOnPort80 "true"^^xsd:boolean .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#answersOnPort" title="https://w3id.org/dseco/ontology/answersOnPort">answersOnPort</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="FQDNEndsInExampleorg">
+      <h3>FQDNEndsInExampleorg<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/FQDNEndsInExampleorg</p>
       <div class="comment">
          <span class="markdown">This property is designed here for illustrative purposes. It is populated by an INSERT WHERE.</span>
       </div>
@@ -743,15 +1507,14 @@ This section provides details for each class and property defined by The DNS Sec
       </dl>
       <dl>
          <dt>Term status</dt>
-         <dd>unstable</dd>
+         <dd>stable</dd>
       </dl>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using FQDN_ends_in_exampleorg property
+            <pre># Example of using FQDNEndsInExampleorg property
 :FQDN_www.example.org a :FQDN ;
-    :FQDN_ends_in_exampleorg "true"^^xsd:boolean .
+    :FQDNEndsInExampleorg "true"^^xsd:boolean .
 </pre>
          </dd>
       </dl>
@@ -782,9 +1545,6 @@ This section provides details for each class and property defined by The DNS Sec
       <p>
          <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasAS</p>
       <div class="description">
-         <p>
-            <strong>has characteristics:
-                </strong> functional</p>
          <dl>
             <dt>has range</dt>
             <dd>
@@ -792,9 +1552,62 @@ This section provides details for each class and property defined by The DNS Sec
                   target="_blank"
                   title="https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem">autonomous system</a>
             </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#originates" title="https://w3id.org/dseco/ontology/originates">originates</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>is also defined as</dt>
             <dd>
                <a href="#hasAS">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasBomRef">
+      <h3>hasBomRef<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasBomRef</p>
+      <div class="comment">
+         <span class="markdown">The BOM reference associated with the component.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/dseco/ontology/">https://w3id.org/dseco/ontology/</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Term status</dt>
+         <dd>stable</dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre># Example of using hasBomRef property
+:COMPONENT_example a :COMPONENT ;
+    :hasBomRef "BOM-12345"^^xsd:string .
+</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#COMPONENT" title="https://w3id.org/dseco/ontology/COMPONENT">COMPONENT</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -822,8 +1635,7 @@ This section provides details for each class and property defined by The DNS Sec
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using hasCountry property
+            <pre># Example of using hasCountry property
 :IP_203.0.113.1 a observable:IPAddress ;
     :hasCountry "FR"^^xsd:string .
 </pre>
@@ -839,7 +1651,6 @@ This section provides details for each class and property defined by The DNS Sec
                <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
                   target="_blank"
                   title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>
-               <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
@@ -857,10 +1668,6 @@ This section provides details for each class and property defined by The DNS Sec
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/dseco/ontology/hasName</p>
-      <div class="comment">
-         <span class="markdown">The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B.
-This means that :hasName can be used with instances of class A or class B.</span>
-      </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -874,8 +1681,7 @@ This means that :hasName can be used with instances of class A or class B.</span
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using hasName property
+            <pre># Example of using hasName property
 :FQDN_example.com a :FQDN ;
     :hasName "example.com."^^xsd:string .
 
@@ -890,14 +1696,6 @@ This means that :hasName can be used with instances of class A or class B.</span
             <strong>has characteristics:
                 </strong> functional</p>
          <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#FQDN" title="https://w3id.org/dseco/ontology/FQDN">FQDN</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#ZONE" title="https://w3id.org/dseco/ontology/ZONE">ZONE</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
             <dt>has range</dt>
             <dd>
                <a href="http://www.w3.org/2001/XMLSchema#string"
@@ -907,13 +1705,13 @@ This means that :hasName can be used with instances of class A or class B.</span
          </dl>
       </div>
    </div>
-   <div class="entity" id="isinOurSubnet">
-      <h3>isinOurSubnet<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="isInOurSubnet">
+      <h3>isInOurSubnet<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isinOurSubnet</p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/isInOurSubnet</p>
       <div class="comment">
          <span class="markdown">True if the IP is in our subnets. It is populated by a INSERT WHERE query.</span>
       </div>
@@ -925,15 +1723,14 @@ This means that :hasName can be used with instances of class A or class B.</span
       </dl>
       <dl>
          <dt>Term status</dt>
-         <dd>unstable</dd>
+         <dd>stable</dd>
       </dl>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>
-# Example of using isinOurSubnet property
+            <pre># Example of using isInOurSubnet property
 :IP_198.51.100.1 a observable:IPAddress ;
-    :isinOurSubnet "true"^^xsd:boolean .
+    :isInOurSubnet "true"^^xsd:boolean .
 </pre>
          </dd>
       </dl>
@@ -947,13 +1744,40 @@ This means that :hasName can be used with instances of class A or class B.</span
                <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
                   target="_blank"
                   title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>
-               <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="http://www.w3.org/2001/XMLSchema#boolean"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="resolvesTo">
+      <h3>resolvesTo<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/dseco/ontology/resolvesTo</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#isAAAATo" title="https://w3id.org/dseco/ontology/isAAAATo">isAAAATo</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#isATo" title="https://w3id.org/dseco/ontology/isATo">isATo</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"
+                  target="_blank"
+                  title="https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">i p address</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#resolvesTo">object property</a>
             </dd>
          </dl>
       </div>
@@ -970,207 +1794,7 @@ This means that :hasName can be used with instances of class A or class B.</span
    
 
 <!--CHANGELOG SECTION-->
-   <div id="changelog"><div id="changelog">
-<h2 id="changes" class="list">Changes from last version</h2>
-<h3 id="changeClass" class="list">Classes</h3>
-<details><summary><u>Modified classes</u></summary>
-<ul><li><a href="#FQDN">https://w3id.org/dseco/ontology/FQDN</a>
-<ul>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of a FQDN instance
-:FQDN_example.com a :FQDN .
-"@en</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Added classes</u></summary>
-<ul><li><a href="#http://www.w3.org/ns/shacl#NodeShape">http://www.w3.org/ns/shacl#NodeShape</a>
-</li>
-<li><a href="#https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem">https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem</a>
-</li>
-<li><a href="#https://ontology.unifiedcyberontology.org/uco/observable/IPAddress">https://ontology.unifiedcyberontology.org/uco/observable/IPAddress</a>
-</li>
-<li><a href="#https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address">https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address</a>
-</li>
-<li><a href="#https://ontology.unifiedcyberontology.org/uco/observable/IPv6Address">https://ontology.unifiedcyberontology.org/uco/observable/IPv6Address</a>
-</li>
-<li><a href="#https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet">https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet</a>
-</li>
-<li><a href="#ZONE">https://w3id.org/dseco/ontology/ZONE</a>
-</li>
-</ul></details><details><summary><u>Deleted classes</u></summary>
-<ul><li><a href="#https://unifiedcyberontology.org/ontology/uco/observable#IPAddress">https://unifiedcyberontology.org/ontology/uco/observable#IPAddress</a>
-</li>
-<li><a href="#IP_Address">https://w3id.org/dseco/ontology/IP_Address</a>
-</li>
-<li><a href="#WhoisDomain">https://w3id.org/dseco/ontology/WhoisDomain</a>
-</li>
-</ul></details><h3 id="changeProp" class="list">Object Properties</h3>
-<details><summary><u>Modified object properties</u></summary>
-<ul><li><a href="#is_AAAA_to">https://w3id.org/dseco/ontology/is_AAAA_to</a>
-<ul>
-<li>Added: Range https://ontology.unifiedcyberontology.org/uco/observable/IPv6Address</li>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using is_AAAA_to property
-:FQDN_example.com a :FQDN ;
-    :is_AAAA_to :IP_::1 .
-"@en</li>
-</ul>
-<ul>
-<li>Deleted: Range https://w3id.org/dseco/ontology/IP_Address</li>
-</ul>
-</li>
-<li><a href="#is_A_to">https://w3id.org/dseco/ontology/is_A_to</a>
-<ul>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using is_A_to property
-:FQDN_example.com a :FQDN ;
-    :is_A_to :IP_192.0.2.1 .
-"@en</li>
-<li>Added: Range https://ontology.unifiedcyberontology.org/uco/observable/IPv4Address</li>
-</ul>
-<ul>
-<li>Deleted: Range https://w3id.org/dseco/ontology/IP_Address</li>
-</ul>
-</li>
-<li><a href="#is_CNAME_of">https://w3id.org/dseco/ontology/is_CNAME_of</a>
-<ul>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using is_CNAME_of property
-:FQDN_alias.example.com a :FQDN ;
-    :is_CNAME_of :FQDN_target.example.com .
-"@en</li>
-</ul>
-</li>
-<li><a href="#is_CNAME_of_CNAME_of">https://w3id.org/dseco/ontology/is_CNAME_of_CNAME_of</a>
-<ul>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using is_CNAME_of_CNAME_of property
-:FQDN_example.com a :FQDN ;
-    :is_CNAME_of_CNAME_of :FQDN_example2.com .
-"@en</li>
-</ul>
-</li>
-<li><a href="#managedBy">https://w3id.org/dseco/ontology/managedBy</a>
-<ul>
-<li>Added: domain https://w3id.org/dseco/ontology/ZONE</li>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using managedBy property
-:ZONE_example.com a :ZONE ;
-    :managedBy :ORGU_internal .
-"@en</li>
-</ul>
-<ul>
-<li>Deleted: domain https://w3id.org/dseco/ontology/WhoisDomain</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Added object properties</u></summary>
-<ul><li><a href="#hasAS">https://w3id.org/dseco/ontology/hasAS</a>
-<ul>
-<li>Added: FunctionalObjectProperty FunctionalObjectProperty(&lt;https://w3id.org/dseco/ontology/hasAS&gt;)</li>
-<li>Added: domain Union of (https://ontology.unifiedcyberontology.org/uco/observable/IPAddress, https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet)</li>
-</ul>
-</li>
-<li><a href="#hasOrgu">https://w3id.org/dseco/ontology/hasOrgu</a>
-<ul>
-<li>Added: domain https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem</li>
-<li>Added: Range http://www.w3.org/ns/org#OrganizationalUnit</li>
-</ul>
-</li>
-<li><a href="#is_in_zone">https://w3id.org/dseco/ontology/is_in_zone</a>
-<ul>
-<li>Added: domain https://w3id.org/dseco/ontology/FQDN</li>
-<li>Added: FunctionalObjectProperty FunctionalObjectProperty(&lt;https://w3id.org/dseco/ontology/is_in_zone&gt;)</li>
-<li>Added: Range https://w3id.org/dseco/ontology/ZONE</li>
-</ul>
-</li>
-<li><a href="#is_part_of">https://w3id.org/dseco/ontology/is_part_of</a>
-<ul>
-<li>Added: Range https://ontology.unifiedcyberontology.org/uco/observable/NetworkSubnet</li>
-<li>Added: FunctionalObjectProperty FunctionalObjectProperty(&lt;https://w3id.org/dseco/ontology/is_part_of&gt;)</li>
-<li>Added: domain https://ontology.unifiedcyberontology.org/uco/observable/IPAddress</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Deleted object properties</u></summary>
-<ul><li><a href="#has_whois_domain">https://w3id.org/dseco/ontology/has_whois_domain</a>
-</li>
-</ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
-<details><summary><u>Modified data properties</u></summary>
-<ul><li><a href="#FQDN_ends_in_exampleorg">https://w3id.org/dseco/ontology/FQDN_ends_in_exampleorg</a>
-<ul>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using FQDN_ends_in_exampleorg property
-:FQDN_www.example.org a :FQDN ;
-    :FQDN_ends_in_exampleorg \"true\"^^xsd:boolean .
-"@en</li>
-</ul>
-</li>
-<li><a href="#hasCountry">https://w3id.org/dseco/ontology/hasCountry</a>
-<ul>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using hasCountry property
-:IP_203.0.113.1 a observable:IPAddress ;
-    :hasCountry \"FR\"^^xsd:string .
-"@en</li>
-<li>Added: <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string</li>
-<li>Added: Domain https://ontology.unifiedcyberontology.org/uco/observable/IPAddress</li>
-</ul>
-<ul>
-<li>Deleted: Domain https://w3id.org/dseco/ontology/IP_Address</li>
-<li>Deleted: <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable"^^xsd:string</li>
-</ul>
-</li>
-<li><a href="#hasName">https://w3id.org/dseco/ontology/hasName</a>
-<ul>
-<li>Added: Domain Union of (https://w3id.org/dseco/ontology/FQDN, https://w3id.org/dseco/ontology/ZONE)</li>
-<li>Added: rdfs:comment "The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B.
-This means that :hasName can be used with instances of class A or class B."@en</li>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using hasName property
-:FQDN_example.com a :FQDN ;
-    :hasName \"example.com.\"^^xsd:string .
-
-# Can also be used with ZONE
-:ZONE_example.org a :ZONE ;
-    :hasName \"example.org.\"^^xsd:string .
-"@en</li>
-<li>Added: rdfs:comment "Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B.
-Cela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B."@fr</li>
-</ul>
-<ul>
-<li>Deleted: rdfs:comment "Le domaine de :hasName est spécifié comme une classe anonyme (indiquée par les crochets []) qui est de type owl:Class et qui a une liste owl:unionOf contenant :A et :B. Cela signifie que :hasName peut être utilisée avec des instances de la classe A ou de la classe B."@fr</li>
-<li>Deleted: Domain Union of (https://w3id.org/dseco/ontology/FQDN, https://w3id.org/dseco/ontology/WhoisDomain)</li>
-<li>Deleted: rdfs:comment "The domain of :hasName is specified as an anonymous class (indicated by the brackets []) that is of type owl:Class and has an owl:unionOf list containing :A and :B. This means that :hasName can be used with instances of class A or class B."@en</li>
-</ul>
-</li>
-<li><a href="#isinOurSubnet">https://w3id.org/dseco/ontology/isinOurSubnet</a>
-<ul>
-<li>Added: Domain https://ontology.unifiedcyberontology.org/uco/observable/IPAddress</li>
-<li>Added: <http://www.w3.org/2004/02/skos/core#example> "
-# Example of using isinOurSubnet property
-:IP_198.51.100.1 a observable:IPAddress ;
-    :isinOurSubnet \"true\"^^xsd:boolean .
-"@en</li>
-</ul>
-<ul>
-<li>Deleted: Domain https://w3id.org/dseco/ontology/IP_Address</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Added data properties</u></summary>
-<ul><li><a href="#hasAS">https://w3id.org/dseco/ontology/hasAS</a>
-<ul>
-<li>Added: Range https://ontology.unifiedcyberontology.org/uco/observable/AutonomousSystem</li>
-<li>Added: FunctionalDataProperty FunctionalDataProperty(&lt;https://w3id.org/dseco/ontology/hasAS&gt;)</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Deleted data properties</u></summary>
-<ul><li><a href="#http://www.w3.org/2002/07/owl#topDataProperty">http://www.w3.org/2002/07/owl#topDataProperty</a>
-</li>
-<li><a href="#hasASN">https://w3id.org/dseco/ontology/hasASN</a>
-</li>
-<li><a href="#hasAddress">https://w3id.org/dseco/ontology/hasAddress</a>
-</li>
-</ul></details></div>
-</div>
+   <div id="changelog">null</div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>

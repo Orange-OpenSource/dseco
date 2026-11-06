@@ -1,0 +1,20 @@
+=== Changed (>5% difference) ===
+  Individuals Count: 1 -> 2
+  Triples Count: 134 -> 155
+  example:Human: 1 -> 2
+  example:hasAge: 1 -> 2
+  owl:DatatypeProperty: 1 -> 2
+  owl:FunctionalProperty: 1 -> 2
+  owl:NamedIndividual: 1 -> 2
+  owl:Thing: 1 -> 2
+  owl:equivalentProperty: 1 -> 2
+  owl:sameAs: 65 -> 70
+  rdf:type: 56 -> 70
+  rdfs:Datatype: 37 -> 40
+  rdfs:domain: 2 -> 4
+  rdfs:range: 1 -> 2
+  rdfs:subPropertyOf: 1 -> 2
+  xsd:decimal: 1 -> 4
+  xsd:integer: 1 -> 4
+=== Added (only in new) ===
+  example:hasChildren: 2

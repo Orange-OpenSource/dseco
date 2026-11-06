@@ -1,0 +1,20 @@
+# Add class in the KG not in the ontology, the need is a local one
+# useless for the onto, usefull for the mykg
+
+PREFIX dseco: <https://w3id.org/dseco/ontology/> 
+PREFIX mykg: <https://w3id.org/dseco/mykg/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+INSERT { ?Fqdn_end mykg:Potentially_to_clean true . }
+WHERE {
+	?Fqdn_end dseco:isInZONE ?EndZONE .
+	?EndZONE dseco:managedBy mykg:ORGU_int .
+
+	FILTER NOT EXISTS {
+		?Fqdn_orig dseco:isCNAMEOf+ ?Fqdn_end .
+		?Fqdn_orig dseco:isInZONE ?_Z .
+        ?_Z dseco:managedBy mykg:ORGU_top  .
+	}.
+	
+}

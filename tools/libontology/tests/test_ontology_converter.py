@@ -1,4 +1,4 @@
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -38,10 +38,10 @@ from libontology.ontology_convert import OntologyConverter
 
 
 def get_sha256_hash(file_path):
-    """Computes the SHA256 hash of a fil."""
+    """Calcule le hash SHA256 d'un fichier."""
     sha256_hash = hashlib.sha256()
     with open(file_path, "rb") as f:
-        # Read and update the hash as 4K blocks
+        # Lire et mettre à jour le hash en blocs de 4K
         for byte_block in iter(lambda: f.read(4096), b""):
             sha256_hash.update(byte_block)
     return sha256_hash.hexdigest()
@@ -62,9 +62,9 @@ class TestOntologyConverter(unittest.TestCase):
         """
         Set up test paths for ontology.
         """
-        self.source_ttl_path = "./tests/test_convert/test_onto.ttl"
+        self.source_ttl_path = "tests/test_convert/test_onto.ttl"
         self.destination_xml_path = "/tmp/test_destination.xml"
-        self.source_xml_path = "./tests/test_convert/test_onto.xml"
+        self.source_xml_path = "tests/test_convert/test_onto.xml"
         self.destination_ttl_path = "/tmp/test_destination.ttl"
 
     def test_convert_ttl_to_xml(self):
@@ -77,12 +77,16 @@ class TestOntologyConverter(unittest.TestCase):
         ontology_converter = OntologyConverter(self.source_ttl_path)
         ontology_converter.convert(self.destination_xml_path, "xml")
 
-        # Parsing the two graphs for comparison
+        # on parse les deux graphes pour les comparer
         graph_valid = Graph()
         graph_test = Graph()
         graph_valid.parse(self.source_ttl_path, format="ttl")
         graph_test.parse(self.destination_xml_path, format="xml")
 
+        # size1 = os.path.getsize(self.destination_path)
+        # size2 = os.path.getsize(self.control_path)
+
+        # self.assertTrue(size1, size2)
         self.assertTrue(graph_test.isomorphic(graph_valid))
 
     def test_convert_xml_to_ttl(self):
@@ -95,14 +99,17 @@ class TestOntologyConverter(unittest.TestCase):
         ontology_converter = OntologyConverter(self.source_xml_path)
         ontology_converter.convert(self.destination_ttl_path, "turtle")
 
-        # Parsing the two graphs for comparison
+        # on parse les deux graphes pour les comparer
         graph_valid = Graph()
         graph_test = Graph()
         graph_valid.parse(self.source_xml_path, format="xml")
         graph_test.parse(self.destination_ttl_path, format="ttl")
 
-        self.assertTrue(graph_test.isomorphic(graph_valid))
+        # size1 = os.path.getsize(self.destination_path)
+        # size2 = os.path.getsize(self.control_path)
 
+        # self.assertTrue(size1, size2)
+        self.assertTrue(graph_test.isomorphic(graph_valid))
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,4 +1,4 @@
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -64,17 +64,17 @@ class TestOntologyQuery(unittest.TestCase):
         ontology_query = OntologyQuery(self.ontology_path)
         test_results = ontology_query.execute_query(query)
 
-        # Catch the output with redirect_stdout
+        # Capturer la sortie avec redirect_stdout
         output = io.StringIO()
         with redirect_stdout(output):
             csvwriter = csv.writer(output, delimiter=" ", lineterminator="\n")
             for row in test_results:
                 csvwriter.writerow(row)
 
-        # Get the generated content
+        # Récupérer le contenu capturé
         stdout_content = output.getvalue()
 
-        # Read the CSV fil with the valid content
+        # Lire fichier csv de résultat valide
         with open(self.result_path, "r", encoding='utf-8') as valid_result_file:
             valid_result = valid_result_file.read()
 

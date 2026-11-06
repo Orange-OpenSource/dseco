@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["libontology"]
+
+
+[project]
+name = "libontology"
+version = "1.1.0"
+description = "tools to do things with ontologies."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Maxime Jerome/Didier Bringer/Antoine Cawet/Zouhair Saitout"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+    "rdflib==7.6.0",
+    "owlrl==7.6.2",
+    "requests==2.34.2",
+    "owlready2==0.51",
+    "pyshacl==0.40.1",
+    "urllib3==2.8.0",
+    "defusedxml",
+    "certifi==v2026.10.23" # NOTE: certifi is normally installed automatically as a dependency of requests.
+                           # This explicit entry is only temporary and should be removed later.
+]
+
+[project.urls]
+homepage = "xxx"
+
+[project.scripts]
+libontology-query = "libontology.ontology_query:main"
+libontology-describe = "libontology.ontology_describe:main"
+libontology-ask = "libontology.ontology_ask:main"
+libontology-infer = "libontology.ontology_infer:main"
+libontology-validate = "libontology.ontology_validate:main"
+libontology-shacl = "libontology.ontology_shacl:main"
+libontology-update = "libontology.ontology_update:main"
+libontology-bulk_update = "libontology.ontology_bulk_update:main"
+libontology-convert-ttl-to-xmlrdf = "libontology.ontology_convert:convert_ttl_to_xmlrdf"
+libontology-convert-xmlrdf-to-ttl = "libontology.ontology_convert:convert_xmlrdf_to_ttl"
+libontology-pull = "libontology.ontology_pull:main"
+libontology-add_swrl_rule = "libontology.ontology_add_swrl_rule:main"
+libontology-stats = "libontology.ontology_stats:main"
+libontology-smart-diff = "libontology.ontology_smart_diff:main"
+libontology-compare = "libontology.ontology_compare:main"

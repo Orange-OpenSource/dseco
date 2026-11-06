@@ -1,4 +1,4 @@
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -68,8 +68,9 @@ class TestOntologyUpdate(unittest.TestCase):
         ontology_update = OntologyUpdate(self.ontology_path)
         ontology_update.update_ontology(update_query)
         ontology_update.graph.serialize(destination=temp_path, format="turtle")
+        print(f"File temp_path '{temp_path}'")
 
-        # We parse the two graphs for comparison
+        # on parse les deux graphes pour les comparer
         graph_valid = Graph()
         graph_test = Graph()
         graph_valid.parse(self.ontology_updated_path)

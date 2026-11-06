@@ -1,0 +1,30 @@
+
+=== Triples Count ===
+134
+
+=== Classes Count ===
+example:Human | 1
+rdfs:Datatype | 37
+xsd:decimal | 1
+xsd:integer | 1
+owl:AnnotationProperty | 9
+owl:DatatypeProperty | 1
+owl:FunctionalProperty | 1
+owl:NamedIndividual | 1
+owl:Thing | 1
+
+=== Properties Count ===
+example:hasAge | 1
+rdf:type | 56
+rdfs:domain | 2
+rdfs:range | 1
+rdfs:subClassOf | 6
+rdfs:subPropertyOf | 1
+owl:equivalentClass | 3
+owl:equivalentProperty | 1
+owl:sameAs | 65
+
+=== Individuals Count ===
+1
+
+[92m[+] All statistics queries executed successfully.[0m

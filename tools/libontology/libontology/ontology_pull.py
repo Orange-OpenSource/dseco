@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -17,10 +17,12 @@ ontology_pull.py
 Script to download and update an ontology from a given URL.
 """
 
+import argparse
 import os
 import sys
 import configparser
 import requests
+from . import __version__
 
 
 class OntologyPull:
@@ -51,7 +53,7 @@ class OntologyPull:
         """
         try:
 
-            response = requests.get(self.url, verify=self.cacert)
+            response = requests.get(self.url, verify=self.cacert, timeout=5)
             response.raise_for_status()
             with open(self.destination, "wb") as file:
                 file.write(response.content)
@@ -68,6 +70,13 @@ class OntologyPull:
 
 def main():
     """Main function to execute the ontology update process."""
+    parser = argparse.ArgumentParser(
+        description="Download and update an ontology (config path in $CONFIG_FILE)."
+    )
+    parser.add_argument(
+        "--version", action="version", version=f"%(prog)s {__version__}"
+    )
+    parser.parse_args()
     config_path = os.getenv("CONFIG_FILE")
     ontology_pull = OntologyPull(config_path)
     ontology_pull.download_ontology()

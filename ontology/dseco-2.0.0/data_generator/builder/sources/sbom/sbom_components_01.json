@@ -1,0 +1,107 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:0abe17cd-4cba-4ec0-afc7-59ff489dedd3",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-05-27T07:28:00Z",
+    "tools": {},
+    "component": {
+      "bom-ref": "bomref1",
+      "type": "container",
+      "name": "artifactory1/pattern01/image1:1.3.0"
+    },
+    "properties": []
+  },
+  "components": [
+    {
+      "bom-ref": "bomref_lib01",
+      "type": "library",
+      "name": "package1",
+      "properties": [
+        {
+          "name": "syft:location:0:layerID",
+          "value": "sha256:110578"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/usr/lib/libpackage1/package.json"
+        }
+      ]
+    },
+    {
+      "bom-ref": "bomref_lib02",
+      "type": "library",
+      "name": "package2",
+      "properties": [
+        {
+          "name": "syft:location:0:layerID",
+          "value": "sha256:578695"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/usr/lib/libpackage2/package.json"
+        }
+      ]
+    },
+    {
+      "bom-ref": "bomref_lib03",
+      "type": "library",
+      "name": "package3",
+      "properties": [
+        {
+          "name": "syft:location:0:layerID",
+          "value": "sha256:362578"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/usr/lib/libpackage3/package.json"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "bomref_lib02",
+      "dependsOn": [
+        "bomref_lib01"
+      ]
+    },
+    {
+      "ref": "bomref_lib03",
+      "dependsOn": [
+        "bomref_lib01"
+      ]
+    }
+   ],
+  "vulnerabilities": [ 
+    {
+      "bom-ref": "bomref_lib03",
+      "id": "CVE-2026-12345",
+      "ratings": [
+        {
+          "score": 7.5,
+          "severity": "high"
+        }
+      ],
+      "recommendation": "Upgrade bomref_lib03 to version 4 or higher.\n",
+      "advisories": [
+        {
+          "url": "https://bomref_lib04.com"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "bomref_lib03",
+          "versions": [
+            {
+              "version": "3",
+              "status": "affected"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

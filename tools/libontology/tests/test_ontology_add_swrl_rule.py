@@ -1,4 +1,4 @@
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -31,6 +31,7 @@ import os
 from libontology.ontology_add_swrl_rule import OntologyAddSwrlRule
 from libontology.ontology_convert import OntologyConverter
 from rdflib import Graph
+
 
 
 class TestOntologyAddSwrlRule(unittest.TestCase):

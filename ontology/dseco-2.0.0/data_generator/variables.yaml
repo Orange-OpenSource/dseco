@@ -1,0 +1,7 @@
+---
+variables:
+  serviceid: "{serviceid}"
+  ext: ext
+  int: int
+  top: top
+  TMPDIR: {{ TMPDIR }}

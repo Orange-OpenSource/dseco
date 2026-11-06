@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -35,6 +35,7 @@ and the inference rules they support.
 """
 
 import argparse
+from . import __version__
 import sys
 import tempfile
 import owlrl
@@ -57,8 +58,8 @@ class OntologyInferHermit(BaseOntology):
 
     def perform_inference(self, destination):
         """Perform inference on our ontology using reasoner hermit"""
-        # We are required to create a world for inferences,
-        # otherwise there is a conflict in the in-memory quadstore
+        # on est obligé de créer un monde pour les inférences,
+        # sinon il y a un conflit dans le quadstore en mémoire
         hermit_world = owl.World()
         onto = hermit_world.get_ontology(self.ontology_path).load()
         with onto:
@@ -78,8 +79,8 @@ class OntologyInferPellet(BaseOntology):
 
     def perform_inference(self, destination):
         """Perform inference on our ontology using reasoner pellet"""
-        # We are required to create a world for inferences,
-        # otherwise there is a conflict in the in-memory quadstore
+        # on est obligé de créer un monde pour les inférences,
+        # sinon il y a un conflit dans le quadstore en mémoire
         pellet_world = owl.World()
         onto = pellet_world.get_ontology(self.ontology_path).load()
         with onto:
@@ -141,14 +142,14 @@ def infer_on_xml_ontology(source, destination, reasoner):
 
 def preserve_namespaces(original_path, destination_path):
     """
-    Preserves the original namespaces in an inferred file using rdflib.
-
+    Préserve les namespaces originaux dans un fichier inféré en utilisant rdflib.
+    
     Parameters
     ----------
     original_path : str
-        Path to the original ontology.
+        Chemin de l'ontologie originale.
     destination_path : str
-        Path to the inferred ontology.
+        Chemin de l'ontologie inférée.
     """
 
     original_graph = rdflib.Graph()
@@ -177,6 +178,9 @@ def main():
         required=True,
     )
 
+    parser.add_argument(
+        "--version", action="version", version=f"%(prog)s {__version__}"
+    )
     args = parser.parse_args()
 
     with (

@@ -1,4 +1,4 @@
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -66,7 +66,7 @@ def replace_blank_nodes(ontology_path, namespace):
         content = content.replace(node, f"{namespace}node_{counter}")
         counter += 1
 
-    # Save changes
+    # Sauvegarder les modifications
     with open(ontology_path, "w", encoding='utf-8') as ontology_file:
         ontology_file.write(content)
 
@@ -123,10 +123,10 @@ class TestOntologyInfer(unittest.TestCase):
         Ensures that the `OntologyInferHermit` class correctly performs inference
         and that the output matches the expected result.
         """
-        # Path for the temporary file where onto_infer will be saved
+        # chemin du fichier temporaire où sera stockée onto_infer
         temp_path = tempfile.NamedTemporaryFile(delete=False, suffix=".ttl").name
 
-        # Paths where we'll save temporary XML prior/post convert files
+        # chemins où seront stockés temporairement les fichiers xml avant/après convert
         with (
             tempfile.NamedTemporaryFile(delete=True, suffix=".xml") as temp_source,
             tempfile.NamedTemporaryFile(delete=True, suffix=".xml") as temp_destination,
@@ -144,7 +144,7 @@ class TestOntologyInfer(unittest.TestCase):
             ontology_converter = OntologyConverter(temp_destination_xml_path)
             ontology_converter.convert(temp_path, "turtle")
 
-            # Parsing the two graphs for comparison
+            # on parse les deux graphes pour les comparer
             graph_valid = Graph()
             graph_test = Graph()
             graph_valid.parse(self.ontology_infer_hermit_path, format="turtle")
@@ -177,11 +177,11 @@ class TestOntologyInfer(unittest.TestCase):
             inference_graph = Graph()
             inference_graph.parse(data=inference_content, format="xml")
 
-            # Loading the reference graph for comparison
+            # Charger le graphe de référence pour comparaison
             graph_valid = Graph()
             graph_valid.parse(self.ontology_infer_hermit_path, format="turtle")
 
-            # Check for graph isomorphism
+            # Vérifier si les graphes sont isomorphiques
             self.assertTrue(inference_graph.isomorphic(graph_valid))
 
     def test_infer_pellet(self):
@@ -191,10 +191,10 @@ class TestOntologyInfer(unittest.TestCase):
         Ensures that the `OntologyInferPellet` class correctly performs inference
         and that the output matches the expected result.
         """
-        # Path for the temporary file where onto_infer will be saved
+        # chemin du fichier temporaire où sera stockée onto_infer
         temp_path = tempfile.NamedTemporaryFile(delete=False, suffix=".ttl").name
 
-        # Paths where we'll save temporary XML prior/post convert files
+        # chemins où seront stockés temporairement les fichiers xml avant/après convert
         with (
             tempfile.NamedTemporaryFile(delete=True, suffix=".xml") as temp_source,
             tempfile.NamedTemporaryFile(delete=True, suffix=".xml") as temp_destination,
@@ -212,7 +212,7 @@ class TestOntologyInfer(unittest.TestCase):
             ontology_converter = OntologyConverter(temp_destination_xml_path)
             ontology_converter.convert(temp_path, "turtle")
 
-            # Parsing the two graphs for comparison
+            # on parse les deux graphes pour les comparer
             graph_valid = Graph()
             graph_test = Graph()
             graph_valid.parse(self.ontology_infer_pellet_path, format="turtle")
@@ -231,10 +231,10 @@ class TestOntologyInfer(unittest.TestCase):
         Ensures that the `OntologyInferOwlrl` class correctly performs inference
         and that the output matches the expected result.
         """
-        # Path for the temporary file where onto_infer will be saved
+        # chemin du fichier temporaire où sera stockée onto_infer
         temp_path = "./tests/test_infer/temp_file.ttl"
 
-        # Paths where we'll save temporary XML prior/post convert files
+        # chemins où seront stockés temporairement les fichiers xml avant/après convert
         with (
             tempfile.NamedTemporaryFile(delete=True, suffix=".xml") as temp_source,
             tempfile.NamedTemporaryFile(delete=True, suffix=".xml") as temp_destination,
@@ -252,7 +252,7 @@ class TestOntologyInfer(unittest.TestCase):
             ontology_converter = OntologyConverter(temp_destination_xml_path)
             ontology_converter.convert(temp_path, "turtle")
 
-            # Parsing the two graphs for comparison
+            # on parse les deux graphes pour les comparer
             graph_valid = Graph()
             graph_test = Graph()
             graph_valid.parse(self.ontology_infer_owlrl_path, format="turtle")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -30,6 +30,7 @@ main()
 """
 
 import argparse
+from . import __version__
 import sys
 from .base_ontology import BaseOntology
 
@@ -71,6 +72,9 @@ def main():
     parser = argparse.ArgumentParser(description="Validate the ontology.")
     parser.add_argument("--ontology", help="ontology file", required=True)
 
+    parser.add_argument(
+        "--version", action="version", version=f"%(prog)s {__version__}"
+    )
     args = parser.parse_args()
 
     try:

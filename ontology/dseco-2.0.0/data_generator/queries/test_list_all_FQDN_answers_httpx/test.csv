@@ -1,0 +1,6 @@
+generique-https.prod.redirect.gslb.internalzone1.org "answersOnPort80 (factual)"
+generique-https.prod.redirect.gslb.internalzone1.org "answersOnPort (inferred)"
+yetanother_isp.fr "answersOnPort443 (factual)"
+yetanother_isp.fr "answersOnPort (inferred)"
+zozo.paas.prod.cachehttp.gslb.internalzone1.org "answersOnPort80 (factual)"
+zozo.paas.prod.cachehttp.gslb.internalzone1.org "answersOnPort (inferred)"

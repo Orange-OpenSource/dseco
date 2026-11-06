@@ -1,0 +1,1695 @@
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix dseco: <https://w3id.org/dseco/ontology/> .
+@prefix mykg: <https://w3id.org/dseco/mykg/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file://tmp.xml> a owl:Ontology ;
+    owl:sameAs <file://tmp.xml> .
+
+rdf:HTML a rdfs:Datatype ;
+    owl:sameAs rdf:HTML .
+
+rdf:PlainLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:PlainLiteral .
+
+rdf:XMLLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:XMLLiteral .
+
+rdf:langString a rdfs:Datatype ;
+    owl:sameAs rdf:langString .
+
+rdf:type owl:sameAs rdf:type .
+
+rdfs:Literal a rdfs:Datatype ;
+    owl:sameAs rdfs:Literal .
+
+rdfs:comment a owl:AnnotationProperty ;
+    owl:sameAs rdfs:comment .
+
+rdfs:isDefinedBy a owl:AnnotationProperty ;
+    owl:sameAs rdfs:isDefinedBy .
+
+rdfs:label a owl:AnnotationProperty ;
+    owl:sameAs rdfs:label .
+
+rdfs:seeAlso a owl:AnnotationProperty ;
+    owl:sameAs rdfs:seeAlso .
+
+rdfs:subClassOf owl:sameAs rdfs:subClassOf .
+
+xsd:NCName a rdfs:Datatype ;
+    owl:sameAs xsd:NCName .
+
+xsd:NMTOKEN a rdfs:Datatype ;
+    owl:sameAs xsd:NMTOKEN .
+
+xsd:Name a rdfs:Datatype ;
+    owl:sameAs xsd:Name .
+
+xsd:anyURI a rdfs:Datatype ;
+    owl:sameAs xsd:anyURI .
+
+xsd:base64Binary a rdfs:Datatype ;
+    owl:sameAs xsd:base64Binary .
+
+xsd:byte a rdfs:Datatype ;
+    owl:sameAs xsd:byte .
+
+xsd:date a rdfs:Datatype ;
+    owl:sameAs xsd:date .
+
+xsd:dateTime a rdfs:Datatype ;
+    owl:sameAs xsd:dateTime .
+
+xsd:dateTimeStamp a rdfs:Datatype ;
+    owl:sameAs xsd:dateTimeStamp .
+
+xsd:decimal a rdfs:Datatype ;
+    owl:sameAs xsd:decimal .
+
+xsd:double a rdfs:Datatype ;
+    owl:sameAs xsd:double .
+
+xsd:hexBinary a rdfs:Datatype ;
+    owl:sameAs xsd:hexBinary .
+
+xsd:int a rdfs:Datatype ;
+    owl:sameAs xsd:int .
+
+xsd:integer a rdfs:Datatype ;
+    owl:sameAs xsd:integer .
+
+xsd:language a rdfs:Datatype ;
+    owl:sameAs xsd:language .
+
+xsd:long a rdfs:Datatype ;
+    owl:sameAs xsd:long .
+
+xsd:negativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:negativeInteger .
+
+xsd:nonNegativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonNegativeInteger .
+
+xsd:nonPositiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonPositiveInteger .
+
+xsd:normalizedString a rdfs:Datatype ;
+    owl:sameAs xsd:normalizedString .
+
+xsd:positiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:positiveInteger .
+
+xsd:short a rdfs:Datatype ;
+    owl:sameAs xsd:short .
+
+xsd:time a rdfs:Datatype ;
+    owl:sameAs xsd:time .
+
+xsd:token a rdfs:Datatype ;
+    owl:sameAs xsd:token .
+
+xsd:unsignedByte a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedByte .
+
+xsd:unsignedInt a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedInt .
+
+xsd:unsignedLong a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedLong .
+
+xsd:unsignedShort a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedShort .
+
+owl:backwardCompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:backwardCompatibleWith .
+
+owl:deprecated a owl:AnnotationProperty ;
+    owl:sameAs owl:deprecated .
+
+owl:disjointWith owl:sameAs owl:disjointWith .
+
+owl:equivalentClass owl:sameAs owl:equivalentClass .
+
+owl:incompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:incompatibleWith .
+
+owl:priorVersion a owl:AnnotationProperty ;
+    owl:sameAs owl:priorVersion .
+
+owl:sameAs owl:sameAs owl:sameAs .
+
+owl:versionInfo a owl:AnnotationProperty ;
+    owl:sameAs owl:versionInfo .
+
+core:hasFacet owl:sameAs core:hasFacet .
+
+observable:addressValue owl:sameAs observable:addressValue .
+
+observable:asHandle owl:sameAs observable:asHandle .
+
+mykg:COMPONENT_9f70be7e764b2f353440b98031cdb4e51ac79b6c86e7817e038b55089a96a340 a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_9f70be7e764b2f353440b98031cdb4e51ac79b6c86e7817e038b55089a96a340 ;
+    dseco:dependsOn mykg:COMPONENT_a0e3d133e26ecb04923a4cc4b7bc41e56cce07a98ee2d9dab8999ce042a232d1 ;
+    dseco:hasBomRef "bomref_lib02"^^xsd:string ;
+    dseco:hasName "package2"^^xsd:string ;
+    dseco:isIncludedIn mykg:COMPONENT_f04a754a27a1dc2ff6e087c650e4c65b912738abd8e7dd07fcb640081d4c1859,
+        mykg:COMPONENT_sha256%3A578695 .
+
+mykg:CVE_CVE-2026-12345 a owl:NamedIndividual,
+        dseco:CVE ;
+    owl:sameAs mykg:CVE_CVE-2026-12345 ;
+    dseco:affects mykg:COMPONENT_916cf84c95cdb6912ba5a7546f58d7fab40b4590d4ba9342feb54c5438dce3f9 ;
+    dseco:hasAdvisory "https://bomref_lib04.com"^^xsd:string ;
+    dseco:hasName "CVE-2026-12345"^^xsd:string ;
+    dseco:hasRecommendation """Upgrade bomref_lib03 to version 4 or higher.
+"""^^xsd:string ;
+    dseco:hasScore "7.5"^^xsd:float ;
+    dseco:hasSeverity "high"^^xsd:string .
+
+mykg:FQDN_auto.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_auto.example.org ;
+    dseco:hasName "auto.example.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_1 ;
+    dseco:isCNAMEOf mykg:FQDN_auto.example.org.cfy.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_christoph.internalzone2.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_christoph.internalzone2.org ;
+    mykg:Potentially_to_clean true ;
+    dseco:hasName "christoph.internalzone2.org"^^xsd:string ;
+    dseco:isATo mykg:IP_0.0.0.1 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone2.org.> .
+
+mykg:FQDN_christoph2.internalzone2.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_christoph2.internalzone2.org ;
+    mykg:Potentially_to_clean true ;
+    dseco:hasName "christoph2.internalzone2.org"^^xsd:string ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone2.org.> .
+
+mykg:FQDN_christoph3.internalzone2.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_christoph3.internalzone2.org ;
+    mykg:Potentially_to_clean true ;
+    dseco:hasName "christoph3.internalzone2.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_7 ;
+    dseco:isAAAATo mykg:IP_%3A%3A3 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone2.org.> .
+
+mykg:FQDN_fqdn1.from_sbom_data a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_fqdn1.from_sbom_data ;
+    dseco:hasName "fqdn1.from_sbom_data"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_10001212 ;
+    dseco:isAAAATo mykg:IP_%3A%3A4 ;
+    dseco:isHostedBy mykg:COMPONENT_cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_from_sbom_data.> .
+
+mykg:FQDN_fqdn2.from_sbom_data a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_fqdn2.from_sbom_data ;
+    dseco:hasName "fqdn2.from_sbom_data"^^xsd:string ;
+    dseco:isHostedBy mykg:COMPONENT_cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481 .
+
+mykg:FQDN_fqdn3.from_sbom_data a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_fqdn3.from_sbom_data ;
+    dseco:hasName "fqdn3.from_sbom_data"^^xsd:string ;
+    dseco:isHostedBy mykg:COMPONENT_de3d43caad2bd3c4f0622fc60deecd06b34a0f25a80e30b81fe051a3c54799bb .
+
+mykg:FQDN_jeu.webagencymorte2.fr a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu.webagencymorte2.fr ;
+    dseco:hasName "jeu.webagencymorte2.fr"^^xsd:string ;
+    dseco:isATo mykg:IP_12.12.12.12 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_webagencymorte2.fr.> .
+
+mykg:FQDN_jeu2.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu2.example.org ;
+    dseco:hasName "jeu2.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_jeu2.example.org.cfy.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_jeu3.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu3.example.org ;
+    dseco:hasName "jeu3.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_jeu3.example.org.cfy.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_jeu4.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu4.example.org ;
+    dseco:hasName "jeu4.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_jeu4.example.org.cfy.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_jeu5.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu5.example.org ;
+    dseco:hasName "jeu5.example.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_6578 ;
+    dseco:isATo mykg:IP_173.175.164.12 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_jeu6.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu6.example.org ;
+    dseco:hasName "jeu6.example.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_263 ;
+    dseco:isATo mykg:IP_34.111.100.56 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_jeumort.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeumort.example.org ;
+    dseco:hasName "jeumort.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_jeumort.example.org.internalzone2.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_malicious.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_malicious.example.org ;
+    dseco:hasName "malicious.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_malicious.example.org.internalzone3.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_outsidesubnets.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_outsidesubnets.example.org ;
+    dseco:hasName "outsidesubnets.example.org"^^xsd:string ;
+    dseco:isATo mykg:IP_199.1.1.1 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_outsidesubnets2.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_outsidesubnets2.example.org ;
+    dseco:hasName "outsidesubnets2.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_outsidesubnets2.example.org.gslb.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_papa.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_papa.example.org ;
+    dseco:hasName "papa.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_pas_dans_lesdata ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_people.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_people.example.org ;
+    dseco:hasName "people.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_prod-https.redirect.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_people.example.org.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_people.example.org.multis.internalzone1.org ;
+    mykg:Potentially_to_clean true ;
+    dseco:hasName "people.example.org.multis.internalzone1.org"^^xsd:string ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_rien.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_rien.example.org ;
+    dseco:hasName "rien.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_rien.example.org.cfy.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_www.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_www.example.org ;
+    dseco:hasName "www.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_www.example.org.multis.internalzone2.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_yetanother_isp.fr a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_yetanother_isp.fr ;
+    dseco:answersOnPort443 true ;
+    dseco:hasName "yetanother_isp.fr"^^xsd:string ;
+    dseco:isATo mykg:IP_103.0.0.1,
+        mykg:IP_99.99.1.1 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_yetanother_isp.fr.> .
+
+mykg:FQDN_zozo.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_zozo.example.org ;
+    dseco:hasName "zozo.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_zozo.example.org.cfy.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:IP_203.0.113.46 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_203.0.113.46 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b1 ;
+    dseco:hasName "203.0.113.46"^^xsd:string ;
+    dseco:isInOurSubnet true ;
+    dseco:isPartOf mykg:SUBNET_203.0.113.0%2F24 .
+
+dseco:affects owl:sameAs dseco:affects .
+
+dseco:answersOnPort443 owl:sameAs dseco:answersOnPort443 .
+
+dseco:answersOnPort80 owl:sameAs dseco:answersOnPort80 .
+
+dseco:dependsOn owl:sameAs dseco:dependsOn .
+
+dseco:hasAS owl:sameAs dseco:hasAS .
+
+dseco:hasAdvisory owl:sameAs dseco:hasAdvisory .
+
+dseco:hasBomRef owl:sameAs dseco:hasBomRef .
+
+dseco:hasName owl:sameAs dseco:hasName .
+
+dseco:hasOrgu owl:sameAs dseco:hasOrgu .
+
+dseco:hasPath owl:sameAs dseco:hasPath .
+
+dseco:hasRecommendation owl:sameAs dseco:hasRecommendation .
+
+dseco:hasScore owl:sameAs dseco:hasScore .
+
+dseco:hasServiceId owl:sameAs dseco:hasServiceId .
+
+dseco:hasSeverity owl:sameAs dseco:hasSeverity .
+
+dseco:isAAAATo owl:sameAs dseco:isAAAATo .
+
+dseco:isATo owl:sameAs dseco:isATo .
+
+dseco:isCNAMEOf owl:sameAs dseco:isCNAMEOf .
+
+dseco:isHostedBy owl:sameAs dseco:isHostedBy .
+
+dseco:isInOurSubnet owl:sameAs dseco:isInOurSubnet .
+
+dseco:isInZONE owl:sameAs dseco:isInZONE .
+
+dseco:isIncludedIn owl:sameAs dseco:isIncludedIn .
+
+dseco:isPartOf owl:sameAs dseco:isPartOf .
+
+dseco:knownFrom owl:sameAs dseco:knownFrom .
+
+dseco:managedBy owl:sameAs dseco:managedBy .
+
+xsd:boolean a rdfs:Datatype ;
+    owl:disjointWith xsd:float,
+        xsd:string ;
+    owl:sameAs xsd:boolean .
+
+owl:Ontology owl:sameAs owl:Ontology .
+
+mykg:275e63b3c7d6e35755cb9f0baec4af21fab6f0f5 a observable:IPAddressFacet ;
+    owl:sameAs mykg:275e63b3c7d6e35755cb9f0baec4af21fab6f0f5 ;
+    observable:addressValue "::3"^^xsd:string .
+
+mykg:AS_AS396982 a owl:NamedIndividual,
+        observable:AutonomousSystem ;
+    owl:sameAs mykg:AS_AS396982 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b2 ;
+    dseco:hasName "AS396982"^^xsd:string ;
+    dseco:hasOrgu mykg:ORGU_google .
+
+mykg:COMPONENT_916cf84c95cdb6912ba5a7546f58d7fab40b4590d4ba9342feb54c5438dce3f9 a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_916cf84c95cdb6912ba5a7546f58d7fab40b4590d4ba9342feb54c5438dce3f9 ;
+    dseco:dependsOn mykg:COMPONENT_a0e3d133e26ecb04923a4cc4b7bc41e56cce07a98ee2d9dab8999ce042a232d1 ;
+    dseco:hasBomRef "bomref_lib03"^^xsd:string ;
+    dseco:hasName "package3"^^xsd:string ;
+    dseco:isIncludedIn mykg:COMPONENT_c0f87188093d28dae3b7a42ee2333bafb0acaa2bdaf8c7e3204d78bb2e1a0ce3,
+        mykg:COMPONENT_f04a754a27a1dc2ff6e087c650e4c65b912738abd8e7dd07fcb640081d4c1859,
+        mykg:COMPONENT_sha256%3A362578 .
+
+mykg:COMPONENT_de3d43caad2bd3c4f0622fc60deecd06b34a0f25a80e30b81fe051a3c54799bb a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_de3d43caad2bd3c4f0622fc60deecd06b34a0f25a80e30b81fe051a3c54799bb ;
+    dseco:hasBomRef "1213"^^xsd:string ;
+    dseco:hasName "mycontainer-for-fqdn1_and_fqdn2"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_10001212 .
+
+mykg:COMPONENT_f76062cc24d664ba08753c9747fb9a598bc9a7065cf774577704a5b34b9b19f0 a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_f76062cc24d664ba08753c9747fb9a598bc9a7065cf774577704a5b34b9b19f0 ;
+    dseco:hasBomRef "bomref_100"^^xsd:string ;
+    dseco:hasName "artifactory1/pattern01/image100:1.3.0"^^xsd:string .
+
+mykg:COMPONENT_sha256%3A110578 a owl:NamedIndividual,
+        dseco:COMPONENT,
+        dseco:LAYER ;
+    owl:sameAs mykg:COMPONENT_sha256%3A110578 ;
+    dseco:hasName "sha256:110578"^^xsd:string ;
+    dseco:hasPath "/usr/lib/libpackage1/package.json"^^xsd:string ;
+    dseco:isIncludedIn mykg:COMPONENT_5c4ed94434db05e0362b99310befa89df6710acaff42da47f90552b74aaab715,
+        mykg:COMPONENT_c0f87188093d28dae3b7a42ee2333bafb0acaa2bdaf8c7e3204d78bb2e1a0ce3,
+        mykg:COMPONENT_f04a754a27a1dc2ff6e087c650e4c65b912738abd8e7dd07fcb640081d4c1859 .
+
+mykg:COMPONENT_sha256%3A362578 a owl:NamedIndividual,
+        dseco:COMPONENT,
+        dseco:LAYER ;
+    owl:sameAs mykg:COMPONENT_sha256%3A362578 ;
+    dseco:hasName "sha256:362578"^^xsd:string ;
+    dseco:hasPath "/usr/lib/libpackage3/package.json"^^xsd:string ;
+    dseco:isIncludedIn mykg:COMPONENT_c0f87188093d28dae3b7a42ee2333bafb0acaa2bdaf8c7e3204d78bb2e1a0ce3,
+        mykg:COMPONENT_f04a754a27a1dc2ff6e087c650e4c65b912738abd8e7dd07fcb640081d4c1859 .
+
+mykg:COMPONENT_sha256%3A578695 a owl:NamedIndividual,
+        dseco:COMPONENT,
+        dseco:LAYER ;
+    owl:sameAs mykg:COMPONENT_sha256%3A578695 ;
+    dseco:hasName "sha256:578695"^^xsd:string ;
+    dseco:hasPath "/usr/lib/libpackage2/package.json"^^xsd:string ;
+    dseco:isIncludedIn mykg:COMPONENT_f04a754a27a1dc2ff6e087c650e4c65b912738abd8e7dd07fcb640081d4c1859 .
+
+mykg:FQDN_auto.example.org.cfy.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_auto.example.org.cfy.multis.internalzone1.org ;
+    dseco:hasName "auto.example.org.cfy.multis.internalzone1.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_1 ;
+    dseco:isCNAMEOf mykg:FQDN_paas.prod.cachehttp.gslb.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_boucle.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_boucle.example.org ;
+    dseco:hasName "boucle.example.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_boucle.example.org.cfy.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_boucle.example.org.cfy.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_boucle.example.org.cfy.multis.internalzone1.org ;
+    dseco:hasName "boucle.example.org.cfy.multis.internalzone1.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_boucle.example.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_generique-https.prod.redirect.gslb.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_generique-https.prod.redirect.gslb.internalzone1.org ;
+    dseco:answersOnPort80 true ;
+    dseco:hasName "generique-https.prod.redirect.gslb.internalzone1.org"^^xsd:string ;
+    dseco:isATo mykg:IP_203.0.113.223 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_hpo-main.prod.hporange.gslb.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_hpo-main.prod.hporange.gslb.internalzone1.org ;
+    dseco:hasName "hpo-main.prod.hporange.gslb.internalzone1.org"^^xsd:string ;
+    dseco:isATo mykg:IP_203.0.113.97 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_jeu.example.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu.example.org ;
+    dseco:hasName "jeu.example.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_2 ;
+    dseco:isCNAMEOf mykg:FQDN_jeu.example.org.cfy.multis.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_example.org.> .
+
+mykg:FQDN_jeu.example.org.cfy.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu.example.org.cfy.multis.internalzone1.org ;
+    dseco:hasName "jeu.example.org.cfy.multis.internalzone1.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_1 ;
+    dseco:isCNAMEOf mykg:FQDN_jeu.example.org.internalzone2.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_jeu.example.org.internalzone2.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu.example.org.internalzone2.org ;
+    dseco:hasName "jeu.example.org.internalzone2.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_5 ;
+    dseco:isCNAMEOf mykg:FQDN_jeu.webagencymorte.fr ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone2.org.> .
+
+mykg:FQDN_jeu.webagencymorte.fr a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu.webagencymorte.fr ;
+    dseco:hasName "jeu.webagencymorte.fr"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_5 ;
+    dseco:isATo mykg:IP_12.12.12.12 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_webagencymorte.fr.> .
+
+mykg:FQDN_jeu2.example.org.cfy.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu2.example.org.cfy.multis.internalzone1.org ;
+    dseco:hasName "jeu2.example.org.cfy.multis.internalzone1.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_jeu2.example.org.webagencyintermediaire.com ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_jeu2.example.org.webagencyintermediaire.com a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu2.example.org.webagencyintermediaire.com ;
+    dseco:hasName "jeu2.example.org.webagencyintermediaire.com"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_jeu.example.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_webagencyintermediaire.com.> .
+
+mykg:FQDN_jeu3.example.org.cfy.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu3.example.org.cfy.multis.internalzone1.org ;
+    dseco:hasName "jeu3.example.org.cfy.multis.internalzone1.org"^^xsd:string ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_jeu4.example.org.cfy.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu4.example.org.cfy.multis.internalzone1.org ;
+    dseco:hasName "jeu4.example.org.cfy.multis.internalzone1.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_jeu4.example.org.webagencyintermediaire.com ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_jeu4.example.org.webagencyintermediaire.com a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeu4.example.org.webagencyintermediaire.com ;
+    dseco:hasName "jeu4.example.org.webagencyintermediaire.com"^^xsd:string ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_webagencyintermediaire.com.> .
+
+mykg:FQDN_jeumort.example.org.internalzone2.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_jeumort.example.org.internalzone2.org ;
+    dseco:hasName "jeumort.example.org.internalzone2.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_jeumort.webagencymorte2.fr ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone2.org.> .
+
+mykg:FQDN_jeumort.webagencymorte2.fr a owl:Thing ;
+    owl:sameAs mykg:FQDN_jeumort.webagencymorte2.fr .
+
+mykg:FQDN_malicious.example.org.internalzone3.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_malicious.example.org.internalzone3.org ;
+    dseco:hasName "malicious.example.org.internalzone3.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_malicious.webagencymorte.fr ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone3.org.> .
+
+mykg:FQDN_malicious.webagencymorte.fr a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_malicious.webagencymorte.fr ;
+    dseco:hasName "malicious.webagencymorte.fr"^^xsd:string ;
+    dseco:isATo mykg:IP_199.1.1.3 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_webagencymorte.fr.> .
+
+mykg:FQDN_outsidesubnets2.example.org.gslb.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_outsidesubnets2.example.org.gslb.internalzone1.org ;
+    dseco:hasName "outsidesubnets2.example.org.gslb.internalzone1.org"^^xsd:string ;
+    dseco:isATo mykg:IP_199.1.1.2 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_paas.prod.cachehttp.gslb.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_paas.prod.cachehttp.gslb.internalzone1.org ;
+    dseco:hasName "paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_1 ;
+    dseco:isATo mykg:IP_198.51.100.227 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_pas_dans_lesdata a owl:Thing ;
+    owl:sameAs mykg:FQDN_pas_dans_lesdata .
+
+mykg:FQDN_prod-https.redirect.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_prod-https.redirect.multis.internalzone1.org ;
+    dseco:hasName "prod-https.redirect.multis.internalzone1.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_generique-https.prod.redirect.gslb.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_rien.example.org.cfy.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_rien.example.org.cfy.multis.internalzone1.org ;
+    dseco:hasName "rien.example.org.cfy.multis.internalzone1.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_rien.paas.prod.cachehttp.gslb.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_rien.paas.prod.cachehttp.gslb.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_rien.paas.prod.cachehttp.gslb.internalzone1.org ;
+    dseco:hasName "rien.paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_www.example.org.multis.internalzone2.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_www.example.org.multis.internalzone2.org ;
+    dseco:hasName "www.example.org.multis.internalzone2.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_hpo-main.prod.hporange.gslb.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone2.org.> .
+
+mykg:FQDN_zozo.example.org.cfy.multis.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_zozo.example.org.cfy.multis.internalzone1.org ;
+    dseco:hasName "zozo.example.org.cfy.multis.internalzone1.org"^^xsd:string ;
+    dseco:isCNAMEOf mykg:FQDN_zozo.paas.prod.cachehttp.gslb.internalzone1.org ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:FQDN_zozo.paas.prod.cachehttp.gslb.internalzone1.org a owl:NamedIndividual,
+        dseco:FQDN ;
+    owl:sameAs mykg:FQDN_zozo.paas.prod.cachehttp.gslb.internalzone1.org ;
+    dseco:answersOnPort80 true ;
+    dseco:hasName "zozo.paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string ;
+    dseco:isATo mykg:IP_198.51.100.1,
+        mykg:IP_198.51.100.2 ;
+    dseco:isInZONE <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> .
+
+mykg:IP_%3A%3A3 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv6Address ;
+    owl:sameAs mykg:IP_%3A%3A3 ;
+    core:hasFacet mykg:275e63b3c7d6e35755cb9f0baec4af21fab6f0f5 ;
+    dseco:hasName "::3"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_%3A%3A3%2F128 .
+
+mykg:IP_%3A%3A4 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv6Address ;
+    owl:sameAs mykg:IP_%3A%3A4 ;
+    core:hasFacet mykg:e37bec3f31db828c2a431012a31a3f7d63140e97 ;
+    dseco:hasName "::4"^^xsd:string .
+
+mykg:IP_0.0.0.1 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_0.0.0.1 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b3 ;
+    dseco:hasName "0.0.0.1"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_0.0.0.1%2F32 .
+
+mykg:IP_103.0.0.1 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_103.0.0.1 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b4 ;
+    dseco:hasName "103.0.0.1"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_103.0.0.0%2F24 .
+
+mykg:IP_173.175.164.12 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_173.175.164.12 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b5 ;
+    dseco:hasName "173.175.164.12"^^xsd:string .
+
+mykg:IP_198.51.100.1 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_198.51.100.1 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b6 ;
+    dseco:hasName "198.51.100.1"^^xsd:string ;
+    dseco:isInOurSubnet true ;
+    dseco:isPartOf mykg:SUBNET_198.51.100.0%2F24 ;
+    dseco:knownFrom mykg:ORGU_team_GCP .
+
+mykg:IP_198.51.100.2 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_198.51.100.2 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b7 ;
+    dseco:hasName "198.51.100.2"^^xsd:string ;
+    dseco:isInOurSubnet true ;
+    dseco:isPartOf mykg:SUBNET_198.51.100.0%2F24 .
+
+mykg:IP_198.51.100.227 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_198.51.100.227 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b8 ;
+    dseco:hasName "198.51.100.227"^^xsd:string ;
+    dseco:isInOurSubnet true ;
+    dseco:isPartOf mykg:SUBNET_198.51.100.0%2F24 ;
+    dseco:knownFrom mykg:ORGU_team_GCP .
+
+mykg:IP_199.1.1.1 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_199.1.1.1 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b9 ;
+    dseco:hasName "199.1.1.1"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_199.1.1.0%2F24 .
+
+mykg:IP_199.1.1.2 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_199.1.1.2 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b10 ;
+    dseco:hasName "199.1.1.2"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_199.1.1.0%2F24 .
+
+mykg:IP_199.1.1.3 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_199.1.1.3 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b11 ;
+    dseco:hasName "199.1.1.3"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_199.1.1.0%2F24 .
+
+mykg:IP_203.0.113.223 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_203.0.113.223 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b12 ;
+    dseco:hasName "203.0.113.223"^^xsd:string ;
+    dseco:isInOurSubnet true ;
+    dseco:isPartOf mykg:SUBNET_203.0.113.0%2F24 .
+
+mykg:IP_203.0.113.97 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_203.0.113.97 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b13 ;
+    dseco:hasName "203.0.113.97"^^xsd:string ;
+    dseco:isInOurSubnet true ;
+    dseco:isPartOf mykg:SUBNET_203.0.113.0%2F24 .
+
+mykg:IP_34.111.100.56 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_34.111.100.56 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b14 ;
+    dseco:hasName "34.111.100.56"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_34.111.0.0%2F16 .
+
+mykg:IP_99.99.1.1 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_99.99.1.1 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b15 ;
+    dseco:hasName "99.99.1.1"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_99.99.1.0%2F24 .
+
+mykg:ORGU_friendly a owl:NamedIndividual,
+        org:OrganizationalUnit ;
+    owl:sameAs mykg:ORGU_friendly ;
+    dseco:hasName "friendly"^^xsd:string .
+
+mykg:ORGU_google a owl:NamedIndividual,
+        org:OrganizationalUnit ;
+    owl:sameAs mykg:ORGU_google ;
+    dseco:hasName "google"^^xsd:string .
+
+mykg:ORGU_malicious a owl:NamedIndividual,
+        org:OrganizationalUnit ;
+    owl:sameAs mykg:ORGU_malicious ;
+    dseco:hasName "malicious"^^xsd:string .
+
+mykg:ORGU_top a owl:NamedIndividual,
+        org:OrganizationalUnit ;
+    owl:sameAs mykg:ORGU_top ;
+    dseco:hasName "top"^^xsd:string .
+
+mykg:SERVICEID_2 a owl:NamedIndividual,
+        dseco:SERVICEID ;
+    owl:sameAs mykg:SERVICEID_2 ;
+    dseco:hasName "2"^^xsd:string .
+
+mykg:SERVICEID_263 a owl:NamedIndividual,
+        dseco:SERVICEID ;
+    owl:sameAs mykg:SERVICEID_263 ;
+    dseco:hasName "263"^^xsd:string .
+
+mykg:SERVICEID_6578 a owl:NamedIndividual,
+        dseco:SERVICEID ;
+    owl:sameAs mykg:SERVICEID_6578 ;
+    dseco:hasName "6578"^^xsd:string .
+
+mykg:SERVICEID_7 a owl:NamedIndividual,
+        dseco:SERVICEID ;
+    owl:sameAs mykg:SERVICEID_7 ;
+    dseco:hasName "7"^^xsd:string .
+
+mykg:SUBNET_%3A%3A3%2F128 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_%3A%3A3%2F128 ;
+    dseco:hasAS mykg:AS_AS2 ;
+    dseco:hasName "::3/128"^^xsd:string .
+
+mykg:SUBNET_0.0.0.1%2F32 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_0.0.0.1%2F32 ;
+    dseco:hasAS mykg:AS_AS2 ;
+    dseco:hasName "0.0.0.1/32"^^xsd:string .
+
+mykg:SUBNET_103.0.0.0%2F24 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_103.0.0.0%2F24 ;
+    dseco:hasAS mykg:AS_AS2 ;
+    dseco:hasName "103.0.0.0/24"^^xsd:string .
+
+mykg:SUBNET_12.12.12.0%2F24 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_12.12.12.0%2F24 ;
+    dseco:hasAS mykg:AS_AS1 ;
+    dseco:hasName "12.12.12.0/24"^^xsd:string .
+
+mykg:SUBNET_34.111.0.0%2F16 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_34.111.0.0%2F16 ;
+    dseco:hasAS mykg:AS_AS396982 ;
+    dseco:hasName "34.111.0.0/16"^^xsd:string .
+
+mykg:SUBNET_99.99.1.0%2F24 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_99.99.1.0%2F24 ;
+    dseco:hasAS mykg:AS_AS1 ;
+    dseco:hasName "99.99.1.0/24"^^xsd:string .
+
+<https://w3id.org/dseco/mykg/ZONE_from_sbom_data.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_from_sbom_data.> ;
+    dseco:hasName "from_sbom_data."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_ext .
+
+<https://w3id.org/dseco/mykg/ZONE_internalzone3.org.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_internalzone3.org.> ;
+    dseco:hasName "internalzone3.org."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_int .
+
+<https://w3id.org/dseco/mykg/ZONE_webagencymorte2.fr.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_webagencymorte2.fr.> ;
+    dseco:hasName "webagencymorte2.fr."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_ext .
+
+<https://w3id.org/dseco/mykg/ZONE_yetanother_isp.fr.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_yetanother_isp.fr.> ;
+    dseco:hasName "yetanother_isp.fr."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_ext .
+
+mykg:e37bec3f31db828c2a431012a31a3f7d63140e97 a observable:IPAddressFacet ;
+    owl:sameAs mykg:e37bec3f31db828c2a431012a31a3f7d63140e97 ;
+    observable:addressValue "::4"^^xsd:string .
+
+dseco:CVE owl:sameAs dseco:CVE .
+
+"7.5"^^xsd:float a rdfs:Datatype,
+        xsd:float ;
+    owl:sameAs "7.5"^^xsd:float .
+
+"/usr/lib/libpackage1/package.json"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "/usr/lib/libpackage1/package.json"^^xsd:string .
+
+"/usr/lib/libpackage2/package.json"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "/usr/lib/libpackage2/package.json"^^xsd:string .
+
+"/usr/lib/libpackage3/package.json"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "/usr/lib/libpackage3/package.json"^^xsd:string .
+
+"0.0.0.1/32"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "0.0.0.1/32"^^xsd:string .
+
+"1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "1"^^xsd:string .
+
+"10001212"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "10001212"^^xsd:string .
+
+"103.0.0.0/24"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "103.0.0.0/24"^^xsd:string .
+
+"12.12.12.0/24"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "12.12.12.0/24"^^xsd:string .
+
+"1212"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "1212"^^xsd:string .
+
+"1213"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "1213"^^xsd:string .
+
+"198.51.100.0/24"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "198.51.100.0/24"^^xsd:string .
+
+"199.1.1.0/24"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "199.1.1.0/24"^^xsd:string .
+
+"2"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "2"^^xsd:string .
+
+"203.0.113.0/24"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "203.0.113.0/24"^^xsd:string .
+
+"263"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "263"^^xsd:string .
+
+"34.111.0.0/16"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "34.111.0.0/16"^^xsd:string .
+
+"5"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "5"^^xsd:string .
+
+"6578"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "6578"^^xsd:string .
+
+"7"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "7"^^xsd:string .
+
+"99.99.1.0/24"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "99.99.1.0/24"^^xsd:string .
+
+"::3/128"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "::3/128"^^xsd:string .
+
+"CVE-2026-12345"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "CVE-2026-12345"^^xsd:string .
+
+"IP_known_from_team_GCP"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "IP_known_from_team_GCP"^^xsd:string .
+
+"""Upgrade bomref_lib03 to version 4 or higher.
+"""^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs """Upgrade bomref_lib03 to version 4 or higher.
+"""^^xsd:string .
+
+"artifactory1/pattern01/image100:1.3.0"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "artifactory1/pattern01/image100:1.3.0"^^xsd:string .
+
+"artifactory1/pattern01/image101:1.3.0"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "artifactory1/pattern01/image101:1.3.0"^^xsd:string .
+
+"artifactory1/pattern01/image1:1.3.0"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "artifactory1/pattern01/image1:1.3.0"^^xsd:string .
+
+"artifactory1/pattern01/image2:1.3.0"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "artifactory1/pattern01/image2:1.3.0"^^xsd:string .
+
+"auto.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "auto.example.org"^^xsd:string .
+
+"auto.example.org.cfy.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "auto.example.org.cfy.multis.internalzone1.org"^^xsd:string .
+
+"bomref1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "bomref1"^^xsd:string .
+
+"bomref2"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "bomref2"^^xsd:string .
+
+"bomref_100"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "bomref_100"^^xsd:string .
+
+"bomref_101"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "bomref_101"^^xsd:string .
+
+"bomref_lib01"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "bomref_lib01"^^xsd:string .
+
+"bomref_lib02"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "bomref_lib02"^^xsd:string .
+
+"bomref_lib03"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "bomref_lib03"^^xsd:string .
+
+"boucle.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "boucle.example.org"^^xsd:string .
+
+"boucle.example.org.cfy.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "boucle.example.org.cfy.multis.internalzone1.org"^^xsd:string .
+
+"christoph.internalzone2.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "christoph.internalzone2.org"^^xsd:string .
+
+"christoph2.internalzone2.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "christoph2.internalzone2.org"^^xsd:string .
+
+"christoph3.internalzone2.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "christoph3.internalzone2.org"^^xsd:string .
+
+"example.org."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "example.org."^^xsd:string .
+
+"ext"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "ext"^^xsd:string .
+
+"fqdn1.from_sbom_data"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "fqdn1.from_sbom_data"^^xsd:string .
+
+"fqdn2.from_sbom_data"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "fqdn2.from_sbom_data"^^xsd:string .
+
+"fqdn3.from_sbom_data"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "fqdn3.from_sbom_data"^^xsd:string .
+
+"friendly"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "friendly"^^xsd:string .
+
+"from_sbom_data."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "from_sbom_data."^^xsd:string .
+
+"generique-https.prod.redirect.gslb.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "generique-https.prod.redirect.gslb.internalzone1.org"^^xsd:string .
+
+"google"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "google"^^xsd:string .
+
+"high"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "high"^^xsd:string .
+
+"hpo-main.prod.hporange.gslb.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "hpo-main.prod.hporange.gslb.internalzone1.org"^^xsd:string .
+
+"https://bomref_lib04.com"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "https://bomref_lib04.com"^^xsd:string .
+
+"int"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "int"^^xsd:string .
+
+"internalzone1.org."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "internalzone1.org."^^xsd:string .
+
+"internalzone2.org."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "internalzone2.org."^^xsd:string .
+
+"internalzone3.org."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "internalzone3.org."^^xsd:string .
+
+"jeu.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu.example.org"^^xsd:string .
+
+"jeu.example.org.cfy.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu.example.org.cfy.multis.internalzone1.org"^^xsd:string .
+
+"jeu.example.org.internalzone2.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu.example.org.internalzone2.org"^^xsd:string .
+
+"jeu.webagencymorte.fr"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu.webagencymorte.fr"^^xsd:string .
+
+"jeu.webagencymorte2.fr"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu.webagencymorte2.fr"^^xsd:string .
+
+"jeu2.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu2.example.org"^^xsd:string .
+
+"jeu2.example.org.cfy.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu2.example.org.cfy.multis.internalzone1.org"^^xsd:string .
+
+"jeu2.example.org.webagencyintermediaire.com"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu2.example.org.webagencyintermediaire.com"^^xsd:string .
+
+"jeu3.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu3.example.org"^^xsd:string .
+
+"jeu3.example.org.cfy.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu3.example.org.cfy.multis.internalzone1.org"^^xsd:string .
+
+"jeu4.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu4.example.org"^^xsd:string .
+
+"jeu4.example.org.cfy.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu4.example.org.cfy.multis.internalzone1.org"^^xsd:string .
+
+"jeu4.example.org.webagencyintermediaire.com"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu4.example.org.webagencyintermediaire.com"^^xsd:string .
+
+"jeu5.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu5.example.org"^^xsd:string .
+
+"jeu6.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeu6.example.org"^^xsd:string .
+
+"jeumort.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeumort.example.org"^^xsd:string .
+
+"jeumort.example.org.internalzone2.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "jeumort.example.org.internalzone2.org"^^xsd:string .
+
+"malicious"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "malicious"^^xsd:string .
+
+"malicious.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "malicious.example.org"^^xsd:string .
+
+"malicious.example.org.internalzone3.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "malicious.example.org.internalzone3.org"^^xsd:string .
+
+"malicious.webagencymorte.fr"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "malicious.webagencymorte.fr"^^xsd:string .
+
+"outsidesubnets.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "outsidesubnets.example.org"^^xsd:string .
+
+"outsidesubnets2.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "outsidesubnets2.example.org"^^xsd:string .
+
+"outsidesubnets2.example.org.gslb.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "outsidesubnets2.example.org.gslb.internalzone1.org"^^xsd:string .
+
+"paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string .
+
+"package1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "package1"^^xsd:string .
+
+"package2"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "package2"^^xsd:string .
+
+"package3"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "package3"^^xsd:string .
+
+"papa.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "papa.example.org"^^xsd:string .
+
+"people.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "people.example.org"^^xsd:string .
+
+"people.example.org.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "people.example.org.multis.internalzone1.org"^^xsd:string .
+
+"prod-https.redirect.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "prod-https.redirect.multis.internalzone1.org"^^xsd:string .
+
+"rien.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "rien.example.org"^^xsd:string .
+
+"rien.example.org.cfy.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "rien.example.org.cfy.multis.internalzone1.org"^^xsd:string .
+
+"rien.paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "rien.paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string .
+
+"sha256:110578"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "sha256:110578"^^xsd:string .
+
+"sha256:362578"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "sha256:362578"^^xsd:string .
+
+"sha256:578695"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "sha256:578695"^^xsd:string .
+
+"top"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "top"^^xsd:string .
+
+"webagencyintermediaire.com."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "webagencyintermediaire.com."^^xsd:string .
+
+"webagencymorte.fr."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "webagencymorte.fr."^^xsd:string .
+
+"webagencymorte2.fr."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "webagencymorte2.fr."^^xsd:string .
+
+"www.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "www.example.org"^^xsd:string .
+
+"www.example.org.multis.internalzone2.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "www.example.org.multis.internalzone2.org"^^xsd:string .
+
+"yetanother_isp.fr"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "yetanother_isp.fr"^^xsd:string .
+
+"yetanother_isp.fr."^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "yetanother_isp.fr."^^xsd:string .
+
+"zozo.example.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "zozo.example.org"^^xsd:string .
+
+"zozo.example.org.cfy.multis.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "zozo.example.org.cfy.multis.internalzone1.org"^^xsd:string .
+
+"zozo.paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "zozo.paas.prod.cachehttp.gslb.internalzone1.org"^^xsd:string .
+
+xsd:float a rdfs:Datatype ;
+    owl:disjointWith xsd:string ;
+    owl:sameAs xsd:float .
+
+owl:Nothing a owl:Class ;
+    rdfs:subClassOf owl:Nothing,
+        owl:Thing,
+        mykg:FQDN_exampleorg_resolving,
+        mykg:FQDN_resolving,
+        dseco:FQDN ;
+    owl:equivalentClass owl:Nothing ;
+    owl:sameAs owl:Nothing .
+
+observable:IPv6Address owl:sameAs observable:IPv6Address .
+
+mykg:COMPONENT_5c4ed94434db05e0362b99310befa89df6710acaff42da47f90552b74aaab715 a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_5c4ed94434db05e0362b99310befa89df6710acaff42da47f90552b74aaab715 ;
+    dseco:hasBomRef "bomref_101"^^xsd:string ;
+    dseco:hasName "artifactory1/pattern01/image101:1.3.0"^^xsd:string ;
+    dseco:isIncludedIn mykg:COMPONENT_f76062cc24d664ba08753c9747fb9a598bc9a7065cf774577704a5b34b9b19f0 .
+
+mykg:COMPONENT_a0e3d133e26ecb04923a4cc4b7bc41e56cce07a98ee2d9dab8999ce042a232d1 a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_a0e3d133e26ecb04923a4cc4b7bc41e56cce07a98ee2d9dab8999ce042a232d1 ;
+    dseco:hasBomRef "bomref_lib01"^^xsd:string ;
+    dseco:hasName "package1"^^xsd:string ;
+    dseco:isIncludedIn mykg:COMPONENT_5c4ed94434db05e0362b99310befa89df6710acaff42da47f90552b74aaab715,
+        mykg:COMPONENT_c0f87188093d28dae3b7a42ee2333bafb0acaa2bdaf8c7e3204d78bb2e1a0ce3,
+        mykg:COMPONENT_f04a754a27a1dc2ff6e087c650e4c65b912738abd8e7dd07fcb640081d4c1859,
+        mykg:COMPONENT_sha256%3A110578 .
+
+mykg:COMPONENT_cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481 a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481 ;
+    dseco:hasBomRef "1212"^^xsd:string ;
+    dseco:hasName "mycontainer-for-fqdn1_and_fqdn2"^^xsd:string ;
+    dseco:hasServiceId mykg:SERVICEID_10001212 .
+
+mykg:IP_12.12.12.12 a owl:NamedIndividual,
+        observable:IPAddress,
+        observable:IPv4Address ;
+    owl:sameAs mykg:IP_12.12.12.12 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b16 ;
+    dseco:hasName "12.12.12.12"^^xsd:string ;
+    dseco:isPartOf mykg:SUBNET_12.12.12.0%2F24 ;
+    dseco:knownFrom mykg:ORGU_team_GCP .
+
+mykg:SERVICEID_5 a owl:NamedIndividual,
+        dseco:SERVICEID ;
+    owl:sameAs mykg:SERVICEID_5 ;
+    dseco:hasName "5"^^xsd:string .
+
+<https://w3id.org/dseco/mykg/ZONE_webagencyintermediaire.com.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_webagencyintermediaire.com.> ;
+    dseco:hasName "webagencyintermediaire.com."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_ext .
+
+<https://w3id.org/dseco/mykg/ZONE_webagencymorte.fr.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_webagencymorte.fr.> ;
+    dseco:hasName "webagencymorte.fr."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_ext .
+
+"0.0.0.1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "0.0.0.1"^^xsd:string .
+
+"103.0.0.1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "103.0.0.1"^^xsd:string .
+
+"12.12.12.12"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "12.12.12.12"^^xsd:string .
+
+"173.175.164.12"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "173.175.164.12"^^xsd:string .
+
+"198.51.100.1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "198.51.100.1"^^xsd:string .
+
+"198.51.100.2"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "198.51.100.2"^^xsd:string .
+
+"198.51.100.227"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "198.51.100.227"^^xsd:string .
+
+"199.1.1.1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "199.1.1.1"^^xsd:string .
+
+"199.1.1.2"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "199.1.1.2"^^xsd:string .
+
+"199.1.1.3"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "199.1.1.3"^^xsd:string .
+
+"203.0.113.223"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "203.0.113.223"^^xsd:string .
+
+"203.0.113.46"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "203.0.113.46"^^xsd:string .
+
+"203.0.113.97"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "203.0.113.97"^^xsd:string .
+
+"34.111.100.56"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "34.111.100.56"^^xsd:string .
+
+"99.99.1.1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "99.99.1.1"^^xsd:string .
+
+"::3"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "::3"^^xsd:string .
+
+"::4"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "::4"^^xsd:string .
+
+"AS1"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "AS1"^^xsd:string .
+
+"AS2"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "AS2"^^xsd:string .
+
+"AS396982"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "AS396982"^^xsd:string .
+
+"mycontainer-for-fqdn1_and_fqdn2"^^xsd:string a rdfs:Datatype,
+        xsd:string ;
+    owl:sameAs "mycontainer-for-fqdn1_and_fqdn2"^^xsd:string .
+
+observable:AutonomousSystem owl:sameAs observable:AutonomousSystem .
+
+observable:AutonomousSystemFacet owl:sameAs observable:AutonomousSystemFacet .
+
+mykg:FQDN_exampleorg_resolving a owl:Class ;
+    rdfs:subClassOf owl:Thing,
+        mykg:FQDN_exampleorg_resolving,
+        mykg:FQDN_resolving,
+        dseco:FQDN ;
+    owl:equivalentClass mykg:FQDN_exampleorg_resolving ;
+    owl:sameAs mykg:FQDN_exampleorg_resolving .
+
+mykg:ORGU_int a owl:NamedIndividual,
+        org:OrganizationalUnit ;
+    owl:sameAs mykg:ORGU_int ;
+    dseco:hasName "int"^^xsd:string .
+
+mykg:ORGU_team_GCP a owl:NamedIndividual,
+        org:OrganizationalUnit ;
+    owl:sameAs mykg:ORGU_team_GCP ;
+    dseco:hasName "IP_known_from_team_GCP"^^xsd:string .
+
+mykg:SERVICEID_10001212 a owl:NamedIndividual,
+        dseco:SERVICEID ;
+    owl:sameAs mykg:SERVICEID_10001212 ;
+    dseco:hasName "10001212"^^xsd:string .
+
+mykg:SUBNET_198.51.100.0%2F24 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_198.51.100.0%2F24 ;
+    dseco:hasAS mykg:AS_AS1 ;
+    dseco:hasName "198.51.100.0/24"^^xsd:string .
+
+mykg:SUBNET_199.1.1.0%2F24 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_199.1.1.0%2F24 ;
+    dseco:hasAS mykg:AS_AS2 ;
+    dseco:hasName "199.1.1.0/24"^^xsd:string .
+
+mykg:SUBNET_203.0.113.0%2F24 a owl:NamedIndividual,
+        observable:NetworkSubnet ;
+    owl:sameAs mykg:SUBNET_203.0.113.0%2F24 ;
+    dseco:hasAS mykg:AS_AS1 ;
+    dseco:hasName "203.0.113.0/24"^^xsd:string .
+
+dseco:LAYER owl:sameAs dseco:LAYER .
+
+owl:Class owl:sameAs owl:Class .
+
+mykg:AS_AS1 a owl:NamedIndividual,
+        observable:AutonomousSystem ;
+    owl:sameAs mykg:AS_AS1 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b17 ;
+    dseco:hasName "AS1"^^xsd:string ;
+    dseco:hasOrgu mykg:ORGU_friendly .
+
+mykg:AS_AS2 a owl:NamedIndividual,
+        observable:AutonomousSystem ;
+    owl:sameAs mykg:AS_AS2 ;
+    core:hasFacet _:n60bafc393a85458ca53160b3268ca1d3b18 ;
+    dseco:hasName "AS2"^^xsd:string ;
+    dseco:hasOrgu mykg:ORGU_malicious .
+
+mykg:COMPONENT_c0f87188093d28dae3b7a42ee2333bafb0acaa2bdaf8c7e3204d78bb2e1a0ce3 a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_c0f87188093d28dae3b7a42ee2333bafb0acaa2bdaf8c7e3204d78bb2e1a0ce3 ;
+    dseco:hasBomRef "bomref2"^^xsd:string ;
+    dseco:hasName "artifactory1/pattern01/image2:1.3.0"^^xsd:string .
+
+mykg:FQDN_resolving a owl:Class ;
+    rdfs:subClassOf owl:Thing,
+        mykg:FQDN_resolving,
+        dseco:FQDN ;
+    owl:equivalentClass mykg:FQDN_resolving ;
+    owl:sameAs mykg:FQDN_resolving .
+
+mykg:SERVICEID_1 a owl:NamedIndividual,
+        dseco:SERVICEID ;
+    owl:sameAs mykg:SERVICEID_1 ;
+    dseco:hasName "1"^^xsd:string .
+
+mykg:ORGU_ext a owl:NamedIndividual,
+        org:OrganizationalUnit ;
+    owl:sameAs mykg:ORGU_ext ;
+    dseco:hasName "ext"^^xsd:string .
+
+mykg:COMPONENT_f04a754a27a1dc2ff6e087c650e4c65b912738abd8e7dd07fcb640081d4c1859 a owl:NamedIndividual,
+        dseco:COMPONENT ;
+    owl:sameAs mykg:COMPONENT_f04a754a27a1dc2ff6e087c650e4c65b912738abd8e7dd07fcb640081d4c1859 ;
+    dseco:hasBomRef "bomref1"^^xsd:string ;
+    dseco:hasName "artifactory1/pattern01/image1:1.3.0"^^xsd:string .
+
+<https://w3id.org/dseco/mykg/ZONE_internalzone2.org.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_internalzone2.org.> ;
+    dseco:hasName "internalzone2.org."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_int .
+
+owl:Thing a owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass owl:Thing ;
+    owl:sameAs owl:Thing .
+
+org:OrganizationalUnit owl:sameAs org:OrganizationalUnit .
+
+dseco:SERVICEID owl:sameAs dseco:SERVICEID .
+
+owl:AnnotationProperty owl:sameAs owl:AnnotationProperty .
+
+observable:NetworkSubnet owl:sameAs observable:NetworkSubnet .
+
+dseco:ZONE owl:sameAs dseco:ZONE .
+
+dseco:COMPONENT owl:sameAs dseco:COMPONENT .
+
+true a rdfs:Datatype,
+        xsd:boolean ;
+    owl:sameAs true .
+
+observable:IPv4Address owl:sameAs observable:IPv4Address .
+
+<https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_internalzone1.org.> ;
+    dseco:hasName "internalzone1.org."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_int .
+
+observable:IPAddress owl:sameAs observable:IPAddress .
+
+observable:IPAddressFacet owl:sameAs observable:IPAddressFacet .
+
+<https://w3id.org/dseco/mykg/ZONE_example.org.> a owl:NamedIndividual,
+        dseco:ZONE ;
+    owl:sameAs <https://w3id.org/dseco/mykg/ZONE_example.org.> ;
+    dseco:hasName "example.org."^^xsd:string ;
+    dseco:managedBy mykg:ORGU_top .
+
+dseco:FQDN owl:sameAs dseco:FQDN .
+
+owl:NamedIndividual owl:sameAs owl:NamedIndividual .
+
+xsd:string a rdfs:Datatype ;
+    owl:sameAs xsd:string .
+
+rdfs:Datatype owl:sameAs rdfs:Datatype .
+
+_:n60bafc393a85458ca53160b3268ca1d3b1 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b1 ;
+    observable:addressValue "203.0.113.46"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b10 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b10 ;
+    observable:addressValue "199.1.1.2"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b11 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b11 ;
+    observable:addressValue "199.1.1.3"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b12 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b12 ;
+    observable:addressValue "203.0.113.223"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b13 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b13 ;
+    observable:addressValue "203.0.113.97"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b14 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b14 ;
+    observable:addressValue "34.111.100.56"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b15 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b15 ;
+    observable:addressValue "99.99.1.1"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b16 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b16 ;
+    observable:addressValue "12.12.12.12"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b17 a observable:AutonomousSystemFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b17 ;
+    observable:asHandle "AS1"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b18 a observable:AutonomousSystemFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b18 ;
+    observable:asHandle "AS2"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b2 a observable:AutonomousSystemFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b2 ;
+    observable:asHandle "AS396982"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b3 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b3 ;
+    observable:addressValue "0.0.0.1"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b4 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b4 ;
+    observable:addressValue "103.0.0.1"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b5 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b5 ;
+    observable:addressValue "173.175.164.12"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b6 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b6 ;
+    observable:addressValue "198.51.100.1"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b7 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b7 ;
+    observable:addressValue "198.51.100.2"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b8 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b8 ;
+    observable:addressValue "198.51.100.227"^^xsd:string .
+
+_:n60bafc393a85458ca53160b3268ca1d3b9 a observable:IPAddressFacet ;
+    owl:sameAs _:n60bafc393a85458ca53160b3268ca1d3b9 ;
+    observable:addressValue "199.1.1.1"^^xsd:string .
+

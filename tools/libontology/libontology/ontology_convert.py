@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -34,6 +34,7 @@ convert_xmlrdf_to_ttl()
 """
 
 import argparse
+from . import __version__
 import sys
 from .base_ontology import BaseOntology
 
@@ -73,6 +74,9 @@ def convert_ontology(output_format=None):
         "--destination", help="destination ontology file", required=True
     )
 
+    parser.add_argument(
+        "--version", action="version", version=f"%(prog)s {__version__}"
+    )
     args = parser.parse_args()
 
     ontology_converter = OntologyConverter(args.ontology)

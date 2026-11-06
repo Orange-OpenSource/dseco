@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -32,8 +32,10 @@ render_describe_graph(results)
 """
 
 import argparse
+from . import __version__
 import sys
-from .base_ontology import BaseOntology
+from .base_ontology import BaseOntology, read_text_file
+import owlrl
 
 
 class OntologyDescribe(BaseOntology):
@@ -68,6 +70,7 @@ class OntologyDescribe(BaseOntology):
         Returns
         -------
         """
+        owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(self.graph)
         return self.graph.query(query)
 
     def render_describe_graph(self, results):
@@ -81,14 +84,12 @@ def main():
     parser.add_argument("--ontology", help="ontology file", required=True)
     parser.add_argument("--query", help="query file", required=True)
 
+    parser.add_argument(
+        "--version", action="version", version=f"%(prog)s {__version__}"
+    )
     args = parser.parse_args()
 
-    try:
-        with open(args.query, "r", encoding="utf-8") as file:
-            query = file.read()
-    except FileNotFoundError:
-        sys.stderr.write(f"\033[91m[-] The file {args.query} not found.\033[0m\n")
-        sys.exit(1)
+    query = read_text_file(args.query)
 
     ontology_describe = OntologyDescribe(args.ontology)
     results = ontology_describe.execute_query(query)

@@ -3,6 +3,8 @@
 /venv
 *.log
 *.~*
+*.DS_Store
+*.jar
 
 # Python
 __pycache__/

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2023-2025 Orange. All rights reserved.
+# Copyright (c) 2023-2026 Orange. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -30,10 +30,11 @@ and properties in the ontology.
 """
 
 import argparse
+from . import __version__
 import sys
 import tempfile
 import owlready2 as owl
-from .base_ontology import BaseOntology
+from .base_ontology import BaseOntology, read_text_file
 from .ontology_convert import OntologyConverter
 
 
@@ -92,6 +93,9 @@ def main():
         "--destination", help="destination ontology turtle file", required=True
     )
 
+    parser.add_argument(
+        "--version", action="version", version=f"%(prog)s {__version__}"
+    )
     args = parser.parse_args()
 
     with (
@@ -107,14 +111,7 @@ def main():
         ontology_converter = OntologyConverter(args.ontology)
         ontology_converter.convert(temp_source_xml_path, "xml")
 
-        try:
-            with open(args.rulefile, "r", encoding="utf-8") as file:
-                swrl_rule = file.read()
-        except FileNotFoundError:
-            sys.stderr.write(
-                f"\033[91m[-] The file {args.rulefile} not found.\033[0m\n"
-            )
-            sys.exit(1)
+        swrl_rule = read_text_file(args.rulefile)
 
         try:
             # We add the SWRL rule to the xml source file and we save a xml destination file

@@ -1,0 +1,6 @@
+PREFIX mykg: <https://w3id.org/dseco/mykg/>
+
+INSERT { ?fqdn mykg:resolves true . }
+WHERE  { 
+    ?fqdn a mykg:FQDN_resolving .
+    }

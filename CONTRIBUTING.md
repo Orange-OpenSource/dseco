@@ -40,3 +40,13 @@ In both contexts, please be kind and courteous.
 Language issues are often contentious and we'd like to keep discussion brief, civil and focused on what we're actually doing, not wandering off into too much imaginary stuff. 
 Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour is not welcome.
 
+## Releases
+
+When releasing a new DSecO version, please ensure:
+
+- providing a CHANGELOG.
+- checking the ontology syntax is valid ; see the `make check-ontology` CLI command.
+- updating the online documentation ; see the `make doc-ontology` CLI command.
+- including a concise and useful description of the new DSecO release within GitHub.
+- updating the redirection rules within the https://w3id.org/ repository for the *dseco* id ; see https://github.com/perma-id/w3id.org/tree/master/ids/dseco
+- updating public vocabulary databases ; see https://lov.linkeddata.es/dataset/vocabs/dseco and https://industryportal.enit.fr/ontologies/DSECO

@@ -1,0 +1,53 @@
+[
+  {
+    "timestamp": "2026-03-06T07:13:08.131696707Z",
+    "port": "80",
+    "url": "https://zozo.paas.prod.cachehttp.gslb.internalzone1.org",
+    "input": "zozo.paas.prod.cachehttp.gslb.internalzone1.org",
+    "scheme": "https",
+    "content_type": "text/plain",
+    "method": "GET",
+    "host": "198.51.100.1",
+    "path": "/",
+    "time": "153.766389ms",
+    "a": [
+      "198.51.100.1"
+    ],
+    "status_code": 80,
+    "failed": false
+  },
+  {
+    "timestamp": "2026-03-06T07:13:08.131696707Z",
+    "port": "443",
+    "url": "https://yetanother_isp.fr",
+    "input": "yetanother_isp.fr",
+    "scheme": "https",
+    "content_type": "text/plain",
+    "method": "GET",
+    "host": "99.99.1.1",
+    "path": "/",
+    "time": "153.766389ms",
+    "a": [
+      "99.99.1.1"
+    ],
+    "status_code": 404,
+    "failed": false
+  },
+  {
+    "timestamp": "2026-03-06T07:13:08.131696707Z",
+    "port": "80",
+    "url": "https://generique-https.prod.redirect.gslb.internalzone1.org",
+    "input": "generique-https.prod.redirect.gslb.internalzone1.org",
+    "scheme": "https",
+    "content_type": "text/plain",
+    "method": "GET",
+    "host": "203.0.113.223",
+    "path": "/",
+    "time": "153.766389ms",
+    "a": [
+      "203.0.113.223"
+    ],
+    "status_code": 80,
+    "failed": false
+  }
+]
